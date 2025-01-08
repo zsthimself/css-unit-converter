@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="英寸(in)转厘米(cm)在线转换器 - 精确计算英寸到厘米的转换">
+    <meta name="keywords" content="in转cm,英寸转厘米,inch to cm,厘米换算">
+    <title>英寸转厘米换算器 - CSS单位转换工具</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../converter.css">
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="../../index.html">首页</a> > 英寸转厘米
+        </nav>
+        <h1>英寸(IN)转厘米(CM)转换器</h1>
+        <p>将英寸(in)精确转换为厘米(cm)，适用于长度单位换算</p>
+    </header>
+
+    <main class="converter-container">
+        <div class="input-section">
+            <div class="converter">
+                <input type="number" id="inchValue" placeholder="输入英寸值">
+                <span class="unit">in</span>
+            </div>
+            <div class="button-group">
+                <button id="convert" class="btn btn-primary">转换</button>
+                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-display">
+                <span id="result">0</span>
+                <span class="unit">cm</span>
+            </div>
+            <div class="formula-display">
+                <p>转换公式: 1 inch = 2.54 centimeters</p>
+                <p>计算方法: inch × 2.54 = cm</p>
+            </div>
+        </div>
+
+        <section class="conversion-info">
+            <h2>英寸转厘米换算说明</h2>
+            <p>英寸(in)是英制长度单位，1英寸精确等于2.54厘米。这是一个固定的换算关系，不受设备或显示器影响。</p>
+            
+            <h3>常用换算值参考：</h3>
+            <ul class="conversion-examples">
+                <li>1in = 2.54cm</li>
+                <li>2in = 5.08cm</li>
+                <li>0.5in = 1.27cm</li>
+                <li>12in = 30.48cm (1英尺)</li>
+            </ul>
+
+            <div class="usage-notes">
+                <h3>使用说明：</h3>
+                <ol>
+                    <li>在输入框中输入英寸值</li>
+                    <li>点击"转换"按钮或按回车</li>
+                    <li>获得对应的厘米值</li>
+                    <li>可以点击复制按钮复制结果</li>
+                </ol>
+            </div>
+
+            <div class="tips">
+                <h3>使用技巧：</h3>
+                <ul>
+                    <li>常用于国际单位换算</li>
+                    <li>精确到小数点后2位</li>
+                    <li>适合日常长度测量</li>
+                    <li>广泛用于工程设计</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const inchInput = document.getElementById('inchValue');
+        const resultSpan = document.getElementById('result');
+        const convertBtn = document.getElementById('convert');
+        const copyBtn = document.getElementById('copy');
+
+        function convertInchToCm() {
+            const inch = parseFloat(inchInput.value);
+            
+            if (!isNaN(inch)) {
+                const cm = inch * 2.54;
+                resultSpan.textContent = cm.toFixed(3);
+            } else {
+                resultSpan.textContent = '请输入有效数值';
+            }
+        }
+
+        function copyResult() {
+            navigator.clipboard.writeText(resultSpan.textContent)
+                .then(() => {
+                    copyBtn.textContent = '已复制!';
+                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                })
+                .catch(err => {
+                    console.error('复制失败:', err);
+                });
+        }
+
+        inchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convertInchToCm();
+        });
+        convertBtn.addEventListener('click', convertInchToCm);
+        copyBtn.addEventListener('click', copyResult);
+    </script>
+</body>
+</html> 

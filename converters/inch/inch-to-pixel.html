@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="英寸(in)转像素(px)在线转换器 - 精确计算英寸到像素的转换">
+    <meta name="keywords" content="in转px,英寸转像素,inch to pixel,像素换算">
+    <title>英寸转像素换算器 - CSS单位转换工具</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../converter.css">
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="../../index.html">首页</a> > 英寸转像素
+        </nav>
+        <h1>英寸(IN)转像素(PX)转换器</h1>
+        <p>将英寸(in)精确转换为像素(px)，适用于网页设计和打印排版</p>
+    </header>
+
+    <main class="converter-container">
+        <div class="input-section">
+            <div class="settings">
+                <label for="dpi">屏幕DPI:</label>
+                <input type="number" id="dpi" value="96" min="1">
+                <span class="unit">dpi</span>
+            </div>
+            <div class="converter">
+                <input type="number" id="inchValue" placeholder="输入英寸值">
+                <span class="unit">in</span>
+            </div>
+            <div class="button-group">
+                <button id="convert" class="btn btn-primary">转换</button>
+                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-display">
+                <span id="result">0</span>
+                <span class="unit">px</span>
+            </div>
+            <div class="formula-display">
+                <p>转换公式: 1 inch = 96 pixels (96dpi)</p>
+                <p>计算方法: inch × dpi = px</p>
+            </div>
+        </div>
+
+        <section class="conversion-info">
+            <h2>英寸转像素换算说明</h2>
+            <p>英寸(in)是一个物理长度单位。在标准96 DPI显示器上，1英寸等于96像素。</p>
+            
+            <h3>常用换算值参考（基于96 DPI）：</h3>
+            <ul class="conversion-examples">
+                <li>1in = 96px</li>
+                <li>0.5in = 48px</li>
+                <li>2in = 192px</li>
+                <li>0.25in = 24px</li>
+            </ul>
+
+            <div class="usage-notes">
+                <h3>使用说明：</h3>
+                <ol>
+                    <li>可以调整屏幕DPI值（默认96）</li>
+                    <li>在输入框中输入英寸值</li>
+                    <li>点击"转换"按钮或按回车</li>
+                    <li>获得对应的像素值</li>
+                </ol>
+            </div>
+
+            <div class="tips">
+                <h3>使用技巧：</h3>
+                <ul>
+                    <li>常用于打印设计</li>
+                    <li>注意不同设备的DPI差异</li>
+                    <li>适合精确尺寸设计</li>
+                    <li>可用于高精度排版</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const inchInput = document.getElementById('inchValue');
+        const dpiInput = document.getElementById('dpi');
+        const resultSpan = document.getElementById('result');
+        const convertBtn = document.getElementById('convert');
+        const copyBtn = document.getElementById('copy');
+
+        function convertInchToPx() {
+            const inch = parseFloat(inchInput.value);
+            const dpi = parseFloat(dpiInput.value) || 96;
+            
+            if (!isNaN(inch)) {
+                const px = inch * dpi;
+                resultSpan.textContent = px.toFixed(3);
+            } else {
+                resultSpan.textContent = '请输入有效数值';
+            }
+        }
+
+        function copyResult() {
+            navigator.clipboard.writeText(resultSpan.textContent)
+                .then(() => {
+                    copyBtn.textContent = '已复制!';
+                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                })
+                .catch(err => {
+                    console.error('复制失败:', err);
+                });
+        }
+
+        inchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convertInchToPx();
+        });
+        dpiInput.addEventListener('input', convertInchToPx);
+        convertBtn.addEventListener('click', convertInchToPx);
+        copyBtn.addEventListener('click', copyResult);
+    </script>
+</body>
+</html> 

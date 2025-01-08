@@ -1,0 +1,319 @@
+.breadcrumb {
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.breadcrumb a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.converter-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.input-section {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.settings {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.settings label {
+    font-weight: 500;
+    color: #333;
+    min-width: 120px;
+}
+
+.settings input {
+    width: 100px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.converter {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.converter input {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.converter input:focus {
+    border-color: #1a73e8;
+    outline: none;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    min-width: 120px;
+}
+
+.btn-primary {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1557b0;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #f8f9fa;
+    color: #1a73e8;
+    border: 1px solid #1a73e8;
+}
+
+.btn-secondary:hover {
+    background-color: #e8f0fe;
+    transform: translateY(-2px);
+}
+
+.result-section {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.result-display {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1a73e8;
+    margin-bottom: 1rem;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.unit {
+    font-size: 0.8em;
+    color: #666;
+    margin-left: 0.5rem;
+}
+
+.formula-display {
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.conversion-info {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.conversion-info h2 {
+    color: #1a73e8;
+    margin-bottom: 1rem;
+}
+
+.conversion-examples {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.conversion-examples li {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.usage-notes, .tips {
+    margin-top: 2rem;
+}
+
+.usage-notes h3, .tips h3 {
+    color: #1a73e8;
+    margin-bottom: 1rem;
+}
+
+.usage-notes ol, .tips ul {
+    padding-left: 1.5rem;
+    line-height: 1.8;
+}
+
+/* 移动端响应式样式 */
+@media (max-width: 768px) {
+    .converter-container {
+        padding: 1rem;
+    }
+
+    .input-section {
+        padding: 1.5rem 1rem;
+    }
+
+    .settings {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    .settings label {
+        min-width: auto;
+    }
+
+    .settings input {
+        width: 100%;
+    }
+
+    .converter {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .converter input {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 0.8rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    .result-display {
+        font-size: 2.5rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .formula-display {
+        font-size: 1rem;
+    }
+
+    .conversion-info {
+        padding: 1.5rem 1rem;
+    }
+
+    .conversion-examples {
+        grid-template-columns: 1fr;
+    }
+
+    .conversion-examples li {
+        font-size: 1rem;
+    }
+}
+
+/* 小屏幕设备优化 */
+@media (max-width: 480px) {
+    .result-display {
+        font-size: 2rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .conversion-info h2 {
+        font-size: 1.3rem;
+    }
+
+    .breadcrumb {
+        font-size: 0.9rem;
+    }
+
+    .unit-info p {
+        font-size: 0.9rem;
+    }
+}
+
+/* 暗色模式支持 */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+
+    .input-section,
+    .result-display,
+    .conversion-info {
+        background: #2d2d2d;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .converter input {
+        background: #1a1a1a;
+        border-color: #404040;
+        color: #e0e0e0;
+    }
+
+    .converter input:focus {
+        border-color: #4a8cff;
+    }
+
+    .btn-secondary {
+        background-color: #2d2d2d;
+        border-color: #4a8cff;
+        color: #4a8cff;
+    }
+
+    .btn-secondary:hover {
+        background-color: #353535;
+    }
+
+    .conversion-examples li {
+        background: #353535;
+    }
+
+    .settings label {
+        color: #e0e0e0;
+    }
+
+    .unit {
+        color: #999;
+    }
+
+    .formula-display {
+        color: #999;
+    }
+} 

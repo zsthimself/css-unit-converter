@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="REM转EM在线转换器 - 精确计算REM到EM的转换">
+    <meta name="keywords" content="rem转em,REM转EM,rem to em,em换算">
+    <title>REM转EM换算器 - CSS单位转换工具</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../converter.css">
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="../../index.html">首页</a> > REM转EM
+        </nav>
+        <h1>REM转EM转换器</h1>
+        <p>将REM转换为EM，适用于响应式网页设计</p>
+    </header>
+
+    <main class="converter-container">
+        <div class="input-section">
+            <div class="settings">
+                <label for="parentFontSize">父元素字体大小:</label>
+                <input type="number" id="parentFontSize" value="16" min="1">
+                <span class="unit">px</span>
+            </div>
+            <div class="converter">
+                <input type="number" id="remValue" placeholder="输入REM值">
+                <span class="unit">rem</span>
+            </div>
+            <div class="button-group">
+                <button id="convert" class="btn btn-primary">转换</button>
+                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-display">
+                <span id="result">0</span>
+                <span class="unit">em</span>
+            </div>
+            <div class="formula-display">
+                <p>计算方法: rem × (父元素字体大小) = em</p>
+            </div>
+        </div>
+
+        <section class="conversion-info">
+            <h2>REM转EM换算说明</h2>
+            <p>EM是相对于父元素字体大小的单位。通过输入REM值和父元素字体大小，可以计算出相应的EM值。</p>
+            
+            <h3>常用换算值参考（基于16px父元素字体）：</h3>
+            <ul class="conversion-examples">
+                <li>1rem = 1em (假设父元素为16px)</li>
+                <li>2rem = 2em (假设父元素为16px)</li>
+                <li>0.5rem = 0.5em (假设父元素为16px)</li>
+            </ul>
+
+            <div class="usage-notes">
+                <h3>使用说明：</h3>
+                <ol>
+                    <li>设置父元素字体大小（默认16px）</li>
+                    <li>输入REM值</li>
+                    <li>获得对应的EM值</li>
+                </ol>
+            </div>
+
+            <div class="tips">
+                <h3>使用技巧：</h3>
+                <ul>
+                    <li>适用于响应式设计</li>
+                    <li>根据父元素字体大小计算</li>
+                    <li>精确到小数点后3位</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const remInput = document.getElementById('remValue');
+        const parentFontSizeInput = document.getElementById('parentFontSize');
+        const resultSpan = document.getElementById('result');
+        const convertBtn = document.getElementById('convert');
+        const copyBtn = document.getElementById('copy');
+
+        function convertRemToEm() {
+            const rem = parseFloat(remInput.value);
+            const parentFontSize = parseFloat(parentFontSizeInput.value) || 16;
+            
+            if (!isNaN(rem)) {
+                const em = rem; // 1rem = 1em
+                resultSpan.textContent = em.toFixed(3);
+            } else {
+                resultSpan.textContent = '请输入有效数值';
+            }
+        }
+
+        function copyResult() {
+            navigator.clipboard.writeText(resultSpan.textContent)
+                .then(() => {
+                    copyBtn.textContent = '已复制!';
+                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                })
+                .catch(err => {
+                    console.error('复制失败:', err);
+                });
+        }
+
+        remInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convertRemToEm();
+        });
+        parentFontSizeInput.addEventListener('input', convertRemToEm);
+        convertBtn.addEventListener('click', convertRemToEm);
+        copyBtn.addEventListener('click', copyResult);
+    </script>
+</body>
+</html> 

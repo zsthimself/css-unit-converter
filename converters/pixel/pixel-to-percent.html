@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="像素(px)转百分比(%)在线转换器 - 精确计算像素到百分比的转换">
+    <meta name="keywords" content="px转%,像素转百分比,px to percent,百分比换算">
+    <title>像素转百分比换算器 - CSS单位转换工具</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../converter.css">
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="../../index.html">首页</a> > 像素转百分比
+        </nav>
+        <h1>像素(PX)转百分比(%)转换器</h1>
+        <p>将像素(px)精确转换为百分比(%)，适用于响应式布局设计</p>
+    </header>
+
+    <main class="converter-container">
+        <div class="input-section">
+            <div class="settings">
+                <label for="parentSize">父元素尺寸:</label>
+                <input type="number" id="parentSize" value="1000" min="1">
+                <span class="unit">px</span>
+            </div>
+            <div class="converter">
+                <input type="number" id="pxValue" placeholder="输入像素值">
+                <span class="unit">px</span>
+            </div>
+            <div class="button-group">
+                <button id="convert" class="btn btn-primary">转换</button>
+                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-display">
+                <span id="result">0</span>
+                <span class="unit">%</span>
+            </div>
+            <div class="formula-display">
+                <p>转换公式: 百分比 = (子元素尺寸 ÷ 父元素尺寸) × 100</p>
+                <p>计算方法: (px ÷ 父元素尺寸) × 100 = %</p>
+            </div>
+        </div>
+
+        <section class="conversion-info">
+            <h2>像素转百分比换算说明</h2>
+            <p>百分比(%)是相对于父元素的单位。例如，如果父元素宽度为1000px，子元素为200px，则子元素宽度为20%。</p>
+            
+            <h3>常用换算值参考（基于1000px父元素）：</h3>
+            <ul class="conversion-examples">
+                <li>100px = 10%</li>
+                <li>250px = 25%</li>
+                <li>500px = 50%</li>
+                <li>1000px = 100%</li>
+            </ul>
+
+            <div class="usage-notes">
+                <h3>使用说明：</h3>
+                <ol>
+                    <li>设置父元素尺寸（默认1000px）</li>
+                    <li>在输入框中输入像素值</li>
+                    <li>点击"转换"按钮或按回车</li>
+                    <li>获得对应的百分比值</li>
+                </ol>
+            </div>
+
+            <div class="tips">
+                <h3>使用技巧：</h3>
+                <ul>
+                    <li>百分比单位适合响应式布局</li>
+                    <li>可用于宽度、高度和边距</li>
+                    <li>注意父元素尺寸的变化</li>
+                    <li>适合流式布局设计</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const pxInput = document.getElementById('pxValue');
+        const parentSizeInput = document.getElementById('parentSize');
+        const resultSpan = document.getElementById('result');
+        const convertBtn = document.getElementById('convert');
+        const copyBtn = document.getElementById('copy');
+
+        function convertPxToPercent() {
+            const px = parseFloat(pxInput.value);
+            const parentSize = parseFloat(parentSizeInput.value) || 1000;
+            
+            if (!isNaN(px)) {
+                const percent = (px / parentSize) * 100;
+                resultSpan.textContent = percent.toFixed(3);
+            } else {
+                resultSpan.textContent = '请输入有效数值';
+            }
+        }
+
+        function copyResult() {
+            navigator.clipboard.writeText(resultSpan.textContent)
+                .then(() => {
+                    copyBtn.textContent = '已复制!';
+                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                })
+                .catch(err => {
+                    console.error('复制失败:', err);
+                });
+        }
+
+        pxInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convertPxToPercent();
+        });
+        parentSizeInput.addEventListener('input', convertPxToPercent);
+        convertBtn.addEventListener('click', convertPxToPercent);
+        copyBtn.addEventListener('click', copyResult);
+    </script>
+</body>
+</html> 

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="像素(px)转视窗高度(vh)在线转换器 - 精确计算像素到vh的转换">
+    <meta name="keywords" content="px转vh,像素转视窗高度,px to vh,vh换算">
+    <title>像素转视窗高度换算器 - CSS单位转换工具</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../converter.css">
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="../../index.html">首页</a> > 像素转视窗高度
+        </nav>
+        <h1>像素(PX)转视窗高度(VH)转换器</h1>
+        <p>将像素(px)精确转换为视窗高度单位(vh)，适用于响应式网页设计</p>
+    </header>
+
+    <main class="converter-container">
+        <div class="input-section">
+            <div class="settings">
+                <label for="viewportHeight">当前视窗高度:</label>
+                <input type="number" id="viewportHeight" readonly>
+                <span class="unit">px</span>
+            </div>
+            <div class="converter">
+                <input type="number" id="pxValue" placeholder="输入像素值">
+                <span class="unit">px</span>
+            </div>
+            <div class="button-group">
+                <button id="convert" class="btn btn-primary">转换</button>
+                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-display">
+                <span id="result">0</span>
+                <span class="unit">vh</span>
+            </div>
+            <div class="formula-display">
+                <p>转换公式: 1vh = 视窗高度的1%</p>
+                <p>计算方法: (px ÷ 视窗高度) × 100 = vh</p>
+            </div>
+        </div>
+
+        <section class="conversion-info">
+            <h2>像素转视窗高度换算说明</h2>
+            <p>视窗高度单位(vh)是相对于浏览器视窗高度的单位，1vh等于视窗高度的1%。这个值会随着浏览器窗口大小的改变而改变。</p>
+            
+            <h3>常用换算值参考（基于当前视窗高度）：</h3>
+            <ul class="conversion-examples" id="examples">
+                <li>计算中...</li>
+            </ul>
+
+            <div class="usage-notes">
+                <h3>使用说明：</h3>
+                <ol>
+                    <li>查看当前视窗高度</li>
+                    <li>在输入框中输入像素值</li>
+                    <li>点击"转换"按钮或按回车</li>
+                    <li>获得对应的vh值</li>
+                    <li>改变窗口大小时会自动更新</li>
+                </ol>
+            </div>
+
+            <div class="tips">
+                <h3>使用技巧：</h3>
+                <ul>
+                    <li>vh单位适合响应式设计</li>
+                    <li>100vh等于整个视窗高度</li>
+                    <li>适合用于设置高度和边距</li>
+                    <li>可以与vw单位配合使用</li>
+                    <li>注意移动端键盘弹出的影响</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const pxInput = document.getElementById('pxValue');
+        const viewportHeightInput = document.getElementById('viewportHeight');
+        const resultSpan = document.getElementById('result');
+        const convertBtn = document.getElementById('convert');
+        const copyBtn = document.getElementById('copy');
+        const examplesList = document.getElementById('examples');
+
+        function updateViewportHeight() {
+            const height = window.innerHeight;
+            viewportHeightInput.value = height;
+            updateExamples(height);
+            if (pxInput.value) {
+                convertPxToVh();
+            }
+        }
+
+        function updateExamples(height) {
+            const examples = [
+                { px: height / 4, text: '25%' },
+                { px: height / 2, text: '50%' },
+                { px: height * 0.75, text: '75%' },
+                { px: height, text: '100%' }
+            ];
+
+            examplesList.innerHTML = examples.map(ex => 
+                `<li>${ex.px.toFixed(0)}px = ${ex.text} (${(ex.px/height*100).toFixed(1)}vh)</li>`
+            ).join('');
+        }
+
+        function convertPxToVh() {
+            const px = parseFloat(pxInput.value);
+            const height = window.innerHeight;
+            
+            if (!isNaN(px)) {
+                const vh = (px / height) * 100;
+                resultSpan.textContent = vh.toFixed(3);
+            } else {
+                resultSpan.textContent = '请输入有效数值';
+            }
+        }
+
+        function copyResult() {
+            navigator.clipboard.writeText(resultSpan.textContent)
+                .then(() => {
+                    copyBtn.textContent = '已复制!';
+                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                })
+                .catch(err => {
+                    console.error('复制失败:', err);
+                });
+        }
+
+        // 初始化和事件监听
+        updateViewportHeight();
+        window.addEventListener('resize', updateViewportHeight);
+        pxInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convertPxToVh();
+        });
+        convertBtn.addEventListener('click', convertPxToVh);
+        copyBtn.addEventListener('click', copyResult);
+    </script>
+</body>
+</html> 

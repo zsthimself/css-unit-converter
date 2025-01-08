@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="REM转视窗高度在线转换器 - 精确计算REM到vh的转换">
+    <meta name="keywords" content="rem转vh,REM转视窗高度,rem to vh,视窗高度换算">
+    <title>REM转视窗高度换算器 - CSS单位转换工具</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../converter.css">
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="../../index.html">首页</a> > REM转视窗高度
+        </nav>
+        <h1>REM转视窗高度(VH)转换器</h1>
+        <p>将REM转换为视窗高度，适用于响应式网页设计</p>
+    </header>
+
+    <main class="converter-container">
+        <div class="input-section">
+            <div class="settings">
+                <label for="rootFontSize">根元素字体大小:</label>
+                <input type="number" id="rootFontSize" value="16" min="1">
+                <span class="unit">px</span>
+            </div>
+            <div class="settings">
+                <label for="viewportHeight">视窗高度:</label>
+                <input type="number" id="viewportHeight" readonly>
+                <span class="unit">px</span>
+            </div>
+            <div class="converter">
+                <input type="number" id="remValue" placeholder="输入REM值">
+                <span class="unit">rem</span>
+            </div>
+            <div class="button-group">
+                <button id="convert" class="btn btn-primary">转换</button>
+                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-display">
+                <span id="result">0</span>
+                <span class="unit">vh</span>
+            </div>
+            <div class="formula-display">
+                <p>计算方法: (rem × rootFontSize ÷ viewportHeight) × 100 = vh</p>
+            </div>
+        </div>
+
+        <section class="conversion-info">
+            <h2>REM转视窗高度换算说明</h2>
+            <p>视窗高度(vh)是相对于浏览器视窗高度的单位，1vh等于视窗高度的1%。通过输入REM值和根元素字体大小，可以计算出相应的vh值。</p>
+            
+            <h3>常用换算值参考（基于1080px高度）：</h3>
+            <ul class="conversion-examples">
+                <li>1rem = 8vh (假设根元素为16px)</li>
+                <li>2rem = 16vh (假设根元素为16px)</li>
+                <li>6rem = 48vh (假设根元素为16px)</li>
+            </ul>
+
+            <div class="usage-notes">
+                <h3>使用说明：</h3>
+                <ol>
+                    <li>设置根元素字体大小（默认16px）</li>
+                    <li>注意当前视窗高度</li>
+                    <li>输入REM值</li>
+                    <li>获得对应的vh值</li>
+                </ol>
+            </div>
+
+            <div class="tips">
+                <h3>使用技巧：</h3>
+                <ul>
+                    <li>适用于响应式布局</li>
+                    <li>随视窗高度变化</li>
+                    <li>精确到小数点后3位</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const remInput = document.getElementById('remValue');
+        const rootFontSizeInput = document.getElementById('rootFontSize');
+        const viewportHeightInput = document.getElementById('viewportHeight');
+        const resultSpan = document.getElementById('result');
+        const convertBtn = document.getElementById('convert');
+        const copyBtn = document.getElementById('copy');
+
+        function updateViewportHeight() {
+            viewportHeightInput.value = window.innerHeight;
+        }
+
+        function convertRemToVh() {
+            const rem = parseFloat(remInput.value);
+            const rootFontSize = parseFloat(rootFontSizeInput.value) || 16;
+            const viewportHeight = window.innerHeight;
+            
+            if (!isNaN(rem)) {
+                const px = rem * rootFontSize;
+                const vh = (px / viewportHeight) * 100;
+                resultSpan.textContent = vh.toFixed(3);
+            } else {
+                resultSpan.textContent = '请输入有效数值';
+            }
+        }
+
+        function copyResult() {
+            navigator.clipboard.writeText(resultSpan.textContent)
+                .then(() => {
+                    copyBtn.textContent = '已复制!';
+                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                })
+                .catch(err => {
+                    console.error('复制失败:', err);
+                });
+        }
+
+        // 初始化和事件监听
+        updateViewportHeight();
+        window.addEventListener('resize', () => {
+            updateViewportHeight();
+            convertRemToVh();
+        });
+        
+        remInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convertRemToVh();
+        });
+        rootFontSizeInput.addEventListener('input', convertRemToVh);
+        convertBtn.addEventListener('click', convertRemToVh);
+        copyBtn.addEventListener('click', copyResult);
+    </script>
+</body>
+</html> 

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="英寸(in)转EM在线转换器 - 精确计算英寸到em的转换">
+    <meta name="keywords" content="in转em,英寸转em,inch to em,em换算">
+    <title>英寸转EM换算器 - CSS单位转换工具</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../converter.css">
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="../../index.html">首页</a> > 英寸转EM
+        </nav>
+        <h1>英寸(IN)转EM转换器</h1>
+        <p>将英寸(in)精确转换为EM，适用于响应式网页设计</p>
+    </header>
+
+    <main class="converter-container">
+        <div class="input-section">
+            <div class="settings">
+                <label for="parentFontSize">父元素字体大小:</label>
+                <input type="number" id="parentFontSize" value="16" min="1">
+                <span class="unit">px</span>
+            </div>
+            <div class="settings">
+                <label for="dpi">屏幕DPI:</label>
+                <input type="number" id="dpi" value="96" min="1">
+                <span class="unit">dpi</span>
+            </div>
+            <div class="converter">
+                <input type="number" id="inchValue" placeholder="输入英寸值">
+                <span class="unit">in</span>
+            </div>
+            <div class="button-group">
+                <button id="convert" class="btn btn-primary">转换</button>
+                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-display">
+                <span id="result">0</span>
+                <span class="unit">em</span>
+            </div>
+            <div class="formula-display">
+                <p>转换公式: 1in = 96px (96dpi)</p>
+                <p>计算方法: (inch × dpi) ÷ parentFontSize = em</p>
+            </div>
+        </div>
+
+        <section class="conversion-info">
+            <h2>英寸转EM换算说明</h2>
+            <p>EM是相对于父元素字体大小的单位。在默认情况下，1英寸等于96像素，再根据父元素字体大小换算为EM。</p>
+            
+            <h3>常用换算值参考（基于16px父元素字体）：</h3>
+            <ul class="conversion-examples">
+                <li>1in = 6em</li>
+                <li>0.5in = 3em</li>
+                <li>0.25in = 1.5em</li>
+                <li>2in = 12em</li>
+            </ul>
+
+            <div class="usage-notes">
+                <h3>使用说明：</h3>
+                <ol>
+                    <li>设置父元素字体大小（默认16px）</li>
+                    <li>调整屏幕DPI值（默认96）</li>
+                    <li>输入英寸值</li>
+                    <li>获得对应的EM值</li>
+                </ol>
+            </div>
+
+            <div class="tips">
+                <h3>使用技巧：</h3>
+                <ul>
+                    <li>适用于响应式设计</li>
+                    <li>根据父元素字体缩放</li>
+                    <li>精确到小数点后3位</li>
+                    <li>常用于文本排版</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const inchInput = document.getElementById('inchValue');
+        const parentFontSizeInput = document.getElementById('parentFontSize');
+        const dpiInput = document.getElementById('dpi');
+        const resultSpan = document.getElementById('result');
+        const convertBtn = document.getElementById('convert');
+        const copyBtn = document.getElementById('copy');
+
+        function convertInchToEm() {
+            const inch = parseFloat(inchInput.value);
+            const parentFontSize = parseFloat(parentFontSizeInput.value) || 16;
+            const dpi = parseFloat(dpiInput.value) || 96;
+            
+            if (!isNaN(inch)) {
+                const px = inch * dpi;
+                const em = px / parentFontSize;
+                resultSpan.textContent = em.toFixed(3);
+            } else {
+                resultSpan.textContent = '请输入有效数值';
+            }
+        }
+
+        function copyResult() {
+            navigator.clipboard.writeText(resultSpan.textContent)
+                .then(() => {
+                    copyBtn.textContent = '已复制!';
+                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                })
+                .catch(err => {
+                    console.error('复制失败:', err);
+                });
+        }
+
+        inchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convertInchToEm();
+        });
+        parentFontSizeInput.addEventListener('input', convertInchToEm);
+        dpiInput.addEventListener('input', convertInchToEm);
+        convertBtn.addEventListener('click', convertInchToEm);
+        copyBtn.addEventListener('click', copyResult);
+    </script>
+</body>
+</html> 

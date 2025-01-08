@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="像素(px)转EM在线转换器 - 精确计算像素到em的转换">
+    <meta name="keywords" content="px转em,像素转em,px to em,em换算">
+    <title>像素转EM换算器 - CSS单位转换工具</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../converter.css">
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="../../index.html">首页</a> > 像素转EM
+        </nav>
+        <h1>像素(PX)转EM转换器</h1>
+        <p>将像素(px)精确转换为em，适用于相对父元素的响应式设计</p>
+    </header>
+
+    <main class="converter-container">
+        <div class="input-section">
+            <div class="settings">
+                <label for="parentFontSize">父元素字体大小:</label>
+                <input type="number" id="parentFontSize" value="16" min="1">
+                <span class="unit">px</span>
+            </div>
+            <div class="converter">
+                <input type="number" id="pxValue" placeholder="输入像素值">
+                <span class="unit">px</span>
+            </div>
+            <div class="button-group">
+                <button id="convert" class="btn btn-primary">转换</button>
+                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-display">
+                <span id="result">0</span>
+                <span class="unit">em</span>
+            </div>
+            <div class="formula-display">
+                <p>转换公式: 1em = 父元素字体大小</p>
+                <p>计算方法: px ÷ 父元素字体大小 = em</p>
+            </div>
+        </div>
+
+        <section class="conversion-info">
+            <h2>像素转EM换算说明</h2>
+            <p>EM是相对于父元素字体大小的单位。如果父元素字体大小为16px，则1em等于16像素。</p>
+            
+            <h3>常用换算值参考（基于16px父元素）：</h3>
+            <ul class="conversion-examples">
+                <li>16px = 1em</li>
+                <li>32px = 2em</li>
+                <li>8px = 0.5em</li>
+                <li>24px = 1.5em</li>
+            </ul>
+
+            <div class="usage-notes">
+                <h3>使用说明：</h3>
+                <ol>
+                    <li>可以调整父元素字体大小（默认16px）</li>
+                    <li>在输入框中输入像素值</li>
+                    <li>点击"转换"按钮或按回车</li>
+                    <li>获得对应的em值</li>
+                </ol>
+            </div>
+
+            <div class="tips">
+                <h3>使用技巧：</h3>
+                <ul>
+                    <li>em单位适合局部响应式设计</li>
+                    <li>注意em会继承父元素的大小</li>
+                    <li>常用于设置字体大小和间距</li>
+                    <li>可能出现em值叠加的情况</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const pxInput = document.getElementById('pxValue');
+        const parentFontSizeInput = document.getElementById('parentFontSize');
+        const resultSpan = document.getElementById('result');
+        const convertBtn = document.getElementById('convert');
+        const copyBtn = document.getElementById('copy');
+
+        function convertPxToEm() {
+            const px = parseFloat(pxInput.value);
+            const parentFontSize = parseFloat(parentFontSizeInput.value) || 16;
+            
+            if (!isNaN(px)) {
+                const em = px / parentFontSize;
+                resultSpan.textContent = em.toFixed(3);
+            } else {
+                resultSpan.textContent = '请输入有效数值';
+            }
+        }
+
+        function copyResult() {
+            navigator.clipboard.writeText(resultSpan.textContent)
+                .then(() => {
+                    copyBtn.textContent = '已复制!';
+                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                })
+                .catch(err => {
+                    console.error('复制失败:', err);
+                });
+        }
+
+        pxInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convertPxToEm();
+        });
+        parentFontSizeInput.addEventListener('input', convertPxToEm);
+        convertBtn.addEventListener('click', convertPxToEm);
+        copyBtn.addEventListener('click', copyResult);
+    </script>
+</body>
+</html> 

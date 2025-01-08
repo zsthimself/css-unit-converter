@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="像素(px)转视窗宽度(vw)在线转换器 - 精确计算像素到vw的转换">
+    <meta name="keywords" content="px转vw,像素转视窗宽度,px to vw,vw计算器">
+    <title>像素转视窗宽度换算器 - CSS单位转换工具</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../converter.css">
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="../../index.html">首页</a> > 像素转视窗宽度
+        </nav>
+        <h1>像素(PX)转视窗宽度(VW)转换器</h1>
+        <p>将像素(px)精确转换为视窗宽度单位(vw)，适用于响应式网页设计</p>
+    </header>
+
+    <main class="converter-container">
+        <div class="input-section">
+            <div class="settings">
+                <label for="viewportWidth">当前视窗宽度:</label>
+                <input type="number" id="viewportWidth" readonly>
+                <span class="unit">px</span>
+            </div>
+            <div class="converter">
+                <input type="number" id="pxValue" placeholder="输入像素值">
+                <span class="unit">px</span>
+            </div>
+            <div class="button-group">
+                <button id="convert" class="btn btn-primary">转换</button>
+                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-display">
+                <span id="result">0</span>
+                <span class="unit">vw</span>
+            </div>
+            <div class="formula-display">
+                <p>转换公式: 1vw = 视窗宽度的1%</p>
+                <p>计算方法: (px ÷ 视窗宽度) × 100 = vw</p>
+            </div>
+        </div>
+
+        <section class="conversion-info">
+            <h2>像素转视窗宽度换算说明</h2>
+            <p>视窗宽度单位(vw)是相对于浏览器视窗宽度的单位，1vw等于视窗宽度的1%。这个值会随着浏览器窗口大小的改变而改变。</p>
+            
+            <h3>常用换算值参考（基于当前视窗宽度）：</h3>
+            <ul class="conversion-examples" id="examples">
+                <li>计算中...</li>
+            </ul>
+
+            <div class="usage-notes">
+                <h3>使用说明：</h3>
+                <ol>
+                    <li>查看当前视窗宽度</li>
+                    <li>在输入框中输入像素值</li>
+                    <li>点击"转换"按钮或按回车</li>
+                    <li>获得对应的vw值</li>
+                    <li>改变窗口大小时会自动更新</li>
+                </ol>
+            </div>
+
+            <div class="tips">
+                <h3>使用技巧：</h3>
+                <ul>
+                    <li>vw单位适合响应式设计</li>
+                    <li>100vw等于整个视窗宽度</li>
+                    <li>适合用于设置宽度和边距</li>
+                    <li>可以与其他单位混合使用</li>
+                    <li>注意在极小或极大屏幕上的表现</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const pxInput = document.getElementById('pxValue');
+        const viewportWidthInput = document.getElementById('viewportWidth');
+        const resultSpan = document.getElementById('result');
+        const convertBtn = document.getElementById('convert');
+        const copyBtn = document.getElementById('copy');
+        const examplesList = document.getElementById('examples');
+
+        function updateViewportWidth() {
+            const width = window.innerWidth;
+            viewportWidthInput.value = width;
+            updateExamples(width);
+            if (pxInput.value) {
+                convertPxToVw();
+            }
+        }
+
+        function updateExamples(width) {
+            const examples = [
+                { px: width / 4, text: '25%' },
+                { px: width / 2, text: '50%' },
+                { px: width * 0.75, text: '75%' },
+                { px: width, text: '100%' }
+            ];
+
+            examplesList.innerHTML = examples.map(ex => 
+                `<li>${ex.px.toFixed(0)}px = ${ex.text} (${(ex.px/width*100).toFixed(1)}vw)</li>`
+            ).join('');
+        }
+
+        function convertPxToVw() {
+            const px = parseFloat(pxInput.value);
+            const width = window.innerWidth;
+            
+            if (!isNaN(px)) {
+                const vw = (px / width) * 100;
+                resultSpan.textContent = vw.toFixed(3);
+            } else {
+                resultSpan.textContent = '请输入有效数值';
+            }
+        }
+
+        function copyResult() {
+            navigator.clipboard.writeText(resultSpan.textContent)
+                .then(() => {
+                    copyBtn.textContent = '已复制!';
+                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                })
+                .catch(err => {
+                    console.error('复制失败:', err);
+                });
+        }
+
+        // 初始化和事件监听
+        updateViewportWidth();
+        window.addEventListener('resize', updateViewportWidth);
+        pxInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convertPxToVw();
+        });
+        convertBtn.addEventListener('click', convertPxToVw);
+        copyBtn.addEventListener('click', copyResult);
+    </script>
+</body>
+</html> 

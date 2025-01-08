@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="像素(px)转英寸(in)在线转换器 - 精确计算像素到英寸的转换">
+    <meta name="keywords" content="px转in,像素转英寸,px to inches,像素英寸换算">
+    <title>像素转英寸换算器 - CSS单位转换工具</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../converter.css">
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="../../index.html">首页</a> > 像素转英寸
+        </nav>
+        <h1>像素(PX)转英寸(IN)转换器</h1>
+        <p>将像素(px)精确转换为英寸(in)，适用于网页设计和打印排版</p>
+    </header>
+
+    <main class="converter-container">
+        <div class="input-section">
+            <div class="settings">
+                <label for="dpi">屏幕DPI:</label>
+                <input type="number" id="dpi" value="96" min="1">
+                <span class="unit">dpi</span>
+            </div>
+            <div class="converter">
+                <input type="number" id="pxValue" placeholder="输入像素值">
+                <span class="unit">px</span>
+            </div>
+            <div class="button-group">
+                <button id="convert" class="btn btn-primary">转换</button>
+                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-display">
+                <span id="result">0</span>
+                <span class="unit">in</span>
+            </div>
+            <div class="formula-display">
+                <p>转换公式: 1 inch = 96 pixels</p>
+                <p>计算方法: px ÷ 96 = in</p>
+            </div>
+        </div>
+
+        <section class="conversion-info">
+            <h2>像素转英寸换算说明</h2>
+            <p>在数字设备中，1英寸通常等于96像素。这个标准DPI（每英寸点数）在大多数现代显示设备中被广泛使用。</p>
+            
+            <h3>常用换算值参考：</h3>
+            <ul class="conversion-examples">
+                <li>96px = 1in</li>
+                <li>48px = 0.5in</li>
+                <li>192px = 2in</li>
+                <li>24px = 0.25in</li>
+            </ul>
+
+            <div class="usage-notes">
+                <h3>使用说明：</h3>
+                <ol>
+                    <li>在输入框中输入像素值</li>
+                    <li>点击"转换"按钮或按回车</li>
+                    <li>获得对应的英寸值</li>
+                    <li>可以点击"复制"按钮复制结果</li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const pxInput = document.getElementById('pxValue');
+        const resultSpan = document.getElementById('result');
+        const convertBtn = document.getElementById('convert');
+        const copyBtn = document.getElementById('copy');
+
+        function convertPxToInch() {
+            const px = parseFloat(pxInput.value);
+            if (!isNaN(px)) {
+                const inches = px / 96;
+                resultSpan.textContent = inches.toFixed(3);
+            } else {
+                resultSpan.textContent = '请输入有效数值';
+            }
+        }
+
+        function copyResult() {
+            navigator.clipboard.writeText(resultSpan.textContent)
+                .then(() => {
+                    copyBtn.textContent = '已复制!';
+                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                })
+                .catch(err => {
+                    console.error('复制失败:', err);
+                });
+        }
+
+        pxInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convertPxToInch();
+        });
+        convertBtn.addEventListener('click', convertPxToInch);
+        copyBtn.addEventListener('click', copyResult);
+    </script>
+</body>
+</html> 

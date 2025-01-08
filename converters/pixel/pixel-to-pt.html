@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="像素(px)转点(pt)在线转换器 - 精确计算像素到点的转换">
+    <meta name="keywords" content="px转pt,像素转点,px to point,点单位换算">
+    <title>像素转点换算器 - CSS单位转换工具</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../converter.css">
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="../../index.html">首页</a> > 像素转点
+        </nav>
+        <h1>像素(PX)转点(PT)转换器</h1>
+        <p>将像素(px)精确转换为点(pt)，适用于排版和打印设计</p>
+    </header>
+
+    <main class="converter-container">
+        <div class="input-section">
+            <div class="settings">
+                <label for="dpi">屏幕DPI:</label>
+                <input type="number" id="dpi" value="96" min="1">
+                <span class="unit">dpi</span>
+            </div>
+            <div class="converter">
+                <input type="number" id="pxValue" placeholder="输入像素值">
+                <span class="unit">px</span>
+            </div>
+            <div class="button-group">
+                <button id="convert" class="btn btn-primary">转换</button>
+                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-display">
+                <span id="result">0</span>
+                <span class="unit">pt</span>
+            </div>
+            <div class="formula-display">
+                <p>转换公式: 1pt = 1.33px (96dpi)</p>
+                <p>计算方法: px × 72 ÷ dpi = pt</p>
+            </div>
+        </div>
+
+        <section class="conversion-info">
+            <h2>像素转点换算说明</h2>
+            <p>点(pt)是一个传统的印刷单位，1点等于1/72英寸。在标准96 DPI显示器上，1点约等于1.33像素。</p>
+            
+            <h3>常用换算值参考（基于96 DPI）：</h3>
+            <ul class="conversion-examples">
+                <li>1.33px = 1pt</li>
+                <li>2.66px = 2pt</li>
+                <li>6.65px = 5pt</li>
+                <li>13.3px = 10pt</li>
+                <li>96px = 72pt (1英寸)</li>
+            </ul>
+
+            <div class="usage-notes">
+                <h3>使用说明：</h3>
+                <ol>
+                    <li>可以调整屏幕DPI值（默认96）</li>
+                    <li>在输入框中输入像素值</li>
+                    <li>点击"转换"按钮或按回车</li>
+                    <li>获得对应的点值</li>
+                </ol>
+            </div>
+
+            <div class="tips">
+                <h3>使用技巧：</h3>
+                <ul>
+                    <li>点单位常用于印刷排版</li>
+                    <li>72点等于1英寸</li>
+                    <li>适合用于设置文字大小</li>
+                    <li>在打印设计中广泛使用</li>
+                    <li>注意不同操作系统对点的处理可能有差异</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const pxInput = document.getElementById('pxValue');
+        const dpiInput = document.getElementById('dpi');
+        const resultSpan = document.getElementById('result');
+        const convertBtn = document.getElementById('convert');
+        const copyBtn = document.getElementById('copy');
+
+        function convertPxToPt() {
+            const px = parseFloat(pxInput.value);
+            const dpi = parseFloat(dpiInput.value) || 96;
+            
+            if (!isNaN(px)) {
+                // 1pt = 1/72英寸，所以要先将px转换为英寸，再乘以72
+                const pt = (px * 72) / dpi;
+                resultSpan.textContent = pt.toFixed(3);
+            } else {
+                resultSpan.textContent = '请输入有效数值';
+            }
+        }
+
+        function copyResult() {
+            navigator.clipboard.writeText(resultSpan.textContent)
+                .then(() => {
+                    copyBtn.textContent = '已复制!';
+                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                })
+                .catch(err => {
+                    console.error('复制失败:', err);
+                });
+        }
+
+        pxInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convertPxToPt();
+        });
+        dpiInput.addEventListener('input', convertPxToPt);
+        convertBtn.addEventListener('click', convertPxToPt);
+        copyBtn.addEventListener('click', copyResult);
+    </script>
+</body>
+</html> 
