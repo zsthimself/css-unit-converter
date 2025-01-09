@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="REM转派卡在线转换器 - 精确计算REM到派卡的转换">
-    <meta name="keywords" content="rem转pc,REM转派卡,rem to pc,派卡换算">
-    <title>REM转派卡换算器 - CSS单位转换工具</title>
+    <meta name="description" content="REM to Pica online converter - Accurately calculate the conversion from REM to pica">
+    <meta name="keywords" content="rem to pc, REM to pica, pica conversion">
+    <title>REM to Pica Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > REM转派卡
+            <a href="../../index.html">Home</a> > REM to Pica
         </nav>
-        <h1>REM转派卡(PC)转换器</h1>
-        <p>将REM转换为派卡，适用于印刷设计</p>
+        <h1>REM to Pica (PC) Converter</h1>
+        <p>Convert REM to pica, suitable for print design</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="settings">
-                <label for="rootFontSize">根元素字体大小:</label>
+                <label for="rootFontSize">Root Element Font Size:</label>
                 <input type="number" id="rootFontSize" value="16" min="1">
                 <span class="unit">px</span>
             </div>
             <div class="converter">
-                <input type="number" id="remValue" placeholder="输入REM值">
+                <input type="number" id="remValue" placeholder="Enter REM value">
                 <span class="unit">rem</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy Result">Copy</button>
             </div>
         </div>
 
@@ -41,15 +41,15 @@
                 <span class="unit">pc</span>
             </div>
             <div class="formula-display">
-                <p>计算方法: rem × 6 = pc</p>
+                <p>Calculation Method: rem × 6 = pc</p>
             </div>
         </div>
 
         <section class="conversion-info">
-            <h2>REM转派卡换算说明</h2>
-            <p>派卡是印刷行业常用的单位。通过输入REM值，可以计算出相应的派卡值。</p>
+            <h2>REM to Pica Conversion Instructions</h2>
+            <p>Pica is a commonly used unit in the printing industry. By entering a REM value, you can calculate the corresponding pica value.</p>
             
-            <h3>常用换算值参考：</h3>
+            <h3>Common Conversion Values Reference:</h3>
             <ul class="conversion-examples">
                 <li>1rem = 6pc</li>
                 <li>2rem = 12pc</li>
@@ -57,20 +57,20 @@
             </ul>
 
             <div class="usage-notes">
-                <h3>使用说明：</h3>
+                <h3>Usage Instructions:</h3>
                 <ol>
-                    <li>设置根元素字体大小（默认16px）</li>
-                    <li>输入REM值</li>
-                    <li>获得对应的派卡值</li>
+                    <li>Set the root element font size (default 16px)</li>
+                    <li>Enter the REM value</li>
+                    <li>Get the corresponding pica value</li>
                 </ol>
             </div>
 
             <div class="tips">
-                <h3>使用技巧：</h3>
+                <h3>Usage Tips:</h3>
                 <ul>
-                    <li>适用于印刷设计</li>
-                    <li>根据根字体大小计算</li>
-                    <li>精确到小数点后3位</li>
+                    <li>Suitable for print design</li>
+                    <li>Calculated based on the root font size</li>
+                    <li>Accurate to three decimal places</li>
                 </ul>
             </div>
         </section>
@@ -91,18 +91,18 @@
                 const pc = rem * 6; // 1rem = 6pc
                 resultSpan.textContent = pc.toFixed(3);
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 

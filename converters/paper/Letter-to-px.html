@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Letter纸张尺寸转换为像素在线转换器">
-    <meta name="keywords" content="Letter,纸张,转换,像素">
-    <title>Letter纸张尺寸转换器 - CSS单位转换工具</title>
+    <meta name="description" content="Letter paper size to pixel online converter">
+    <meta name="keywords" content="Letter,paper,conversion,pixels">
+    <title>Letter Paper Size Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > Letter纸张尺寸转换
+            <a href="../../index.html">Home</a> > Letter Paper Size Conversion
         </nav>
-        <h1>Letter纸张尺寸转换器</h1>
-        <p>将Letter纸张尺寸转换为像素（PX），适用于排版和设计</p>
+        <h1>Letter Paper Size Converter</h1>
+        <p>Convert Letter paper size to pixels (PX), suitable for typesetting and design</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="converter">
-                <input type="number" id="dpiValue" placeholder="输入DPI值">
+                <input type="number" id="dpiValue" placeholder="Enter DPI value">
                 <span class="unit">DPI</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
             </div>
         </div>
 
@@ -36,26 +36,26 @@
                 <span class="unit">px</span>
             </div>
             <div class="formula-display">
-                <p id="formula">计算公式: </p>
+                <p id="formula">Calculation formula: </p>
             </div>
         </div>
 
         <section class="introduction">
-            <h2>什么是Letter纸张尺寸？</h2>
-            <p>Letter纸张尺寸为8.5in x 11in，常用于打印和文档。</p>
+            <h2>What is Letter Paper Size?</h2>
+            <p>Letter paper size is 8.5in x 11in, commonly used for printing and documents.</p>
         </section>
 
         <section class="usage-guide">
-            <h2>使用说明</h2>
+            <h2>Usage Instructions</h2>
             <ol>
-                <li>输入DPI值（每英寸的点数）</li>
-                <li>点击"转换"按钮或按回车键获取结果</li>
-                <li>使用"复制"按钮复制转换结果</li>
+                <li>Enter the DPI value (dots per inch)</li>
+                <li>Click the "Convert" button or press Enter to get the result</li>
+                <li>Use the "Copy" button to copy the conversion result</li>
             </ol>
         </section>
 
         <section class="examples-section">
-            <h2>常见转换示例</h2>
+            <h2>Common Conversion Examples</h2>
             <ul class="conversion-examples">
                 <li>300 DPI = 2550px x 3300px</li>
                 <li>72 DPI = 612px x 792px</li>
@@ -75,20 +75,20 @@
                 const widthPx = (8.5 * 25.4 / 25.4) * dpi; // 8.5in to px
                 const heightPx = (11 * 25.4 / 25.4) * dpi; // 11in to px
                 resultSpan.textContent = `${Math.round(widthPx)} x ${Math.round(heightPx)}`;
-                document.getElementById('formula').textContent = `计算公式: px = (尺寸 / 25.4) × DPI`;
+                document.getElementById('formula').textContent = `Calculation formula: px = (size / 25.4) × DPI`;
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 

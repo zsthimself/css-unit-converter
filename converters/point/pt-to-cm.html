@@ -1,32 +1,33 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="点转厘米在线转换器 - 精确计算点到厘米的转换">
-    <meta name="keywords" content="pt转cm,点转厘米,pt to cm,厘米换算">
-    <title>点转厘米转换器 - CSS单位转换工具</title>
+    <meta name="description" content="Point to Centimeter online converter - Accurately calculate the conversion from points to centimeters">
+    <meta name="keywords" content="pt to cm, point to centimeter, cm conversion">
+    <title>Point to Centimeter Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > 点转厘米
+            <a href="../../index.html">Home</a> > Point to Centimeter
         </nav>
-        <h1>点转厘米转换器</h1>
-        <p>将点（PT）转换为厘米（CM），适用于排版和设计</p>
+        <h1>Point to Centimeter (CM) Converter</h1>
+        <p>Convert points (PT) to centimeters (CM), suitable for typesetting and design</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="converter">
-                <input type="number" id="ptValue" placeholder="输入点值">
+                <label for="ptValue">Enter Point Value:</label>
+                <input type="number" id="ptValue" placeholder="Enter point value">
                 <span class="unit">pt</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
             </div>
         </div>
 
@@ -36,26 +37,26 @@
                 <span class="unit">cm</span>
             </div>
             <div class="formula-display">
-                <p id="formula">计算公式: </p>
+                <p id="formula">Formula: </p>
             </div>
         </div>
 
         <section class="introduction">
-            <h2>什么是点（PT）和厘米（CM）？</h2>
-            <p>点（PT）是一个绝对单位，通常用于印刷和排版。厘米（CM）是一个常用的长度单位。</p>
+            <h2>What is a Point (PT) and a Centimeter (CM)?</h2>
+            <p>A Point (PT) is an absolute unit used in printing and typesetting. A Centimeter (CM) is a commonly used length unit.</p>
         </section>
 
         <section class="usage-guide">
-            <h2>使用说明</h2>
+            <h2>Usage Instructions</h2>
             <ol>
-                <li>输入要转换的点值</li>
-                <li>点击"转换"按钮或按回车键获取结果</li>
-                <li>使用"复制"按钮复制转换结果</li>
+                <li>Enter the point value</li>
+                <li>Click "Convert" button or press Enter to get the result</li>
+                <li>Use "Copy" button to copy the conversion result</li>
             </ol>
         </section>
 
         <section class="examples-section">
-            <h2>常见转换示例</h2>
+            <h2>Common Conversion Examples</h2>
             <ul class="conversion-examples">
                 <li>1pt = 0.035cm</li>
                 <li>12pt = 0.423cm</li>
@@ -76,20 +77,20 @@
             if (!isNaN(pt)) {
                 const cm = pt * 0.0352778; // 1pt = 0.0352778cm
                 resultSpan.textContent = cm.toFixed(3);
-                document.getElementById('formula').textContent = `计算公式: cm = ${pt}pt × 0.0352778`;
+                document.getElementById('formula').textContent = `Formula: cm = ${pt}pt × 0.0352778`;
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 

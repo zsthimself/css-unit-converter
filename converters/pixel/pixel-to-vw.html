@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="像素(px)转视窗宽度(vw)在线转换器 - 精确计算像素到vw的转换">
-    <meta name="keywords" content="px转vw,像素转视窗宽度,px to vw,vw计算器">
-    <title>像素转视窗宽度换算器 - CSS单位转换工具</title>
+    <meta name="description" content="Pixel (px) to Viewport Width (vw) online converter - Accurately calculate the conversion from pixels to vw">
+    <meta name="keywords" content="px to vw, pixel to viewport width, vw conversion">
+    <title>Pixel to Viewport Width Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > 像素转视窗宽度
+            <a href="../../index.html">Home</a> > Pixel to Viewport Width
         </nav>
-        <h1>像素(PX)转视窗宽度(VW)转换器</h1>
-        <p>将像素(px)精确转换为视窗宽度单位(vw)，适用于响应式网页设计</p>
+        <h1>Pixel (PX) to Viewport Width (VW) Converter</h1>
+        <p>Accurately convert pixels (px) to viewport width units (vw), suitable for responsive web design</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="settings">
-                <label for="viewportWidth">当前视窗宽度:</label>
+                <label for="viewportWidth">Current Viewport Width:</label>
                 <input type="number" id="viewportWidth" readonly>
                 <span class="unit">px</span>
             </div>
             <div class="converter">
-                <input type="number" id="pxValue" placeholder="输入像素值">
+                <input type="number" id="pxValue" placeholder="Enter pixel value">
                 <span class="unit">px</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
             </div>
         </div>
 
@@ -41,39 +41,39 @@
                 <span class="unit">vw</span>
             </div>
             <div class="formula-display">
-                <p>转换公式: 1vw = 视窗宽度的1%</p>
-                <p>计算方法: (px ÷ 视窗宽度) × 100 = vw</p>
+                <p>Conversion formula: 1vw = 1% of viewport width</p>
+                <p>Calculation method: (px ÷ viewport width) × 100 = vw</p>
             </div>
         </div>
 
         <section class="conversion-info">
-            <h2>像素转视窗宽度换算说明</h2>
-            <p>视窗宽度单位(vw)是相对于浏览器视窗宽度的单位，1vw等于视窗宽度的1%。这个值会随着浏览器窗口大小的改变而改变。</p>
+            <h2>Pixel to Viewport Width Conversion Instructions</h2>
+            <p>Viewport width units (vw) are relative to the width of the browser viewport. 1vw is equal to 1% of the viewport width. This value changes as the browser window size changes.</p>
             
-            <h3>常用换算值参考（基于当前视窗宽度）：</h3>
+            <h3>Common Conversion Values (Based on Current Viewport Width):</h3>
             <ul class="conversion-examples" id="examples">
-                <li>计算中...</li>
+                <li>Calculating...</li>
             </ul>
 
             <div class="usage-notes">
-                <h3>使用说明：</h3>
+                <h3>Usage Instructions:</h3>
                 <ol>
-                    <li>查看当前视窗宽度</li>
-                    <li>在输入框中输入像素值</li>
-                    <li>点击"转换"按钮或按回车</li>
-                    <li>获得对应的vw值</li>
-                    <li>改变窗口大小时会自动更新</li>
+                    <li>Check the current viewport width</li>
+                    <li>Enter the pixel value in the input field</li>
+                    <li>Click "Convert" or press Enter</li>
+                    <li>Get the corresponding vw value</li>
+                    <li>The value will automatically update when the window size changes</li>
                 </ol>
             </div>
 
             <div class="tips">
-                <h3>使用技巧：</h3>
+                <h3>Usage Tips:</h3>
                 <ul>
-                    <li>vw单位适合响应式设计</li>
-                    <li>100vw等于整个视窗宽度</li>
-                    <li>适合用于设置宽度和边距</li>
-                    <li>可以与其他单位混合使用</li>
-                    <li>注意在极小或极大屏幕上的表现</li>
+                    <li>vw units are ideal for responsive design</li>
+                    <li>100vw equals the full viewport width</li>
+                    <li>Useful for setting widths and margins</li>
+                    <li>Can be used in combination with other units</li>
+                    <li>Consider performance on very small or very large screens</li>
                 </ul>
             </div>
         </section>
@@ -117,22 +117,22 @@
                 const vw = (px / width) * 100;
                 resultSpan.textContent = vw.toFixed(3);
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 
-        // 初始化和事件监听
+        // Initial setup and event listeners
         updateViewportWidth();
         window.addEventListener('resize', updateViewportWidth);
         pxInput.addEventListener('keypress', (e) => {

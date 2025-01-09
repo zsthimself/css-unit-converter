@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="英寸(in)转像素(px)在线转换器 - 精确计算英寸到像素的转换">
-    <meta name="keywords" content="in转px,英寸转像素,inch to pixel,像素换算">
-    <title>英寸转像素换算器 - CSS单位转换工具</title>
+    <meta name="description" content="Inch (in) to Pixel (px) online converter - Accurately calculate the conversion from inches to pixels">
+    <meta name="keywords" content="in to px, inch to pixel, inch转像素, pixel conversion">
+    <title>Inch to Pixel Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > 英寸转像素
+            <a href="../../index.html">Home</a> > Inch to Pixel
         </nav>
-        <h1>英寸(IN)转像素(PX)转换器</h1>
-        <p>将英寸(in)精确转换为像素(px)，适用于网页设计和打印排版</p>
+        <h1>Inch (IN) to Pixel (PX) Converter</h1>
+        <p>Accurately convert inches (in) to pixels (px), suitable for web design and printing layout</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="settings">
-                <label for="dpi">屏幕DPI:</label>
+                <label for="dpi">Screen DPI:</label>
                 <input type="number" id="dpi" value="96" min="1">
                 <span class="unit">dpi</span>
             </div>
             <div class="converter">
-                <input type="number" id="inchValue" placeholder="输入英寸值">
+                <input type="number" id="inchValue" placeholder="Enter inch value">
                 <span class="unit">in</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
             </div>
         </div>
 
@@ -41,16 +41,16 @@
                 <span class="unit">px</span>
             </div>
             <div class="formula-display">
-                <p>转换公式: 1 inch = 96 pixels (96dpi)</p>
-                <p>计算方法: inch × dpi = px</p>
+                <p>Conversion formula: 1 inch = 96 pixels (96dpi)</p>
+                <p>Calculation method: inch × dpi = px</p>
             </div>
         </div>
 
         <section class="conversion-info">
-            <h2>英寸转像素换算说明</h2>
-            <p>英寸(in)是一个物理长度单位。在标准96 DPI显示器上，1英寸等于96像素。</p>
+            <h2>Inch to Pixel Conversion Instructions</h2>
+            <p>Inch (in) is a physical length unit. On a standard 96 DPI display, 1 inch equals 96 pixels.</p>
             
-            <h3>常用换算值参考（基于96 DPI）：</h3>
+            <h3>Common Conversion Values Reference (based on 96 DPI):</h3>
             <ul class="conversion-examples">
                 <li>1in = 96px</li>
                 <li>0.5in = 48px</li>
@@ -59,22 +59,22 @@
             </ul>
 
             <div class="usage-notes">
-                <h3>使用说明：</h3>
+                <h3>Usage Instructions:</h3>
                 <ol>
-                    <li>可以调整屏幕DPI值（默认96）</li>
-                    <li>在输入框中输入英寸值</li>
-                    <li>点击"转换"按钮或按回车</li>
-                    <li>获得对应的像素值</li>
+                    <li>You can adjust the screen DPI value (default 96)</li>
+                    <li>Enter the inch value in the input box</li>
+                    <li>Click the "Convert" button or press Enter</li>
+                    <li>Get the corresponding pixel value</li>
                 </ol>
             </div>
 
             <div class="tips">
-                <h3>使用技巧：</h3>
+                <h3>Usage Tips:</h3>
                 <ul>
-                    <li>常用于打印设计</li>
-                    <li>注意不同设备的DPI差异</li>
-                    <li>适合精确尺寸设计</li>
-                    <li>可用于高精度排版</li>
+                    <li>Commonly used for print design</li>
+                    <li>Be aware of DPI differences between devices</li>
+                    <li>Suitable for precise size design</li>
+                    <li>Can be used for high-precision typesetting</li>
                 </ul>
             </div>
         </section>
@@ -95,18 +95,18 @@
                 const px = inch * dpi;
                 resultSpan.textContent = px.toFixed(3);
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 

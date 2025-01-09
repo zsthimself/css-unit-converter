@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="厘米转英寸在线转换器 - 精确计算厘米到英寸的转换">
-    <meta name="keywords" content="cm转in,厘米转英寸,cm to inch,英寸换算">
-    <title>厘米转英寸转换器 - CSS单位转换工具</title>
+    <meta name="description" content="Centimeter to inch online converter - Accurately calculate the conversion from centimeters to inches">
+    <meta name="keywords" content="cm to in, centimeter to inches, cm转in, inches换算">
+    <title>Centimeter to Inch Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > 厘米转英寸
+            <a href="../../index.html">Home</a> > Centimeter to Inch
         </nav>
-        <h1>厘米转英寸转换器</h1>
-        <p>将厘米（CM）转换为英寸（IN），适用于排版和设计</p>
+        <h1>Centimeter to Inch Converter</h1>
+        <p>Convert centimeters (CM) to inches (IN), suitable for typesetting and design</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="converter">
-                <input type="number" id="cmValue" placeholder="输入厘米值">
+                <input type="number" id="cmValue" placeholder="Enter centimeter value">
                 <span class="unit">cm</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
             </div>
         </div>
 
@@ -36,26 +36,25 @@
                 <span class="unit">in</span>
             </div>
             <div class="formula-display">
-                <p id="formula">计算公式: </p>
+                <p id="formula">Calculation formula: </p>
             </div>
         </div>
 
         <section class="introduction">
-            <h2>什么是厘米（CM）和英寸（IN）？</h2>
-            <p>厘米（CM）是一个常用的长度单位。英寸（IN）是一个常用的长度单位，通常用于测量物体的尺寸。</p>
+            <h2>What are Centimeters (CM) and Inches (IN)?</h2>
+            <p>Centimeters (CM) are a commonly used unit of length. Inches (IN) are a commonly used unit of length, typically used to measure the size of objects.</p>
         </section>
 
         <section class="usage-guide">
-            <h2>使用说明</h2>
+            <h2>Usage Instructions</h2>
             <ol>
-                <li>输入要转换的厘米值</li>
-                <li>点击"转换"按钮或按回车键获取结果</li>
-                <li>使用"复制"按钮复制转换结果</li>
+                <li>Enter the centimeter value to convert</li>
+                <li>Use the "Copy" button to copy the conversion result</li>
             </ol>
         </section>
 
         <section class="examples-section">
-            <h2>常见转换示例</h2>
+            <h2>Common Conversion Examples</h2>
             <ul class="conversion-examples">
                 <li>1cm = 0.3937in</li>
                 <li>2cm = 0.7874in</li>
@@ -76,20 +75,20 @@
             if (!isNaN(cm)) {
                 const inch = cm / 2.54; // 1cm = 0.3937in
                 resultSpan.textContent = inch.toFixed(4);
-                document.getElementById('formula').textContent = `计算公式: in = ${cm}cm ÷ 2.54`;
+                document.getElementById('formula').textContent = `Calculation formula: in = ${cm}cm ÷ 2.54`;
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 

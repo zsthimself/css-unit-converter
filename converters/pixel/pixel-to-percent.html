@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="像素(px)转百分比(%)在线转换器 - 精确计算像素到百分比的转换">
-    <meta name="keywords" content="px转%,像素转百分比,px to percent,百分比换算">
-    <title>像素转百分比换算器 - CSS单位转换工具</title>
+    <meta name="description" content="Pixel (px) to Percent (%) online converter - Accurately calculate the conversion from pixels to percent">
+    <meta name="keywords" content="px to %, pixel to percent, percent conversion">
+    <title>Pixel to Percent Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > 像素转百分比
+            <a href="../../index.html">Home</a> > Pixel to Percent
         </nav>
-        <h1>像素(PX)转百分比(%)转换器</h1>
-        <p>将像素(px)精确转换为百分比(%)，适用于响应式布局设计</p>
+        <h1>Pixel (PX) to Percent (%) Converter</h1>
+        <p>Accurately convert pixels (px) to percent (%), suitable for responsive layout design</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="settings">
-                <label for="parentSize">父元素尺寸:</label>
+                <label for="parentSize">Parent Element Size:</label>
                 <input type="number" id="parentSize" value="1000" min="1">
                 <span class="unit">px</span>
             </div>
             <div class="converter">
-                <input type="number" id="pxValue" placeholder="输入像素值">
+                <input type="number" id="pxValue" placeholder="Enter pixel value">
                 <span class="unit">px</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
             </div>
         </div>
 
@@ -41,16 +41,16 @@
                 <span class="unit">%</span>
             </div>
             <div class="formula-display">
-                <p>转换公式: 百分比 = (子元素尺寸 ÷ 父元素尺寸) × 100</p>
-                <p>计算方法: (px ÷ 父元素尺寸) × 100 = %</p>
+                <p>Conversion formula: Percentage = (Child Element Size ÷ Parent Element Size) × 100</p>
+                <p>Calculation method: (px ÷ Parent Element Size) × 100 = %</p>
             </div>
         </div>
 
         <section class="conversion-info">
-            <h2>像素转百分比换算说明</h2>
-            <p>百分比(%)是相对于父元素的单位。例如，如果父元素宽度为1000px，子元素为200px，则子元素宽度为20%。</p>
+            <h2>Pixel to Percent Conversion Instructions</h2>
+            <p>Percentage (%) is a unit relative to the parent element. For example, if the parent element width is 1000px, and the child element is 200px, the child element width is 20%.</p>
             
-            <h3>常用换算值参考（基于1000px父元素）：</h3>
+            <h3>Common Conversion Values (Based on 1000px Parent Element):</h3>
             <ul class="conversion-examples">
                 <li>100px = 10%</li>
                 <li>250px = 25%</li>
@@ -59,22 +59,22 @@
             </ul>
 
             <div class="usage-notes">
-                <h3>使用说明：</h3>
+                <h3>Usage Instructions:</h3>
                 <ol>
-                    <li>设置父元素尺寸（默认1000px）</li>
-                    <li>在输入框中输入像素值</li>
-                    <li>点击"转换"按钮或按回车</li>
-                    <li>获得对应的百分比值</li>
+                    <li>Set the parent element size (default 1000px)</li>
+                    <li>Enter the pixel value in the input field</li>
+                    <li>Click "Convert" button or press Enter</li>
+                    <li>Get the corresponding percentage value</li>
                 </ol>
             </div>
 
             <div class="tips">
-                <h3>使用技巧：</h3>
+                <h3>Usage Tips:</h3>
                 <ul>
-                    <li>百分比单位适合响应式布局</li>
-                    <li>可用于宽度、高度和边距</li>
-                    <li>注意父元素尺寸的变化</li>
-                    <li>适合流式布局设计</li>
+                    <li>Percentage units are suitable for responsive layout design</li>
+                    <li>Can be used for width, height, and margin</li>
+                    <li>Pay attention to parent element size changes</li>
+                    <li>Suitable for flow layout design</li>
                 </ul>
             </div>
         </section>
@@ -95,18 +95,18 @@
                 const percent = (px / parentSize) * 100;
                 resultSpan.textContent = percent.toFixed(3);
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 

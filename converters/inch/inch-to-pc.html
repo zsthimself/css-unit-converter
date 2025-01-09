@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="英寸(in)转派卡(pc)在线转换器 - 精确计算英寸到派卡的转换">
-    <meta name="keywords" content="in转pc,英寸转派卡,inch to pica,派卡换算">
-    <title>英寸转派卡换算器 - CSS单位转换工具</title>
+    <meta name="description" content="Inch (in) to Pica (pc) online converter - Accurately calculate the conversion from inches to pica">
+    <meta name="keywords" content="in to pc, inch to pica, inch转pc, pica conversion">
+    <title>Inch to Pica Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > 英寸转派卡
+            <a href="../../index.html">Home</a> > Inch to Pica
         </nav>
-        <h1>英寸(IN)转派卡(PC)转换器</h1>
-        <p>将英寸(in)精确转换为派卡(pc)，适用于专业排版设计</p>
+        <h1>Inch (IN) to Pica (PC) Converter</h1>
+        <p>Accurately convert inches (in) to pica (pc), suitable for professional typesetting design</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="converter">
-                <input type="number" id="inchValue" placeholder="输入英寸值">
+                <input type="number" id="inchValue" placeholder="Enter inch value">
                 <span class="unit">in</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
             </div>
         </div>
 
@@ -36,14 +36,14 @@
                 <span class="unit">pc</span>
             </div>
             <div class="formula-display">
-                <p>转换公式: 1 inch = 6 picas</p>
-                <p>计算方法: inch × 6 = pc</p>
+                <p>Conversion formula: 1 inch = 6 picas</p>
+                <p>Calculation method: inch × 6 = pc</p>
             </div>
         </div>
 
         <section class="conversion-info">
-            <h2>英寸转派卡换算说明</h2>
-            <p>在印刷和排版中，1英寸等于6派卡。派卡是一个传统的印刷单位，1派卡等于12点，常用于专业排版设计。</p>
+            <h2>Inch to Pica Conversion Instructions</h2>
+            <p>In printing and typesetting, 1 inch equals 6 picas. Pica is a traditional printing unit, and 1 pica equals 12 points, commonly used in professional typesetting design.</p>
             
             <h3>常用换算值参考：</h3>
             <ul class="conversion-examples">
@@ -88,18 +88,18 @@
                 const pc = inch * 6;
                 resultSpan.textContent = pc.toFixed(3);
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 

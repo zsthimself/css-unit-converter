@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="视口宽度转厘米在线转换器 - 精确计算视口宽度到厘米的转换">
-    <meta name="keywords" content="vw转cm,视口宽度转厘米,vw to cm,厘米换算">
-    <title>视口宽度转厘米转换器 - CSS单位转换工具</title>
+    <meta name="description" content="Viewport width to centimeter online converter - Accurately calculate the conversion from viewport width to centimeters">
+    <meta name="keywords" content="vw to cm, viewport width to centimeters, vw转cm, centimeters conversion">
+    <title>Viewport Width to Centimeter Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > 视口宽度转厘米
+            <a href="../../index.html">Home</a> > Viewport Width to Centimeter
         </nav>
-        <h1>视口宽度转厘米转换器</h1>
-        <p>将视口宽度（VW）转换为厘米（CM），适用于排版和设计</p>
+        <h1>Viewport Width to Centimeter Converter</h1>
+        <p>Convert viewport width (VW) to centimeters (CM), suitable for typesetting and design</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="converter">
-                <input type="number" id="vwValue" placeholder="输入视口宽度值">
+                <input type="number" id="vwValue" placeholder="Enter viewport width value">
                 <span class="unit">vw</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
             </div>
         </div>
 
@@ -36,28 +36,28 @@
                 <span class="unit">cm</span>
             </div>
             <div class="formula-display">
-                <p id="formula">计算公式: </p>
+                <p id="formula">Calculation formula: </p>
             </div>
         </div>
 
         <section class="introduction">
-            <h2>什么是视口宽度（VW）和厘米（CM）？</h2>
-            <p>视口宽度（VW）是相对于视口宽度的百分比单位。厘米（CM）是一个常用的长度单位。</p>
+            <h2>What are Viewport Width (VW) and Centimeters (CM)?</h2>
+            <p>Viewport width (VW) is a percentage unit relative to the viewport width. Centimeters (CM) is a commonly used unit of length.</p>
         </section>
 
         <section class="usage-guide">
-            <h2>使用说明</h2>
+            <h2>Usage Guide</h2>
             <ol>
-                <li>输入要转换的视口宽度值</li>
-                <li>点击"转换"按钮或按回车键获取结果</li>
-                <li>使用"复制"按钮复制转换结果</li>
+                <li>Enter the viewport width value</li>
+                <li>Click "Convert" button or press Enter key to get the result</li>
+                <li>Use "Copy" button to copy the conversion result</li>
             </ol>
         </section>
 
         <section class="examples-section">
-            <h2>常见转换示例</h2>
+            <h2>Common Conversion Examples</h2>
             <ul class="conversion-examples">
-                <li>1vw = 0.01cm (假设视口宽度为 1000px)</li>
+                <li>1vw = 0.01cm (assuming viewport width is 1000px)</li>
                 <li>2vw = 0.02cm</li>
                 <li>5vw = 0.05cm</li>
                 <li>10vw = 0.1cm</li>
@@ -73,24 +73,24 @@
 
         function convertVwToCm() {
             const vw = parseFloat(vwInput.value);
-            const viewportWidth = 1000; // 假设视口宽度为 1000px
+            const viewportWidth = 1000; // assuming viewport width is 1000px
             if (!isNaN(vw)) {
                 const cm = (vw / 100) * viewportWidth / 2.54; // 1cm = 0.3937in
                 resultSpan.textContent = cm.toFixed(2);
-                document.getElementById('formula').textContent = `计算公式: cm = (${vw}vw × ${viewportWidth} ÷ 100) ÷ 2.54`;
+                document.getElementById('formula').textContent = `Calculation formula: cm = (${vw}vw × ${viewportWidth} ÷ 100) ÷ 2.54`;
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 

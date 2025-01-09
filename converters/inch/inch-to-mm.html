@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="英寸(in)转毫米(mm)在线转换器 - 精确计算英寸到毫米的转换">
-    <meta name="keywords" content="in转mm,英寸转毫米,inch to mm,毫米换算">
-    <title>英寸转毫米换算器 - CSS单位转换工具</title>
+    <meta name="description" content="Inch (in) to Millimeter (mm) online converter - Accurately calculate the conversion from inches to millimeters">
+    <meta name="keywords" content="in to mm, inch to millimeter, inch转mm, millimeter conversion">
+    <title>Inch to Millimeter Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > 英寸转毫米
+            <a href="../../index.html">Home</a> > Inch to Millimeter
         </nav>
-        <h1>英寸(IN)转毫米(MM)转换器</h1>
-        <p>将英寸(in)精确转换为毫米(mm)，适用于精密长度单位换算</p>
+        <h1>Inch (IN) to Millimeter (MM) Converter</h1>
+        <p>Accurately convert inches (in) to millimeters (mm), suitable for precise length unit conversion</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="converter">
-                <input type="number" id="inchValue" placeholder="输入英寸值">
+                <input type="number" id="inchValue" placeholder="Enter inch value">
                 <span class="unit">in</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
             </div>
         </div>
 
@@ -36,16 +36,16 @@
                 <span class="unit">mm</span>
             </div>
             <div class="formula-display">
-                <p>转换公式: 1 inch = 25.4 millimeters</p>
-                <p>计算方法: inch × 25.4 = mm</p>
+                <p>Conversion formula: 1 inch = 25.4 millimeters</p>
+                <p>Calculation method: inch × 25.4 = mm</p>
             </div>
         </div>
 
         <section class="conversion-info">
-            <h2>英寸转毫米换算说明</h2>
-            <p>英寸(in)是英制长度单位，1英寸精确等于25.4毫米。这是一个标准的国际换算关系，常用于精密测量。</p>
+            <h2>Inch to Millimeter Conversion Instructions</h2>
+            <p>Inch (in) is a unit of length in the imperial system, and 1 inch is precisely equal to 25.4 millimeters. This is a standard international conversion relationship commonly used for precise measurements.</p>
             
-            <h3>常用换算值参考：</h3>
+            <h3>Common conversion values:</h3>
             <ul class="conversion-examples">
                 <li>1in = 25.4mm</li>
                 <li>0.5in = 12.7mm</li>
@@ -54,22 +54,22 @@
             </ul>
 
             <div class="usage-notes">
-                <h3>使用说明：</h3>
+                <h3>Usage:</h3>
                 <ol>
-                    <li>在输入框中输入英寸值</li>
-                    <li>点击"转换"按钮或按回车</li>
-                    <li>获得对应的毫米值</li>
-                    <li>可以点击复制按钮复制结果</li>
+                    <li>Enter the inch value</li>
+                    <li>Click "Convert" or press Enter</li>
+                    <li>Get the corresponding millimeter value</li>
+                    <li>Click "Copy" to copy the result</li>
                 </ol>
             </div>
 
             <div class="tips">
-                <h3>使用技巧：</h3>
+                <h3>Usage Tips:</h3>
                 <ul>
-                    <li>适用于精密测量</li>
-                    <li>常用于机械加工</li>
-                    <li>精确到小数点后1位</li>
-                    <li>工程设计常用单位</li>
+                    <li>Suitable for precise measurements</li>
+                    <li>Commonly used in machining</li>
+                    <li>Accurate to one decimal place</li>
+                    <li>Common unit in engineering design</li>
                 </ul>
             </div>
         </section>
@@ -88,18 +88,18 @@
                 const mm = inch * 25.4;
                 resultSpan.textContent = mm.toFixed(3);
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 

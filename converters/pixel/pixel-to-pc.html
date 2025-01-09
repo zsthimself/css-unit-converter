@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="像素(px)转派卡(pc)在线转换器 - 精确计算像素到派卡的转换">
-    <meta name="keywords" content="px转pc,像素转派卡,px to pica,派卡换算">
-    <title>像素转派卡换算器 - CSS单位转换工具</title>
+    <meta name="description" content="Pixel (px) to Pica (pc) online converter - Accurately calculate the conversion from pixels to pica">
+    <meta name="keywords" content="px to pc, pixel to pica, pica conversion">
+    <title>Pixel to Pica Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > 像素转派卡
+            <a href="../../index.html">Home</a> > Pixel to Pica
         </nav>
-        <h1>像素(PX)转派卡(PC)转换器</h1>
-        <p>将像素(px)精确转换为派卡(pc)，适用于专业排版设计</p>
+        <h1>Pixel (PX) to Pica (PC) Converter</h1>
+        <p>Accurately convert pixels (px) to pica (pc), suitable for professional typesetting design</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="settings">
-                <label for="dpi">屏幕DPI:</label>
+                <label for="dpi">Screen DPI:</label>
                 <input type="number" id="dpi" value="96" min="1">
                 <span class="unit">dpi</span>
             </div>
             <div class="converter">
-                <input type="number" id="pxValue" placeholder="输入像素值">
+                <input type="number" id="pxValue" placeholder="Enter pixel value">
                 <span class="unit">px</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
             </div>
         </div>
 
@@ -41,40 +41,40 @@
                 <span class="unit">pc</span>
             </div>
             <div class="formula-display">
-                <p>转换公式: 1pc = 16px (96dpi)</p>
-                <p>计算方法: px ÷ (dpi × 0.166667) = pc</p>
+                <p>Conversion formula: 1pc = 16px (96dpi)</p>
+                <p>Calculation method: px ÷ (dpi × 0.166667) = pc</p>
             </div>
         </div>
 
         <section class="conversion-info">
-            <h2>像素转派卡换算说明</h2>
-            <p>派卡(pc)是一个传统印刷单位，1派卡等于12点，约为1/6英寸。在标准96 DPI显示器上，1派卡约等于16像素。</p>
+            <h2>Pixel to Pica Conversion Instructions</h2>
+            <p>Pica (pc) is a traditional printing unit, where 1 pica equals 12 points, approximately 1/6 inch. At standard 96 DPI displays, 1 pica is approximately equal to 16 pixels.</p>
             
-            <h3>常用换算值参考（基于96 DPI）：</h3>
+            <h3>Common Conversion Values (based on 96 DPI):</h3>
             <ul class="conversion-examples">
                 <li>16px = 1pc</li>
                 <li>32px = 2pc</li>
                 <li>8px = 0.5pc</li>
-                <li>96px = 6pc (1英寸)</li>
+                <li>96px = 6pc (1 inch)</li>
             </ul>
 
             <div class="usage-notes">
-                <h3>使用说明：</h3>
+                <h3>Usage Instructions:</h3>
                 <ol>
-                    <li>可以调整屏幕DPI值（默认96）</li>
-                    <li>在输入框中输入像素值</li>
-                    <li>点击"转换"按钮或按回车</li>
-                    <li>获得对应的派卡值</li>
+                    <li>You can adjust the screen DPI value (default is 96)</li>
+                    <li>Enter the pixel value in the input field</li>
+                    <li>Click "Convert" button or press Enter</li>
+                    <li>Get the corresponding pica value</li>
                 </ol>
             </div>
 
             <div class="tips">
-                <h3>使用技巧：</h3>
+                <h3>Usage Tips:</h3>
                 <ul>
-                    <li>派卡单位主要用于专业排版</li>
-                    <li>1派卡 = 12点</li>
-                    <li>适合用于设置段落间距</li>
-                    <li>在印刷设计中较常用</li>
+                    <li>Pica units are mainly used in professional typesetting</li>
+                    <li>1 pica = 12 points</li>
+                    <li>Suitable for setting paragraph spacing</li>
+                    <li>Commonly used in printing design</li>
                 </ul>
             </div>
         </section>
@@ -96,18 +96,18 @@
                 const pc = px / (dpi * 0.166667);
                 resultSpan.textContent = pc.toFixed(3);
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 

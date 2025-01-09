@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="派卡转英尺在线转换器 - 精确计算派卡到英尺的转换">
-    <meta name="keywords" content="pc转ft,派卡转英尺,pc to ft,英尺换算">
-    <title>派卡转英尺转换器 - CSS单位转换工具</title>
+    <meta name="description" content="Pica to feet online converter - Accurately calculate the conversion from pica to feet">
+    <meta name="keywords" content="pc to ft, pica to feet, pc转ft, feet换算">
+    <title>Pica to Feet Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > 派卡转英尺
+            <a href="../../index.html">Home</a> > Pica to Feet
         </nav>
-        <h1>派卡转英尺转换器</h1>
-        <p>将派卡（PC）转换为英尺（FT），适用于排版和设计</p>
+        <h1>Pica to Feet Converter</h1>
+        <p>Convert pica (PC) to feet (FT), suitable for typesetting and design</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="converter">
-                <input type="number" id="pcValue" placeholder="输入派卡值">
+                <input type="number" id="pcValue" placeholder="Enter pica value">
                 <span class="unit">pc</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
             </div>
         </div>
 
@@ -36,26 +36,26 @@
                 <span class="unit">ft</span>
             </div>
             <div class="formula-display">
-                <p id="formula">计算公式: </p>
+                <p id="formula">Calculation formula: </p>
             </div>
         </div>
 
         <section class="introduction">
-            <h2>什么是派卡（PC）和英尺（FT）？</h2>
-            <p>派卡（PC）是印刷和排版中常用的单位。英尺（FT）是另一种常用的长度单位。</p>
+            <h2>What are Pica (PC) and Feet (FT)?</h2>
+            <p>Pica (PC) is a unit commonly used in printing and typesetting. Feet (FT) is another commonly used unit of length.</p>
         </section>
 
         <section class="usage-guide">
-            <h2>使用说明</h2>
+            <h2>Usage Instructions</h2>
             <ol>
-                <li>输入要转换的派卡值</li>
-                <li>点击"转换"按钮或按回车键获取结果</li>
-                <li>使用"复制"按钮复制转换结果</li>
+                <li>Enter the pica value to convert</li>
+                <li>Click the "Convert" button or press Enter to get the result</li>
+                <li>Use the "Copy" button to copy the conversion result</li>
             </ol>
         </section>
 
         <section class="examples-section">
-            <h2>常见转换示例</h2>
+            <h2>Common Conversion Examples</h2>
             <ul class="conversion-examples">
                 <li>1pc = 0.0139ft</li>
                 <li>2pc = 0.0278ft</li>
@@ -76,20 +76,20 @@
             if (!isNaN(pc)) {
                 const ft = pc * 0.0139; // 1pc = 0.0139ft
                 resultSpan.textContent = ft.toFixed(4);
-                document.getElementById('formula').textContent = `计算公式: ft = ${pc}pc × 0.0139`;
+                document.getElementById('formula').textContent = `Calculation formula: ft = ${pc}pc × 0.0139`;
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 

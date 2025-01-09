@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="像素(px)转毫米(mm)在线转换器 - 精确计算像素到毫米的转换">
-    <meta name="keywords" content="px转mm,像素转毫米,px to mm,毫米换算">
-    <title>像素转毫米换算器 - CSS单位转换工具</title>
+    <meta name="description" content="Pixel (px) to Millimeter (mm) online converter - Accurately calculate the conversion from pixels to millimeters">
+    <meta name="keywords" content="px to mm, pixel to millimeters, mm conversion">
+    <title>Pixel to Millimeter Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > 像素转毫米
+            <a href="../../index.html">Home</a> > Pixel to Millimeter
         </nav>
-        <h1>像素(PX)转毫米(MM)转换器</h1>
-        <p>将像素(px)精确转换为毫米(mm)，适用于精确尺寸设计和打印</p>
+        <h1>Pixel (PX) to Millimeter (MM) Converter</h1>
+        <p>Accurately convert pixels (px) to millimeters (mm), suitable for precise size design and printing</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="settings">
-                <label for="dpi">屏幕DPI:</label>
+                <label for="dpi">Screen DPI:</label>
                 <input type="number" id="dpi" value="96" min="1">
                 <span class="unit">dpi</span>
             </div>
             <div class="converter">
-                <input type="number" id="pxValue" placeholder="输入像素值">
+                <input type="number" id="pxValue" placeholder="Enter pixel value">
                 <span class="unit">px</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy Result">Copy</button>
             </div>
         </div>
 
@@ -41,16 +41,16 @@
                 <span class="unit">mm</span>
             </div>
             <div class="formula-display">
-                <p>转换公式: 1mm = 3.78px (96dpi)</p>
-                <p>计算方法: px ÷ (dpi × 0.0393701) = mm</p>
+                <p>Conversion Formula: 1mm = 3.78px (96dpi)</p>
+                <p>Calculation Method: px ÷ (dpi × 0.0393701) = mm</p>
             </div>
         </div>
 
         <section class="conversion-info">
-            <h2>像素转毫米换算说明</h2>
-            <p>在标准96 DPI显示器上，1毫米约等于3.78像素。毫米是厘米的十分之一，常用于需要更精确测量的场景。</p>
+            <h2>Pixel to Millimeter Conversion Instructions</h2>
+            <p>On a standard 96 DPI display, 1 millimeter is approximately equal to 3.78 pixels. Millimeters are one-tenth of a centimeter, commonly used for more precise measurements.</p>
             
-            <h3>常用换算值参考（基于96 DPI）：</h3>
+            <h3>Common Conversion Values (Based on 96 DPI):</h3>
             <ul class="conversion-examples">
                 <li>3.78px = 1mm</li>
                 <li>7.56px = 2mm</li>
@@ -59,22 +59,22 @@
             </ul>
 
             <div class="usage-notes">
-                <h3>使用说明：</h3>
+                <h3>Usage Instructions:</h3>
                 <ol>
-                    <li>可以调整屏幕DPI值（默认96）</li>
-                    <li>在输入框中输入像素值</li>
-                    <li>点击"转换"按钮或按回车</li>
-                    <li>获得对应的毫米值</li>
+                    <li>Adjust the Screen DPI value (default is 96)</li>
+                    <li>Enter the pixel value in the input field</li>
+                    <li>Click "Convert" button or press Enter</li>
+                    <li>Get the corresponding millimeter value</li>
                 </ol>
             </div>
 
             <div class="tips">
-                <h3>使用技巧：</h3>
+                <h3>Usage Tips:</h3>
                 <ul>
-                    <li>毫米单位适合精确测量</li>
-                    <li>常用于高精度打印设计</li>
-                    <li>1厘米 = 10毫米的换算关系</li>
-                    <li>打印时注意校准DPI设置</li>
+                    <li>Millimeters are suitable for precise measurements</li>
+                    <li>Commonly used in high-precision printing designs</li>
+                    <li>1 centimeter = 10 millimeters</li>
+                    <li>Ensure correct DPI settings when printing</li>
                 </ul>
             </div>
         </section>
@@ -92,22 +92,22 @@
             const dpi = parseFloat(dpiInput.value) || 96;
             
             if (!isNaN(px)) {
-                // 1英寸 = 25.4毫米
+                // 1 inch = 25.4 millimeters
                 const mm = px / (dpi * 0.0393701);
                 resultSpan.textContent = mm.toFixed(3);
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 

@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="像素(px)转英尺(ft)在线转换器 - 精确计算像素到英尺的转换">
-    <meta name="keywords" content="px转ft,像素转英尺,px to feet,英尺换算">
-    <title>像素转英尺换算器 - CSS单位转换工具</title>
+    <meta name="description" content="Pixel (px) to Feet (ft) online converter - Accurately calculate the conversion from pixels to feet">
+    <meta name="keywords" content="px to ft, pixel to feet, feet conversion">
+    <title>Pixel to Feet Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > 像素转英尺
+            <a href="../../index.html">Home</a> > Pixel to Feet
         </nav>
-        <h1>像素(PX)转英尺(FT)转换器</h1>
-        <p>将像素(px)精确转换为英尺(ft)，适用于实际尺寸设计</p>
+        <h1>Pixel (PX) to Feet (FT) Converter</h1>
+        <p>Accurately convert pixels (px) to feet (ft), suitable for actual size design</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="settings">
-                <label for="dpi">屏幕DPI:</label>
+                <label for="dpi">Screen DPI:</label>
                 <input type="number" id="dpi" value="96" min="1">
                 <span class="unit">dpi</span>
             </div>
             <div class="converter">
-                <input type="number" id="pxValue" placeholder="输入像素值">
+                <input type="number" id="pxValue" placeholder="Enter pixel value">
                 <span class="unit">px</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
             </div>
         </div>
 
@@ -41,16 +41,16 @@
                 <span class="unit">ft</span>
             </div>
             <div class="formula-display">
-                <p>转换公式: 1ft = 1152px (96dpi)</p>
-                <p>计算方法: px ÷ (dpi × 12) = ft</p>
+                <p>Conversion formula: 1ft = 1152px (96dpi)</p>
+                <p>Calculation method: px ÷ (dpi × 12) = ft</p>
             </div>
         </div>
 
         <section class="conversion-info">
-            <h2>像素转英尺换算说明</h2>
-            <p>英尺(ft)是一个物理长度单位，1英尺等于12英寸。在标准96 DPI显示器上，1英尺约等于1152像素。</p>
+            <h2>Pixel to Feet Conversion Instructions</h2>
+            <p>Feet (ft) is a physical length unit, 1 foot equals 12 inches. On a standard 96 DPI display, 1 foot is approximately equal to 1152 pixels.</p>
             
-            <h3>常用换算值参考（基于96 DPI）：</h3>
+            <h3>Common Conversion Values (Based on 96 DPI):</h3>
             <ul class="conversion-examples">
                 <li>1152px = 1ft</li>
                 <li>576px = 0.5ft</li>
@@ -59,23 +59,23 @@
             </ul>
 
             <div class="usage-notes">
-                <h3>使用说明：</h3>
+                <h3>Usage Instructions:</h3>
                 <ol>
-                    <li>可以调整屏幕DPI值（默认96）</li>
-                    <li>在输入框中输入像素值</li>
-                    <li>点击"转换"按钮或按回车</li>
-                    <li>获得对应的英尺值</li>
+                    <li>You can adjust the Screen DPI value (default 96)</li>
+                    <li>Enter the pixel value in the input box</li>
+                    <li>Click "Convert" button or press Enter</li>
+                    <li>Get the corresponding feet value</li>
                 </ol>
             </div>
 
             <div class="tips">
-                <h3>使用技巧：</h3>
+                <h3>Usage Tips:</h3>
                 <ul>
-                    <li>英尺单位常用于实际尺寸设计</li>
-                    <li>1英尺 = 12英寸</li>
-                    <li>适合用于大尺寸设计</li>
-                    <li>注意不同设备的DPI差异</li>
-                    <li>可以与英寸单位配合使用</li>
+                    <li>Feet unit is commonly used for actual size design</li>
+                    <li>1 foot = 12 inches</li>
+                    <li>Suitable for large size design</li>
+                    <li>Note the DPI differences between different devices</li>
+                    <li>Can be used in conjunction with inches</li>
                 </ul>
             </div>
         </section>
@@ -97,18 +97,18 @@
                 const ft = px / (dpi * 12);
                 resultSpan.textContent = ft.toFixed(3);
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 

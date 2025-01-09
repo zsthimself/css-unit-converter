@@ -1,48 +1,104 @@
 # CSS Unit Converter
 
-一个简单易用的 CSS 单位转换工具网站，帮助开发者在不同的 CSS 单位之间进行转换。
+A simple and user-friendly CSS unit conversion tool that helps developers convert between different CSS units.
 
-## 功能特点
+## Features
 
-- 支持多种 CSS 单位之间的相互转换
-- 直观的卡片式布局
-- 实时转换结果
-- 响应式设计，支持移动端访问
+- Supports conversion between various CSS units
+- Intuitive card-style layout
+- Real-time conversion results
+- Responsive design, supporting mobile access
 
-## 支持的单位转换
+## Supported Unit Conversions
 
-- 像素 (px)
-- 厘米 (cm)
-- 毫米 (mm)
-- 英寸 (in)
-- 点 (pt)
-- 派卡 (pc)
-- rem
-- em
-- 视窗宽度 (vw)
-- 视窗高度 (vh)
+- Pixels (px)
+- Centimeters (cm)
+- Millimeters (mm)
+- Inches (in)
+- Points (pt)
+- Picas (pc)
+- REM
+- EM
+- Viewport Width (vw)
+- Viewport Height (vh)
 
-## 技术栈
+## Conversion Tools
+
+### Pixel Converters
+- Pixel to Centimeter
+- Pixel to EM
+- Pixel to Feet
+- Pixel to Inch
+- Pixel to Millimeter
+- Pixel to Pica
+- Pixel to Percent
+- Pixel to Point
+- Pixel to REM
+- Pixel to Viewport Width
+- Pixel to Viewport Height
+
+### REM Converters
+- REM to Centimeter
+- REM to EM
+- REM to Feet
+- REM to Inch
+- REM to Millimeter
+- REM to Pica
+- REM to Percent
+- REM to Point
+- REM to Pixel
+- REM to Viewport Width
+- REM to Viewport Height
+
+### Point Converters
+- Point to Centimeter
+- Point to EM
+- Point to Feet
+- Point to Inch
+- Point to Millimeter
+- Point to Pica
+- Point to Percent
+- Point to Pixel
+- Point to REM
+- Point to Viewport Width
+- Point to Viewport Height
+
+## Usage Instructions
+
+1. Navigate to the desired conversion tool (e.g., Pixel to Pica).
+2. Enter the value you wish to convert in the input field.
+3. Click the "Convert" button or press the Enter key to see the result.
+4. Use the "Copy" button to copy the conversion result to your clipboard.
+
+## Technical Stack
 
 - HTML5
 - CSS3
-- JavaScript (vanilla) 
+- JavaScript (vanilla)
 
-## 项目结构
+## Project Structure
+
 ```
 project-root/
-├── index.html              # 主页
-├── styles.css              # 全局样式
+├── index.html              # Home page
+├── styles.css              # Global styles
 ├── converters/
-│   ├── converter.css       # 转换器通用样式
-│   ├── pixel/             # 像素相关转换
-│   │   ├── index.html     # 像素转换器首页
-│   │   ├── to-inch.html   # 像素转英寸
-│   │   ├── to-pt.html     # 像素转点
-│   │   ├── to-pc.html     # 像素转派卡
-│   │   ├── to-vw.html     # 像素转视窗宽度
-│   │   ├── to-vh.html     # 像素转视窗高度
-│   │   ├── to-ft.html     # 像素转英尺
-│   │   └── to-percent.html # 像素转百分比
-│   └── inch/              # 英寸相关转换（待实现）
-└── README.md 
+│   ├── converter.css       # Common styles for converters
+│   ├── pixel/              # Pixel related conversions
+│   │   ├── index.html      # Pixel converter homepage
+│   │   ├── to-inch.html    # Pixel to Inch
+│   │   ├── to-pt.html      # Pixel to Point
+│   │   ├── to-pc.html      # Pixel to Pica
+│   │   ├── to-vw.html      # Pixel to Viewport Width
+│   │   ├── to-vh.html      # Pixel to Viewport Height
+│   │   ├── to-ft.html      # Pixel to Feet
+│   │   └── to-percent.html  # Pixel to Percent
+│   └── rem/                # REM related conversions
+│       ├── index.html      # REM converter homepage
+│       └── ...             # Other REM conversion files
+└── README.md               # Project documentation
+```
+
+## Conclusion
+
+This CSS Unit Converter is designed to simplify the process of converting between different CSS units, making it easier for developers to work with various measurements in their projects. Feel free to explore the different conversion tools available! 

@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="点转像素在线转换器 - 精确计算点到像素的转换">
-    <meta name="keywords" content="pt转px,点转像素,pt to pixels,像素换算">
-    <title>点转像素转换器 - CSS单位转换工具</title>
+    <meta name="description" content="Point to Pixel online converter - Accurately calculate the conversion from points to pixels">
+    <meta name="keywords" content="pt to px, point to pixels, pixel conversion">
+    <title>Point to Pixel Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > 点转像素
+            <a href="../../index.html">Home</a> > Point to Pixel
         </nav>
-        <h1>点转像素转换器</h1>
-        <p>将点（PT）转换为像素（PX），适用于排版和设计</p>
+        <h1>Point to Pixel (PX) Converter</h1>
+        <p>Convert points (PT) to pixels (PX), suitable for typesetting and design</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="converter">
-                <input type="number" id="ptValue" placeholder="输入点值">
-                <span class="unit">pt</span>
+                <input type="number" id="ptValue" placeholder="Enter point value">
+                <span class="unit">px</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
             </div>
         </div>
 
@@ -36,26 +36,26 @@
                 <span class="unit">px</span>
             </div>
             <div class="formula-display">
-                <p id="formula">计算公式: </p>
+                <p id="formula">Formula: </p>
             </div>
         </div>
 
         <section class="introduction">
-            <h2>什么是点（PT）和像素（PX）？</h2>
-            <p>点（PT）是一个绝对单位，通常用于印刷和排版。像素（PX）是屏幕显示的基本单位。</p>
+            <h2>What is a Point (PT) and a Pixel (PX)?</h2>
+            <p>A point (PT) is an absolute unit used in printing and typesetting. A pixel (PX) is the basic unit of screen display.</p>
         </section>
 
         <section class="usage-guide">
-            <h2>使用说明</h2>
+            <h2>Usage Instructions</h2>
             <ol>
-                <li>输入要转换的点值</li>
-                <li>点击"转换"按钮或按回车键获取结果</li>
-                <li>使用"复制"按钮复制转换结果</li>
+                <li>Enter the point value</li>
+                <li>Click "Convert" button or press Enter to get the result</li>
+                <li>Use "Copy" button to copy the conversion result</li>
             </ol>
         </section>
 
         <section class="examples-section">
-            <h2>常见转换示例</h2>
+            <h2>Common Conversion Examples</h2>
             <ul class="conversion-examples">
                 <li>1pt = 1.33px</li>
                 <li>12pt = 1in</li>
@@ -79,20 +79,20 @@
             if (!isNaN(pt)) {
                 const px = pt * 1.3333; // 1pt = 1.3333px
                 resultSpan.textContent = px.toFixed(3);
-                document.getElementById('formula').textContent = `计算公式: px = ${pt}pt × 1.3333`;
+                document.getElementById('formula').textContent = `Formula: px = ${pt}pt × 1.3333`;
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 

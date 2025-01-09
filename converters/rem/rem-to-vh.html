@@ -1,42 +1,42 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="REM转视窗高度在线转换器 - 精确计算REM到vh的转换">
-    <meta name="keywords" content="rem转vh,REM转视窗高度,rem to vh,视窗高度换算">
-    <title>REM转视窗高度换算器 - CSS单位转换工具</title>
+    <meta name="description" content="REM to Viewport Height online converter - Accurately calculate the conversion from REM to vh">
+    <meta name="keywords" content="rem to vh, REM to viewport height, vh conversion">
+    <title>REM to Viewport Height Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > REM转视窗高度
+            <a href="../../index.html">Home</a> > REM to Viewport Height
         </nav>
-        <h1>REM转视窗高度(VH)转换器</h1>
-        <p>将REM转换为视窗高度，适用于响应式网页设计</p>
+        <h1>REM to Viewport Height (VH) Converter</h1>
+        <p>Convert REM to viewport height units (vh), suitable for responsive web design</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="settings">
-                <label for="rootFontSize">根元素字体大小:</label>
+                <label for="rootFontSize">Root Element Font Size:</label>
                 <input type="number" id="rootFontSize" value="16" min="1">
                 <span class="unit">px</span>
             </div>
             <div class="settings">
-                <label for="viewportHeight">视窗高度:</label>
+                <label for="viewportHeight">Viewport Height:</label>
                 <input type="number" id="viewportHeight" readonly>
                 <span class="unit">px</span>
             </div>
             <div class="converter">
-                <input type="number" id="remValue" placeholder="输入REM值">
+                <input type="number" id="remValue" placeholder="Enter REM value">
                 <span class="unit">rem</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy Result">Copy</button>
             </div>
         </div>
 
@@ -46,37 +46,37 @@
                 <span class="unit">vh</span>
             </div>
             <div class="formula-display">
-                <p>计算方法: (rem × rootFontSize ÷ viewportHeight) × 100 = vh</p>
+                <p>Calculation Method: (rem × rootFontSize ÷ viewportHeight) × 100 = vh</p>
             </div>
         </div>
 
         <section class="conversion-info">
-            <h2>REM转视窗高度换算说明</h2>
-            <p>视窗高度(vh)是相对于浏览器视窗高度的单位，1vh等于视窗高度的1%。通过输入REM值和根元素字体大小，可以计算出相应的vh值。</p>
+            <h2>REM to Viewport Height Conversion Information</h2>
+            <p>Viewport height (vh) is a unit relative to the browser viewport height, where 1vh equals 1% of the viewport height. By entering the REM value and the root element font size, you can calculate the corresponding vh value.</p>
             
-            <h3>常用换算值参考（基于1080px高度）：</h3>
+            <h3>Common Conversion Values (Based on 1080px Height):</h3>
             <ul class="conversion-examples">
-                <li>1rem = 8vh (假设根元素为16px)</li>
-                <li>2rem = 16vh (假设根元素为16px)</li>
-                <li>6rem = 48vh (假设根元素为16px)</li>
+                <li>1rem = 8vh (Assuming root element is 16px)</li>
+                <li>2rem = 16vh (Assuming root element is 16px)</li>
+                <li>6rem = 48vh (Assuming root element is 16px)</li>
             </ul>
 
             <div class="usage-notes">
-                <h3>使用说明：</h3>
+                <h3>Usage Instructions:</h3>
                 <ol>
-                    <li>设置根元素字体大小（默认16px）</li>
-                    <li>注意当前视窗高度</li>
-                    <li>输入REM值</li>
-                    <li>获得对应的vh值</li>
+                    <li>Set the root element font size (default 16px)</li>
+                    <li>Note the current viewport height</li>
+                    <li>Enter the REM value</li>
+                    <li>Get the corresponding vh value</li>
                 </ol>
             </div>
 
             <div class="tips">
-                <h3>使用技巧：</h3>
+                <h3>Usage Tips:</h3>
                 <ul>
-                    <li>适用于响应式布局</li>
-                    <li>随视窗高度变化</li>
-                    <li>精确到小数点后3位</li>
+                    <li>Suitable for responsive layout</li>
+                    <li>Changes with viewport height</li>
+                    <li>Accurate to three decimal places</li>
                 </ul>
             </div>
         </section>
@@ -104,22 +104,22 @@
                 const vh = (px / viewportHeight) * 100;
                 resultSpan.textContent = vh.toFixed(3);
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 
-        // 初始化和事件监听
+        // Initialization and event listeners
         updateViewportHeight();
         window.addEventListener('resize', () => {
             updateViewportHeight();

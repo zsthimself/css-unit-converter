@@ -1,52 +1,52 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="EM转Pica在线转换器 - 精确计算EM到Pica的转换">
-    <meta name="keywords" content="em转pc,EM转Pica,em to pica,Pica换算">
-    <title>EM转Pica换算器 - CSS单位转换工具</title>
+    <meta name="description" content="EM to Pica online converter - Accurately calculate the conversion from EM to Pica">
+    <meta name="keywords" content="em to pc, EM to Pica, Pica conversion">
+    <title>EM to Pica Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > EM转Pica
+            <a href="../../index.html">Home</a> > EM to Pica
         </nav>
-        <h1>EM转Pica转换器</h1>
-        <p>将EM转换为Pica，适用于响应式网页设计</p>
+        <h1>EM to Pica Converter</h1>
+        <p>Convert EM to Pica, suitable for responsive web design</p>
     </header>
 
     <main class="converter-container">
         <section class="introduction">
-            <h2>什么是 EM 和 Pica？</h2>
-            <p>EM 是一个相对单位，相对于父元素的字体大小。Pica 是一个绝对单位，通常用于排版，1 Pica = 12 点。</p>
+            <h2>What are EM and Pica?</h2>
+            <p>EM is a relative unit based on the font size of the parent element. Pica is an absolute unit typically used in typography, where 1 Pica = 12 points.</p>
         </section>
 
         <section class="usage-guide">
-            <h2>使用说明</h2>
+            <h2>Usage Instructions</h2>
             <ol>
-                <li>设置父元素字体大小（默认为 16px）</li>
-                <li>输入要转换的 EM 值</li>
-                <li>点击"转换"按钮或按回车键获取结果</li>
-                <li>使用"复制"按钮复制转换结果</li>
+                <li>Set the parent element's font size (default is 16px)</li>
+                <li>Input the EM value to convert</li>
+                <li>Click the "Convert" button or press Enter to get the result</li>
+                <li>Use the "Copy" button to copy the conversion result</li>
             </ol>
         </section>
 
         <div class="input-section">
             <div class="settings">
-                <label for="parentFontSize">父元素字体大小:</label>
+                <label for="parentFontSize">Parent Element Font Size:</label>
                 <input type="number" id="parentFontSize" value="16" min="1">
                 <span class="unit">px</span>
             </div>
             <div class="converter">
-                <input type="number" id="emValue" placeholder="输入EM值">
+                <input type="number" id="emValue" placeholder="Enter EM value">
                 <span class="unit">em</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
             </div>
         </div>
 
@@ -56,14 +56,14 @@
                 <span class="unit">pc</span>
             </div>
             <div class="formula-display">
-                <p>计算公式: pc = (em × 父元素字体大小) ÷ 16</p>
+                <p>Calculation formula: pc = (em × parent element font size) ÷ 16</p>
             </div>
         </div>
 
         <section class="examples-section">
-            <h2>常见转换示例</h2>
+            <h2>Common Conversion Examples</h2>
             <ul class="conversion-examples">
-                <li>1em = 1.0pc (当父元素字体大小为 16px 时)</li>
+                <li>1em = 1.0pc (when the parent element's font size is 16px)</li>
                 <li>2em = 2.0pc</li>
                 <li>0.5em = 0.5pc</li>
                 <li>1.5em = 1.5pc</li>
@@ -86,18 +86,18 @@
                 const pc = (em * parentFontSize) / 16; // 1 Pica = 16 points
                 resultSpan.textContent = pc.toFixed(3);
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 

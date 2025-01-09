@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="毫米转视口高度在线转换器 - 精确计算毫米到视口高度的转换">
-    <meta name="keywords" content="mm转vh,毫米转视口高度,mm to vh,视口高度换算">
-    <title>毫米转视口高度转换器 - CSS单位转换工具</title>
+    <meta name="description" content="Millimeter to viewport height online converter - Accurately calculate the conversion from millimeters to viewport height">
+    <meta name="keywords" content="mm to vh, millimeter to viewport height, mm转vh, 视口高度换算">
+    <title>Millimeter to Viewport Height Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > 毫米转视口高度
+            <a href="../../index.html">Home</a> > Millimeter to Viewport Height
         </nav>
-        <h1>毫米转视口高度转换器</h1>
-        <p>将毫米（MM）转换为视口高度（VH），适用于排版和设计</p>
+        <h1>Millimeter to Viewport Height Converter</h1>
+        <p>Convert millimeters (MM) to viewport height (VH), suitable for typesetting and design</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="converter">
-                <input type="number" id="mmValue" placeholder="输入毫米值">
+                <input type="number" id="mmValue" placeholder="Enter millimeter value">
                 <span class="unit">mm</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
             </div>
         </div>
 
@@ -36,28 +36,28 @@
                 <span class="unit">vh</span>
             </div>
             <div class="formula-display">
-                <p id="formula">计算公式: </p>
+                <p id="formula">Calculation formula: </p>
             </div>
         </div>
 
         <section class="introduction">
-            <h2>什么是毫米（MM）和视口高度（VH）？</h2>
-            <p>毫米（MM）是常用的长度单位。视口高度（VH）是相对于视口高度的百分比单位。</p>
+            <h2>What are Millimeters (MM) and Viewport Height (VH)?</h2>
+            <p>Millimeters (MM) are a common unit of length. Viewport height (VH) is a percentage unit relative to the height of the viewport.</p>
         </section>
 
         <section class="usage-guide">
-            <h2>使用说明</h2>
+            <h2>Usage Instructions</h2>
             <ol>
-                <li>输入要转换的毫米值</li>
-                <li>点击"转换"按钮或按回车键获取结果</li>
-                <li>使用"复制"按钮复制转换结果</li>
+                <li>Enter the millimeter value to convert</li>
+                <li>Click the "Convert" button or press Enter to get the result</li>
+                <li>Use the "Copy" button to copy the conversion result</li>
             </ol>
         </section>
 
         <section class="examples-section">
-            <h2>常见转换示例</h2>
+            <h2>Common Conversion Examples</h2>
             <ul class="conversion-examples">
-                <li>1mm = 0.1vh (假设视口高度为 1000px)</li>
+                <li>1mm = 0.1vh (assuming viewport height is 1000px)</li>
                 <li>2mm = 0.2vh</li>
                 <li>5mm = 0.5vh</li>
                 <li>10mm = 1vh</li>
@@ -73,24 +73,24 @@
 
         function convertMmToVh() {
             const mm = parseFloat(mmInput.value);
-            const viewportHeight = 1000; // 假设视口高度为 1000px
+            const viewportHeight = 1000; // Assuming viewport height is 1000px
             if (!isNaN(mm)) {
                 const vh = (mm / viewportHeight) * 100; // 1vh = 1% of viewport height
                 resultSpan.textContent = vh.toFixed(2);
-                document.getElementById('formula').textContent = `计算公式: vh = (${mm}mm ÷ ${viewportHeight}) × 100`;
+                document.getElementById('formula').textContent = `Calculation formula: vh = (${mm}mm ÷ ${viewportHeight}) × 100`;
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 

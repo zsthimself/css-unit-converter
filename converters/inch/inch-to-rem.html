@@ -1,42 +1,42 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="英寸(in)转REM在线转换器 - 精确计算英寸到rem的转换">
-    <meta name="keywords" content="in转rem,英寸转rem,inch to rem,rem换算">
-    <title>英寸转REM换算器 - CSS单位转换工具</title>
+    <meta name="description" content="Inch (in) to REM online converter - Accurately calculate the conversion from inches to REM">
+    <meta name="keywords" content="in to rem, inch to rem, inch转rem, rem conversion">
+    <title>Inch to REM Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > 英寸转REM
+            <a href="../../index.html">Home</a> > Inch to REM
         </nav>
-        <h1>英寸(IN)转REM转换器</h1>
-        <p>将英寸(in)精确转换为REM，适用于响应式网页设计</p>
+        <h1>Inch (IN) to REM Converter</h1>
+        <p>Accurately convert inches (in) to REM, suitable for responsive web design</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="settings">
-                <label for="rootFontSize">根元素字体大小:</label>
+                <label for="rootFontSize">Root Element Font Size:</label>
                 <input type="number" id="rootFontSize" value="16" min="1">
                 <span class="unit">px</span>
             </div>
             <div class="settings">
-                <label for="dpi">屏幕DPI:</label>
+                <label for="dpi">Screen DPI:</label>
                 <input type="number" id="dpi" value="96" min="1">
                 <span class="unit">dpi</span>
             </div>
             <div class="converter">
-                <input type="number" id="inchValue" placeholder="输入英寸值">
+                <input type="number" id="inchValue" placeholder="Enter inch value">
                 <span class="unit">in</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
             </div>
         </div>
 
@@ -46,16 +46,16 @@
                 <span class="unit">rem</span>
             </div>
             <div class="formula-display">
-                <p>转换公式: 1in = 96px (96dpi)</p>
-                <p>计算方法: (inch × dpi) ÷ rootFontSize = rem</p>
+                <p>Conversion formula: 1 inch = 96px (96dpi)</p>
+                <p>Calculation method: (inch × dpi) ÷ rootFontSize = rem</p>
             </div>
         </div>
 
         <section class="conversion-info">
-            <h2>英寸转REM换算说明</h2>
-            <p>REM是相对于根元素(html)字体大小的单位。在默认情况下，1英寸等于96像素，再根据根元素字体大小换算为REM。</p>
+            <h2>Inch to REM Conversion Instructions</h2>
+            <p>REM is a unit of measurement relative to the root element (html) font size. In the default case, 1 inch equals 96 pixels, then converted to REM based on the root font size.</p>
             
-            <h3>常用换算值参考（基于16px根字体）：</h3>
+            <h3>Common Conversion Values (Based on 16px Root Font):</h3>
             <ul class="conversion-examples">
                 <li>1in = 6rem</li>
                 <li>0.5in = 3rem</li>
@@ -64,22 +64,22 @@
             </ul>
 
             <div class="usage-notes">
-                <h3>使用说明：</h3>
+                <h3>Usage Instructions:</h3>
                 <ol>
-                    <li>设置根元素字体大小（默认16px）</li>
-                    <li>调整屏幕DPI值（默认96）</li>
-                    <li>输入英寸值</li>
-                    <li>获得对应的REM值</li>
+                    <li>Set the root element font size (default 16px)</li>
+                    <li>Adjust the screen DPI value (default 96)</li>
+                    <li>Input the inch value</li>
+                    <li>Get the corresponding REM value</li>
                 </ol>
             </div>
 
             <div class="tips">
-                <h3>使用技巧：</h3>
+                <h3>Usage Tips:</h3>
                 <ul>
-                    <li>适用于响应式设计</li>
-                    <li>根据根字体大小缩放</li>
-                    <li>精确到小数点后3位</li>
-                    <li>常用于网页布局</li>
+                    <li>Suitable for responsive design</li>
+                    <li>Scales based on the root font size</li>
+                    <li>Accurate to three decimal places</li>
+                    <li>Commonly used in web layout</li>
                 </ul>
             </div>
         </section>
@@ -103,18 +103,18 @@
                 const rem = px / rootFontSize;
                 resultSpan.textContent = rem.toFixed(3);
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 

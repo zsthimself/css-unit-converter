@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="像素(px)转英寸(in)在线转换器 - 精确计算像素到英寸的转换">
-    <meta name="keywords" content="px转in,像素转英寸,px to inches,像素英寸换算">
-    <title>像素转英寸换算器 - CSS单位转换工具</title>
+    <meta name="description" content="Pixel (px) to Inch (in) online converter - Accurately calculate the conversion from pixels to inches">
+    <meta name="keywords" content="px to in, pixel to inches, inches conversion">
+    <title>Pixel to Inch Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > 像素转英寸
+            <a href="../../index.html">Home</a> > Pixel to Inch
         </nav>
-        <h1>像素(PX)转英寸(IN)转换器</h1>
-        <p>将像素(px)精确转换为英寸(in)，适用于网页设计和打印排版</p>
+        <h1>Pixel (PX) to Inch (IN) Converter</h1>
+        <p>Accurately convert pixels (px) to inches (in), suitable for web design and print layout</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="settings">
-                <label for="dpi">屏幕DPI:</label>
+                <label for="dpi">Screen DPI:</label>
                 <input type="number" id="dpi" value="96" min="1">
                 <span class="unit">dpi</span>
             </div>
             <div class="converter">
-                <input type="number" id="pxValue" placeholder="输入像素值">
+                <input type="number" id="pxValue" placeholder="Enter pixel value">
                 <span class="unit">px</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
             </div>
         </div>
 
@@ -41,16 +41,16 @@
                 <span class="unit">in</span>
             </div>
             <div class="formula-display">
-                <p>转换公式: 1 inch = 96 pixels</p>
-                <p>计算方法: px ÷ 96 = in</p>
+                <p>Conversion formula: 1 inch = 96 pixels</p>
+                <p>Calculation method: px ÷ 96 = in</p>
             </div>
         </div>
 
         <section class="conversion-info">
-            <h2>像素转英寸换算说明</h2>
-            <p>在数字设备中，1英寸通常等于96像素。这个标准DPI（每英寸点数）在大多数现代显示设备中被广泛使用。</p>
+            <h2>Pixel to Inch Conversion Instructions</h2>
+            <p>In digital devices, 1 inch is typically equal to 96 pixels. This standard DPI (pixels per inch) is widely used in most modern display devices.</p>
             
-            <h3>常用换算值参考：</h3>
+            <h3>Common Conversion Values Reference:</h3>
             <ul class="conversion-examples">
                 <li>96px = 1in</li>
                 <li>48px = 0.5in</li>
@@ -59,12 +59,12 @@
             </ul>
 
             <div class="usage-notes">
-                <h3>使用说明：</h3>
+                <h3>Usage Instructions:</h3>
                 <ol>
-                    <li>在输入框中输入像素值</li>
-                    <li>点击"转换"按钮或按回车</li>
-                    <li>获得对应的英寸值</li>
-                    <li>可以点击"复制"按钮复制结果</li>
+                    <li>Enter the pixel value in the input field</li>
+                    <li>Click "Convert" button or press Enter</li>
+                    <li>Get the corresponding inch value</li>
+                    <li>Click "Copy" button to copy the result</li>
                 </ol>
             </div>
         </section>
@@ -82,18 +82,18 @@
                 const inches = px / 96;
                 resultSpan.textContent = inches.toFixed(3);
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 

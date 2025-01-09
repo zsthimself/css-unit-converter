@@ -1,42 +1,42 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="REM转毫米在线转换器 - 精确计算REM到毫米的转换">
-    <meta name="keywords" content="rem转mm,REM转毫米,rem to mm,毫米换算">
-    <title>REM转毫米换算器 - CSS单位转换工具</title>
+    <meta name="description" content="REM to Millimeter online converter - Accurately calculate the conversion from REM to millimeters">
+    <meta name="keywords" content="rem to mm, REM to millimeters, mm conversion">
+    <title>REM to Millimeter Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > REM转毫米
+            <a href="../../index.html">Home</a> > REM to Millimeter
         </nav>
-        <h1>REM转毫米(MM)转换器</h1>
-        <p>将REM转换为毫米，适用于印刷设计</p>
+        <h1>REM to Millimeter (MM) Converter</h1>
+        <p>Convert REM to millimeters, suitable for precise size design and printing</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="settings">
-                <label for="rootFontSize">根元素字体大小:</label>
+                <label for="rootFontSize">Root Element Font Size:</label>
                 <input type="number" id="rootFontSize" value="16" min="1">
                 <span class="unit">px</span>
             </div>
             <div class="settings">
-                <label for="dpi">屏幕DPI:</label>
+                <label for="dpi">Screen DPI:</label>
                 <input type="number" id="dpi" value="96" min="1">
                 <span class="unit">dpi</span>
             </div>
             <div class="converter">
-                <input type="number" id="remValue" placeholder="输入REM值">
+                <input type="number" id="remValue" placeholder="Enter REM value">
                 <span class="unit">rem</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy Result">Copy</button>
             </div>
         </div>
 
@@ -46,15 +46,15 @@
                 <span class="unit">mm</span>
             </div>
             <div class="formula-display">
-                <p>计算方法: rem × rootFontSize ÷ 3.78 = mm</p>
+                <p>Calculation Method: rem × rootFontSize ÷ 3.78 = mm</p>
             </div>
         </div>
 
         <section class="conversion-info">
-            <h2>REM转毫米换算说明</h2>
-            <p>REM是相对于根元素字体大小的单位。通过输入REM值和根元素字体大小，可以计算出相应的毫米值。</p>
+            <h2>REM to Millimeter Conversion Instructions</h2>
+            <p>REM is a unit relative to the root element font size. By entering the REM value and the root element font size, you can calculate the corresponding millimeter value.</p>
             
-            <h3>常用换算值参考（基于16px根字体）：</h3>
+            <h3>Common Conversion Values (Based on 16px Root Font):</h3>
             <ul class="conversion-examples">
                 <li>1rem = 25.4mm</li>
                 <li>2rem = 50.8mm</li>
@@ -62,21 +62,21 @@
             </ul>
 
             <div class="usage-notes">
-                <h3>使用说明：</h3>
+                <h3>Usage Instructions:</h3>
                 <ol>
-                    <li>设置根元素字体大小（默认16px）</li>
-                    <li>调整屏幕DPI值（默认96）</li>
-                    <li>输入REM值</li>
-                    <li>获得对应的毫米值</li>
+                    <li>Set the root element font size (default 16px)</li>
+                    <li>Adjust the screen DPI value (default 96)</li>
+                    <li>Enter the REM value</li>
+                    <li>Get the corresponding millimeter value</li>
                 </ol>
             </div>
 
             <div class="tips">
-                <h3>使用技巧：</h3>
+                <h3>Usage Tips:</h3>
                 <ul>
-                    <li>适用于印刷设计</li>
-                    <li>根据根字体大小计算</li>
-                    <li>精确到小数点后3位</li>
+                    <li>Suitable for precise size design and printing</li>
+                    <li>Calculate based on root font size</li>
+                    <li>Accurate to three decimal places</li>
                 </ul>
             </div>
         </section>
@@ -100,18 +100,18 @@
                 const mm = px / 3.78; // 1 inch = 25.4 mm, 1 inch = 96 px
                 resultSpan.textContent = mm.toFixed(3);
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 

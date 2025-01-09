@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="点转英尺在线转换器 - 精确计算点到英尺的转换">
-    <meta name="keywords" content="pt转ft,点转英尺,pt to ft,英尺换算">
-    <title>点转英尺转换器 - CSS单位转换工具</title>
+    <meta name="description" content="Point to Feet online converter - Accurately calculate the conversion from points to feet">
+    <meta name="keywords" content="pt to ft, point to feet, feet conversion">
+    <title>Point to Feet Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
     <header>
         <nav class="breadcrumb">
-            <a href="../../index.html">首页</a> > 点转英尺
+            <a href="../../index.html">Home</a> > Point to Feet
         </nav>
-        <h1>点转英尺转换器</h1>
-        <p>将点（PT）转换为英尺（FT），适用于排版和设计</p>
+        <h1>Point to Feet (FT) Converter</h1>
+        <p>Convert points (PT) to feet (FT), suitable for typesetting and design</p>
     </header>
 
     <main class="converter-container">
         <div class="input-section">
             <div class="converter">
-                <input type="number" id="ptValue" placeholder="输入点值">
-                <span class="unit">pt</span>
+                <input type="number" id="ptValue" placeholder="Enter point value">
+                <span class="unit">ft</span>
             </div>
             <div class="button-group">
-                <button id="convert" class="btn btn-primary">转换</button>
-                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
             </div>
         </div>
 
@@ -36,26 +36,26 @@
                 <span class="unit">ft</span>
             </div>
             <div class="formula-display">
-                <p id="formula">计算公式: </p>
+                <p id="formula">Calculation formula: </p>
             </div>
         </div>
 
         <section class="introduction">
-            <h2>什么是点（PT）和英尺（FT）？</h2>
-            <p>点（PT）是一个绝对单位，通常用于印刷和排版。英尺（FT）是一个常用的长度单位。</p>
+            <h2>What is Point (PT) and Foot (FT)?</h2>
+            <p>Point (PT) is an absolute unit used in printing and typesetting. Foot (FT) is a commonly used length unit.</p>
         </section>
 
         <section class="usage-guide">
-            <h2>使用说明</h2>
+            <h2>Usage Instructions</h2>
             <ol>
-                <li>输入要转换的点值</li>
-                <li>点击"转换"按钮或按回车键获取结果</li>
-                <li>使用"复制"按钮复制转换结果</li>
+                <li>Enter the point value to be converted</li>
+                <li>Click "Convert" button or press Enter key to get the result</li>
+                <li>Use "Copy" button to copy the conversion result</li>
             </ol>
         </section>
 
         <section class="examples-section">
-            <h2>常见转换示例</h2>
+            <h2>Common Conversion Examples</h2>
             <ul class="conversion-examples">
                 <li>1pt = 0.0001ft</li>
                 <li>12pt = 0.001ft</li>
@@ -76,20 +76,20 @@
             if (!isNaN(pt)) {
                 const ft = pt / 864; // 1ft = 864pt
                 resultSpan.textContent = ft.toFixed(6);
-                document.getElementById('formula').textContent = `计算公式: ft = ${pt}pt ÷ 864`;
+                document.getElementById('formula').textContent = `Calculation formula: ft = ${pt}pt ÷ 864`;
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 
