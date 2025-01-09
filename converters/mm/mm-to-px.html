@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="毫米转像素在线转换器 - 精确计算毫米到像素的转换">
+    <meta name="keywords" content="mm转px,毫米转像素,mm to px,像素换算">
+    <title>毫米转像素转换器 - CSS单位转换工具</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../converter.css">
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="../../index.html">首页</a> > 毫米转像素
+        </nav>
+        <h1>毫米转像素转换器</h1>
+        <p>将毫米（MM）转换为像素（PX），适用于排版和设计</p>
+    </header>
+
+    <main class="converter-container">
+        <div class="input-section">
+            <div class="converter">
+                <input type="number" id="mmValue" placeholder="输入毫米值">
+                <span class="unit">mm</span>
+            </div>
+            <div class="button-group">
+                <button id="convert" class="btn btn-primary">转换</button>
+                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-display">
+                <span id="result">0</span>
+                <span class="unit">px</span>
+            </div>
+            <div class="formula-display">
+                <p id="formula">计算公式: </p>
+            </div>
+        </div>
+
+        <section class="introduction">
+            <h2>什么是毫米（MM）和像素（PX）？</h2>
+            <p>毫米（MM）是常用的长度单位。像素（PX）是屏幕显示的基本单位。</p>
+        </section>
+
+        <section class="usage-guide">
+            <h2>使用说明</h2>
+            <ol>
+                <li>输入要转换的毫米值</li>
+                <li>点击"转换"按钮或按回车键获取结果</li>
+                <li>使用"复制"按钮复制转换结果</li>
+            </ol>
+        </section>
+
+        <section class="examples-section">
+            <h2>常见转换示例</h2>
+            <ul class="conversion-examples">
+                <li>1mm = 3.779px (假设96dpi)</li>
+                <li>2mm = 7.558px</li>
+                <li>5mm = 18.897px</li>
+                <li>10mm = 37.795px</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        const mmInput = document.getElementById('mmValue');
+        const resultSpan = document.getElementById('result');
+        const convertBtn = document.getElementById('convert');
+        const copyBtn = document.getElementById('copy');
+
+        function convertMmToPx() {
+            const mm = parseFloat(mmInput.value);
+            if (!isNaN(mm)) {
+                const px = mm * 3.779; // 1mm = 3.779px (假设96dpi)
+                resultSpan.textContent = px.toFixed(4);
+                document.getElementById('formula').textContent = `计算公式: px = ${mm}mm × 3.779`;
+            } else {
+                resultSpan.textContent = '请输入有效数值';
+            }
+        }
+
+        function copyResult() {
+            navigator.clipboard.writeText(resultSpan.textContent)
+                .then(() => {
+                    copyBtn.textContent = '已复制!';
+                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                })
+                .catch(err => {
+                    console.error('复制失败:', err);
+                });
+        }
+
+        mmInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convertMmToPx();
+        });
+        convertBtn.addEventListener('click', convertMmToPx);
+        copyBtn.addEventListener('click', copyResult);
+    </script>
+</body>
+</html> 

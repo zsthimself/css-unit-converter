@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="点转毫米在线转换器 - 精确计算点到毫米的转换">
+    <meta name="keywords" content="pt转mm,点转毫米,pt to mm,毫米换算">
+    <title>点转毫米转换器 - CSS单位转换工具</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../converter.css">
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="../../index.html">首页</a> > 点转毫米
+        </nav>
+        <h1>点转毫米转换器</h1>
+        <p>将点（PT）转换为毫米（MM），适用于排版和设计</p>
+    </header>
+
+    <main class="converter-container">
+        <div class="input-section">
+            <div class="converter">
+                <input type="number" id="ptValue" placeholder="输入点值">
+                <span class="unit">pt</span>
+            </div>
+            <div class="button-group">
+                <button id="convert" class="btn btn-primary">转换</button>
+                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-display">
+                <span id="result">0</span>
+                <span class="unit">mm</span>
+            </div>
+            <div class="formula-display">
+                <p id="formula">计算公式: </p>
+            </div>
+        </div>
+
+        <section class="introduction">
+            <h2>什么是点（PT）和毫米（MM）？</h2>
+            <p>点（PT）是一个绝对单位，通常用于印刷和排版。毫米（MM）是一个常用的长度单位。</p>
+        </section>
+
+        <section class="usage-guide">
+            <h2>使用说明</h2>
+            <ol>
+                <li>输入要转换的点值</li>
+                <li>点击"转换"按钮或按回车键获取结果</li>
+                <li>使用"复制"按钮复制转换结果</li>
+            </ol>
+        </section>
+
+        <section class="examples-section">
+            <h2>常见转换示例</h2>
+            <ul class="conversion-examples">
+                <li>1pt = 0.3528mm</li>
+                <li>12pt = 4.233mm</li>
+                <li>24pt = 8.466mm</li>
+                <li>72pt = 25.4mm</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        const ptInput = document.getElementById('ptValue');
+        const resultSpan = document.getElementById('result');
+        const convertBtn = document.getElementById('convert');
+        const copyBtn = document.getElementById('copy');
+
+        function convertPtToMm() {
+            const pt = parseFloat(ptInput.value);
+            if (!isNaN(pt)) {
+                const mm = pt * 0.352778; // 1pt = 0.352778mm
+                resultSpan.textContent = mm.toFixed(3);
+                document.getElementById('formula').textContent = `计算公式: mm = ${pt}pt × 0.352778`;
+            } else {
+                resultSpan.textContent = '请输入有效数值';
+            }
+        }
+
+        function copyResult() {
+            navigator.clipboard.writeText(resultSpan.textContent)
+                .then(() => {
+                    copyBtn.textContent = '已复制!';
+                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                })
+                .catch(err => {
+                    console.error('复制失败:', err);
+                });
+        }
+
+        ptInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convertPtToMm();
+        });
+        convertBtn.addEventListener('click', convertPtToMm);
+        copyBtn.addEventListener('click', copyResult);
+    </script>
+</body>
+</html> 

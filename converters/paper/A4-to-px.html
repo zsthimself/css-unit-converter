@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A4纸张尺寸转换为像素在线转换器">
+    <meta name="keywords" content="A4,纸张,转换,像素">
+    <title>A4纸张尺寸转换器 - CSS单位转换工具</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../converter.css">
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="../../index.html">首页</a> > A4纸张尺寸转换
+        </nav>
+        <h1>A4纸张尺寸转换器</h1>
+        <p>将A4纸张尺寸转换为像素（PX），适用于排版和设计</p>
+    </header>
+
+    <main class="converter-container">
+        <div class="input-section">
+            <div class="converter">
+                <input type="number" id="dpiValue" placeholder="输入DPI值">
+                <span class="unit">DPI</span>
+            </div>
+            <div class="button-group">
+                <button id="convert" class="btn btn-primary">转换</button>
+                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-display">
+                <span id="result">0</span>
+                <span class="unit">px</span>
+            </div>
+            <div class="formula-display">
+                <p id="formula">计算公式: </p>
+            </div>
+        </div>
+
+        <section class="introduction">
+            <h2>什么是A4纸张尺寸？</h2>
+            <p>A4纸张尺寸为210mm x 297mm，常用于打印和文档。</p>
+        </section>
+
+        <section class="usage-guide">
+            <h2>使用说明</h2>
+            <ol>
+                <li>输入DPI值（每英寸的点数）</li>
+                <li>点击"转换"按钮或按回车键获取结果</li>
+                <li>使用"复制"按钮复制转换结果</li>
+            </ol>
+        </section>
+
+        <section class="examples-section">
+            <h2>常见转换示例</h2>
+            <ul class="conversion-examples">
+                <li>300 DPI = 2480px x 3508px</li>
+                <li>72 DPI = 595px x 842px</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        const dpiInput = document.getElementById('dpiValue');
+        const resultSpan = document.getElementById('result');
+        const convertBtn = document.getElementById('convert');
+        const copyBtn = document.getElementById('copy');
+
+        function convertA4ToPx() {
+            const dpi = parseFloat(dpiInput.value);
+            if (!isNaN(dpi)) {
+                const widthPx = (210 / 25.4) * dpi; // 210mm to px
+                const heightPx = (297 / 25.4) * dpi; // 297mm to px
+                resultSpan.textContent = `${Math.round(widthPx)} x ${Math.round(heightPx)}`;
+                document.getElementById('formula').textContent = `计算公式: px = (尺寸 / 25.4) × DPI`;
+            } else {
+                resultSpan.textContent = '请输入有效数值';
+            }
+        }
+
+        function copyResult() {
+            navigator.clipboard.writeText(resultSpan.textContent)
+                .then(() => {
+                    copyBtn.textContent = '已复制!';
+                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                })
+                .catch(err => {
+                    console.error('复制失败:', err);
+                });
+        }
+
+        dpiInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convertA4ToPx();
+        });
+        convertBtn.addEventListener('click', convertA4ToPx);
+        copyBtn.addEventListener('click', copyResult);
+    </script>
+</body>
+</html> 

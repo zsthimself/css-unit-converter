@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EM转英尺在线转换器 - 精确计算EM到英尺的转换">
+    <meta name="keywords" content="em转ft,EM转英尺,em to feet,英尺换算">
+    <title>EM转英尺换算器 - CSS单位转换工具</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../converter.css">
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="../../index.html">首页</a> > EM转英尺
+        </nav>
+        <h1>EM转英尺转换器</h1>
+        <p>将EM转换为英尺，适用于响应式网页设计</p>
+    </header>
+
+    <main class="converter-container">
+        <section class="introduction">
+            <h2>什么是 EM 和英尺？</h2>
+            <p>EM 是一个相对单位，相对于父元素的字体大小。英尺是一个绝对单位，通常用于物理尺寸的测量。</p>
+        </section>
+
+        <section class="usage-guide">
+            <h2>使用说明</h2>
+            <ol>
+                <li>设置父元素字体大小（默认为 16px）</li>
+                <li>输入要转换的 EM 值</li>
+                <li>点击"转换"按钮或按回车键获取结果</li>
+                <li>使用"复制"按钮复制转换结果</li>
+            </ol>
+        </section>
+
+        <div class="input-section">
+            <div class="settings">
+                <label for="parentFontSize">父元素字体大小:</label>
+                <input type="number" id="parentFontSize" value="16" min="1">
+                <span class="unit">px</span>
+            </div>
+            <div class="converter">
+                <input type="number" id="emValue" placeholder="输入EM值">
+                <span class="unit">em</span>
+            </div>
+            <div class="button-group">
+                <button id="convert" class="btn btn-primary">转换</button>
+                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-display">
+                <span id="result">0</span>
+                <span class="unit">ft</span>
+            </div>
+            <div class="formula-display">
+                <p>计算公式: ft = (em × 父元素字体大小) ÷ 1152</p>
+            </div>
+        </div>
+
+        <section class="examples-section">
+            <h2>常见转换示例</h2>
+            <ul class="conversion-examples">
+                <li>1em = 0.0139ft (当父元素字体大小为 16px 时)</li>
+                <li>2em = 0.0278ft</li>
+                <li>0.5em = 0.0069ft</li>
+                <li>1.5em = 0.0208ft</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        const emInput = document.getElementById('emValue');
+        const parentFontSizeInput = document.getElementById('parentFontSize');
+        const resultSpan = document.getElementById('result');
+        const convertBtn = document.getElementById('convert');
+        const copyBtn = document.getElementById('copy');
+
+        function convertEmToFt() {
+            const em = parseFloat(emInput.value);
+            const parentFontSize = parseFloat(parentFontSizeInput.value) || 16;
+            
+            if (!isNaN(em)) {
+                const feet = (em * parentFontSize) / 1152; // 1 foot = 12 inches, 1 inch = 96 pixels
+                resultSpan.textContent = feet.toFixed(4);
+            } else {
+                resultSpan.textContent = '请输入有效数值';
+            }
+        }
+
+        function copyResult() {
+            navigator.clipboard.writeText(resultSpan.textContent)
+                .then(() => {
+                    copyBtn.textContent = '已复制!';
+                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                })
+                .catch(err => {
+                    console.error('复制失败:', err);
+                });
+        }
+
+        emInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convertEmToFt();
+        });
+        parentFontSizeInput.addEventListener('input', convertEmToFt);
+        convertBtn.addEventListener('click', convertEmToFt);
+        copyBtn.addEventListener('click', copyResult);
+    </script>
+</body>
+</html> 

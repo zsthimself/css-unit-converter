@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EM转厘米在线转换器 - 精确计算EM到厘米的转换">
+    <meta name="keywords" content="em转cm,EM转厘米,em to cm,厘米换算">
+    <title>EM转厘米换算器 - CSS单位转换工具</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../converter.css">
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="../../index.html">首页</a> > EM转厘米
+        </nav>
+        <h1>EM转厘米转换器</h1>
+        <p>将EM转换为厘米，适用于响应式网页设计</p>
+    </header>
+
+    <main class="converter-container">
+        <section class="introduction">
+            <h2>什么是 EM 和厘米？</h2>
+            <p>EM 是一个相对单位，相对于父元素的字体大小。厘米是一个绝对单位，通常用于物理尺寸的测量。</p>
+        </section>
+
+        <section class="usage-guide">
+            <h2>使用说明</h2>
+            <ol>
+                <li>设置父元素字体大小（默认为 16px）</li>
+                <li>输入要转换的 EM 值</li>
+                <li>点击"转换"按钮或按回车键获取结果</li>
+                <li>使用"复制"按钮复制转换结果</li>
+            </ol>
+        </section>
+
+        <div class="input-section">
+            <div class="settings">
+                <label for="parentFontSize">父元素字体大小:</label>
+                <input type="number" id="parentFontSize" value="16" min="1">
+                <span class="unit">px</span>
+            </div>
+            <div class="converter">
+                <input type="number" id="emValue" placeholder="输入EM值">
+                <span class="unit">em</span>
+            </div>
+            <div class="button-group">
+                <button id="convert" class="btn btn-primary">转换</button>
+                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-display">
+                <span id="result">0</span>
+                <span class="unit">cm</span>
+            </div>
+            <div class="formula-display">
+                <p>计算公式: cm = (em × 父元素字体大小) ÷ 37.795</p>
+            </div>
+        </div>
+
+        <section class="examples-section">
+            <h2>常见转换示例</h2>
+            <ul class="conversion-examples">
+                <li>1em = 0.423cm (当父元素字体大小为 16px 时)</li>
+                <li>2em = 0.846cm</li>
+                <li>0.5em = 0.211cm</li>
+                <li>1.5em = 0.634cm</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        const emInput = document.getElementById('emValue');
+        const parentFontSizeInput = document.getElementById('parentFontSize');
+        const resultSpan = document.getElementById('result');
+        const convertBtn = document.getElementById('convert');
+        const copyBtn = document.getElementById('copy');
+
+        function convertEmToCm() {
+            const em = parseFloat(emInput.value);
+            const parentFontSize = parseFloat(parentFontSizeInput.value) || 16;
+            
+            if (!isNaN(em)) {
+                const cm = (em * parentFontSize) / 37.795; // 1 inch = 2.54 cm, 1 inch = 96 pixels
+                resultSpan.textContent = cm.toFixed(3);
+            } else {
+                resultSpan.textContent = '请输入有效数值';
+            }
+        }
+
+        function copyResult() {
+            navigator.clipboard.writeText(resultSpan.textContent)
+                .then(() => {
+                    copyBtn.textContent = '已复制!';
+                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                })
+                .catch(err => {
+                    console.error('复制失败:', err);
+                });
+        }
+
+        emInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convertEmToCm();
+        });
+        parentFontSizeInput.addEventListener('input', convertEmToCm);
+        convertBtn.addEventListener('click', convertEmToCm);
+        copyBtn.addEventListener('click', copyResult);
+    </script>
+</body>
+</html> 

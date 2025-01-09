@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="派卡转点在线转换器 - 精确计算派卡到点的转换">
+    <meta name="keywords" content="pc转pt,派卡转点,pc to pt,点换算">
+    <title>派卡转点转换器 - CSS单位转换工具</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../converter.css">
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="../../index.html">首页</a> > 派卡转点
+        </nav>
+        <h1>派卡转点转换器</h1>
+        <p>将派卡（PC）转换为点（PT），适用于排版和设计</p>
+    </header>
+
+    <main class="converter-container">
+        <div class="input-section">
+            <div class="converter">
+                <input type="number" id="pcValue" placeholder="输入派卡值">
+                <span class="unit">pc</span>
+            </div>
+            <div class="button-group">
+                <button id="convert" class="btn btn-primary">转换</button>
+                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-display">
+                <span id="result">0</span>
+                <span class="unit">pt</span>
+            </div>
+            <div class="formula-display">
+                <p id="formula">计算公式: </p>
+            </div>
+        </div>
+
+        <section class="introduction">
+            <h2>什么是派卡（PC）和点（PT）？</h2>
+            <p>派卡（PC）是印刷和排版中常用的单位。点（PT）是另一种常用的长度单位。</p>
+        </section>
+
+        <section class="usage-guide">
+            <h2>使用说明</h2>
+            <ol>
+                <li>输入要转换的派卡值</li>
+                <li>点击"转换"按钮或按回车键获取结果</li>
+                <li>使用"复制"按钮复制转换结果</li>
+            </ol>
+        </section>
+
+        <section class="examples-section">
+            <h2>常见转换示例</h2>
+            <ul class="conversion-examples">
+                <li>1pc = 12pt</li>
+                <li>2pc = 24pt</li>
+                <li>5pc = 60pt</li>
+                <li>10pc = 120pt</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        const pcInput = document.getElementById('pcValue');
+        const resultSpan = document.getElementById('result');
+        const convertBtn = document.getElementById('convert');
+        const copyBtn = document.getElementById('copy');
+
+        function convertPcToPt() {
+            const pc = parseFloat(pcInput.value);
+            if (!isNaN(pc)) {
+                const pt = pc * 12; // 1pc = 12pt
+                resultSpan.textContent = pt.toFixed(4);
+                document.getElementById('formula').textContent = `计算公式: pt = ${pc}pc × 12`;
+            } else {
+                resultSpan.textContent = '请输入有效数值';
+            }
+        }
+
+        function copyResult() {
+            navigator.clipboard.writeText(resultSpan.textContent)
+                .then(() => {
+                    copyBtn.textContent = '已复制!';
+                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                })
+                .catch(err => {
+                    console.error('复制失败:', err);
+                });
+        }
+
+        pcInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convertPcToPt();
+        });
+        convertBtn.addEventListener('click', convertPcToPt);
+        copyBtn.addEventListener('click', copyResult);
+    </script>
+</body>
+</html> 

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EM转REM在线转换器 - 精确计算EM到REM的转换">
+    <meta name="keywords" content="em转rem,EM转REM,em to rem,rem换算">
+    <title>EM转REM换算器 - CSS单位转换工具</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../converter.css">
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="../../index.html">首页</a> > EM转REM
+        </nav>
+        <h1>EM转REM转换器</h1>
+        <p>将EM转换为REM，适用于响应式网页设计</p>
+    </header>
+
+    <main class="converter-container">
+        <section class="introduction">
+            <h2>什么是 EM 和 REM？</h2>
+            <p>EM 是一个相对单位，相对于父元素的字体大小。例如，如果父元素的字体大小是 16px，那么 1em 就等于 16px。</p>
+            <p>REM（Root EM）也是一个相对单位，但它始终相对于根元素（html）的字体大小。这使得它在响应式设计中更容易预测和控制。</p>
+        </section>
+
+        <section class="usage-guide">
+            <h2>使用说明</h2>
+            <ol>
+                <li>设置父元素字体大小（默认为 16px）</li>
+                <li>设置根元素字体大小（默认为 16px）</li>
+                <li>输入要转换的 EM 值</li>
+                <li>点击"转换"按钮或按回车键获取结果</li>
+                <li>使用"复制"按钮复制转换结果</li>
+            </ol>
+        </section>
+
+        <div class="input-section">
+            <div class="settings">
+                <label for="parentFontSize">父元素字体大小:</label>
+                <input type="number" id="parentFontSize" value="16" min="1">
+                <span class="unit">px</span>
+            </div>
+            <div class="settings">
+                <label for="rootFontSize">根元素字体大小:</label>
+                <input type="number" id="rootFontSize" value="16" min="1">
+                <span class="unit">px</span>
+            </div>
+            <div class="converter">
+                <input type="number" id="emValue" placeholder="输入EM值">
+                <span class="unit">em</span>
+            </div>
+            <div class="button-group">
+                <button id="convert" class="btn btn-primary">转换</button>
+                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-display">
+                <span id="result">0</span>
+                <span class="unit">rem</span>
+            </div>
+            <div class="formula-display">
+                <p>计算公式: rem = (em × 父元素字体大小) ÷ 根元素字体大小</p>
+            </div>
+        </div>
+
+        <section class="examples-section">
+            <h2>常见转换示例</h2>
+            <ul class="conversion-examples">
+                <li>1em = 1rem (当父元素字体大小等于根元素字体大小时)</li>
+                <li>1em = 1.25rem (当父元素字体大小为20px，根元素字体大小为16px时)</li>
+                <li>1em = 0.75rem (当父元素字体大小为12px，根元素字体大小为16px时)</li>
+                <li>2em = 2rem (当父元素字体大小等于根元素字体大小时)</li>
+            </ul>
+        </section>
+
+        <section class="tips-section">
+            <h2>使用技巧</h2>
+            <ul class="tips-list">
+                <li>
+                    <strong>响应式设计：</strong>
+                    REM 单位适合用于响应式设计中的文本大小和间距设置，因为它们都相对于根元素的字体大小。
+                </li>
+                <li>
+                    <strong>嵌套元素：</strong>
+                    使用 EM 时要注意嵌套元素的计算方式，因为 EM 值会相对于父元素进行累积计算。
+                </li>
+                <li>
+                    <strong>默认值：</strong>
+                    大多数浏览器的默认根元素字体大小为 16px，这是一个良好的基准值。
+                </li>
+                <li>
+                    <strong>混合使用：</strong>
+                    在实际开发中，可以混合使用 EM 和 REM。例如，使用 REM 设置主要的排版比例，使用 EM 处理组件内部的相对大小。
+                </li>
+            </ul>
+        </section>
+
+        <section class="notes-section">
+            <h2>注意事项</h2>
+            <ul class="notes-list">
+                <li>EM 值会受到父元素字体大小的影响，在嵌套元素中使用时要特别注意。</li>
+                <li>REM 值只受根元素（html）字体大小的影响，更容易控制。</li>
+                <li>在响应式设计中，建议使用 REM 作为主要的相对单位。</li>
+                <li>转换结果保留三位小数，以确保精确性。</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        const emInput = document.getElementById('emValue');
+        const parentFontSizeInput = document.getElementById('parentFontSize');
+        const rootFontSizeInput = document.getElementById('rootFontSize');
+        const resultSpan = document.getElementById('result');
+        const convertBtn = document.getElementById('convert');
+        const copyBtn = document.getElementById('copy');
+
+        function convertEmToRem() {
+            const em = parseFloat(emInput.value);
+            const parentFontSize = parseFloat(parentFontSizeInput.value) || 16;
+            const rootFontSize = parseFloat(rootFontSizeInput.value) || 16;
+            
+            if (!isNaN(em)) {
+                const px = em * parentFontSize;
+                const rem = px / rootFontSize;
+                resultSpan.textContent = rem.toFixed(3);
+            } else {
+                resultSpan.textContent = '请输入有效数值';
+            }
+        }
+
+        function copyResult() {
+            navigator.clipboard.writeText(resultSpan.textContent)
+                .then(() => {
+                    copyBtn.textContent = '已复制!';
+                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                })
+                .catch(err => {
+                    console.error('复制失败:', err);
+                });
+        }
+
+        emInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convertEmToRem();
+        });
+        parentFontSizeInput.addEventListener('input', convertEmToRem);
+        rootFontSizeInput.addEventListener('input', convertEmToRem);
+        convertBtn.addEventListener('click', convertEmToRem);
+        copyBtn.addEventListener('click', copyResult);
+    </script>
+</body>
+</html> 

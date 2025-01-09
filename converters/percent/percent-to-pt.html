@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="百分比转点在线转换器 - 精确计算百分比到点的转换">
+    <meta name="keywords" content="%转pt,百分比转点,percent to pt,点换算">
+    <title>百分比转点转换器 - CSS单位转换工具</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../converter.css">
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="../../index.html">首页</a> > 百分比转点
+        </nav>
+        <h1>百分比转点转换器</h1>
+        <p>将百分比（%）转换为点（PT），适用于排版和设计</p>
+    </header>
+
+    <main class="converter-container">
+        <div class="input-section">
+            <div class="converter">
+                <input type="number" id="percentValue" placeholder="输入百分比值">
+                <span class="unit">%</span>
+            </div>
+            <div class="button-group">
+                <button id="convert" class="btn btn-primary">转换</button>
+                <button id="copy" class="btn btn-secondary" title="复制结果">复制</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-display">
+                <span id="result">0</span>
+                <span class="unit">pt</span>
+            </div>
+            <div class="formula-display">
+                <p id="formula">计算公式: </p>
+            </div>
+        </div>
+
+        <section class="introduction">
+            <h2>什么是百分比（%）和点（PT）？</h2>
+            <p>百分比（%）是相对于某个基准的单位。点（PT）是印刷和排版中常用的单位。</p>
+        </section>
+
+        <section class="usage-guide">
+            <h2>使用说明</h2>
+            <ol>
+                <li>输入要转换的百分比值</li>
+                <li>点击"转换"按钮或按回车键获取结果</li>
+                <li>使用"复制"按钮复制转换结果</li>
+            </ol>
+        </section>
+
+        <section class="examples-section">
+            <h2>常见转换示例</h2>
+            <ul class="conversion-examples">
+                <li>100% = 12pt</li>
+                <li>200% = 24pt</li>
+                <li>50% = 6pt</li>
+                <li>25% = 3pt</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        const percentInput = document.getElementById('percentValue');
+        const resultSpan = document.getElementById('result');
+        const convertBtn = document.getElementById('convert');
+        const copyBtn = document.getElementById('copy');
+
+        function convertPercentToPt() {
+            const percent = parseFloat(percentInput.value);
+            if (!isNaN(percent)) {
+                const pt = (percent / 100) * 12; // 100% = 12pt
+                resultSpan.textContent = pt.toFixed(4);
+                document.getElementById('formula').textContent = `计算公式: pt = (${percent}% ÷ 100) × 12`;
+            } else {
+                resultSpan.textContent = '请输入有效数值';
+            }
+        }
+
+        function copyResult() {
+            navigator.clipboard.writeText(resultSpan.textContent)
+                .then(() => {
+                    copyBtn.textContent = '已复制!';
+                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                })
+                .catch(err => {
+                    console.error('复制失败:', err);
+                });
+        }
+
+        percentInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') convertPercentToPt();
+        });
+        convertBtn.addEventListener('click', convertPercentToPt);
+        copyBtn.addEventListener('click', copyResult);
+    </script>
+</body>
+</html> 
