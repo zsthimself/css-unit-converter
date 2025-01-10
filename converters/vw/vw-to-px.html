@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Viewport width to pixel online converter - Accurately calculate the conversion from viewport width to pixels">
-    <meta name="keywords" content="vw to px, viewport width to pixels, vw转px, pixels conversion">
+    <meta name="keywords" content="vw to px, viewport width to pixels, viewport width conversion, pixel conversion">
     <title>Viewport Width to Pixel Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
@@ -46,18 +46,18 @@
         </section>
 
         <section class="usage-guide">
-            <h2>使用说明</h2>
+            <h2>Usage Instructions</h2>
             <ol>
-                <li>输入要转换的视口宽度值</li>
-                <li>点击"转换"按钮或按回车键获取结果</li>
-                <li>使用"复制"按钮复制转换结果</li>
+                <li>Enter the viewport width value</li>
+                <li>Click "Convert" button or press Enter</li>
+                <li>Use "Copy" button to copy the result</li>
             </ol>
         </section>
 
         <section class="examples-section">
-            <h2>常见转换示例</h2>
+            <h2>Common Conversion Examples</h2>
             <ul class="conversion-examples">
-                <li>1vw = 10px (假设视口宽度为 1000px)</li>
+                <li>1vw = 10px (assuming viewport width is 1000px)</li>
                 <li>2vw = 20px</li>
                 <li>5vw = 50px</li>
                 <li>10vw = 100px</li>
@@ -73,24 +73,24 @@
 
         function convertVwToPx() {
             const vw = parseFloat(vwInput.value);
-            const viewportWidth = 1000; // 假设视口宽度为 1000px
+            const viewportWidth = 1000; // assuming viewport width is 1000px
             if (!isNaN(vw)) {
-                const px = (vw / 100) * viewportWidth; // 1vw = 1% of viewport width
+                const px = (vw / 100) * viewportWidth;
                 resultSpan.textContent = px.toFixed(2);
                 document.getElementById('formula').textContent = `Calculation formula: px = (${vw}vw × ${viewportWidth} ÷ 100)`;
             } else {
-                resultSpan.textContent = '请输入有效数值';
+                resultSpan.textContent = 'Please enter a valid value';
             }
         }
 
         function copyResult() {
             navigator.clipboard.writeText(resultSpan.textContent)
                 .then(() => {
-                    copyBtn.textContent = '已复制!';
-                    setTimeout(() => copyBtn.textContent = '复制', 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
                 })
                 .catch(err => {
-                    console.error('复制失败:', err);
+                    console.error('Copy failed:', err);
                 });
         }
 
@@ -101,4 +101,4 @@
         copyBtn.addEventListener('click', copyResult);
     </script>
 </body>
-</html> 
+</html>
