@@ -5,123 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="REM to Millimeter online converter - Accurately calculate the conversion from REM to millimeters">
     <meta name="keywords" content="rem to mm, REM to millimeters, mm conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/rem/rem-to-mm" />
     <title>REM to Millimeter Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > REM to Millimeter
-        </nav>
-        <h1>REM to Millimeter (MM) Converter</h1>
-        <p>Convert REM to millimeters, suitable for precise size design and printing</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="settings">
-                <label for="rootFontSize">Root Element Font Size:</label>
-                <input type="number" id="rootFontSize" value="16" min="1">
-                <span class="unit">px</span>
-            </div>
-            <div class="settings">
-                <label for="dpi">Screen DPI:</label>
-                <input type="number" id="dpi" value="96" min="1">
-                <span class="unit">dpi</span>
-            </div>
-            <div class="converter">
-                <input type="number" id="remValue" placeholder="Enter REM value">
-                <span class="unit">rem</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy Result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">mm</span>
-            </div>
-            <div class="formula-display">
-                <p>Calculation Method: rem × rootFontSize ÷ 3.78 = mm</p>
-            </div>
-        </div>
+    <div class="page-container">
+        <header>
+            <h1>REM to Millimeter Converter</h1>
+            <p>Convert REM to millimeters (MM), suitable for print design</p>
+        </header>
 
-        <section class="conversion-info">
-            <h2>REM to Millimeter Conversion Instructions</h2>
-            <p>REM is a unit relative to the root element font size. By entering the REM value and the root element font size, you can calculate the corresponding millimeter value.</p>
-            
-            <h3>Common Conversion Values (Based on 16px Root Font):</h3>
-            <ul class="conversion-examples">
-                <li>1rem = 25.4mm</li>
-                <li>2rem = 50.8mm</li>
-                <li>6rem = 152.4mm</li>
-            </ul>
-
-            <div class="usage-notes">
-                <h3>Usage Instructions:</h3>
-                <ol>
-                    <li>Set the root element font size (default 16px)</li>
-                    <li>Adjust the screen DPI value (default 96)</li>
-                    <li>Enter the REM value</li>
-                    <li>Get the corresponding millimeter value</li>
-                </ol>
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="settings">
+                    <label for="rootFontSize">Root Element Font Size:</label>
+                    <input type="number" id="rootFontSize" value="16" min="1">
+                    <span class="unit">px</span>
+                </div>
+                <div class="settings">
+                    <label for="dpi">Screen DPI:</label>
+                    <input type="number" id="dpi" value="96" min="1">
+                    <span class="unit">dpi</span>
+                </div>
+                <div class="converter">
+                    <input type="number" id="remValue" placeholder="Enter REM value">
+                    <span class="unit">rem</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy Result">Copy</button>
+                </div>
             </div>
 
-            <div class="tips">
-                <h3>Usage Tips:</h3>
-                <ul>
-                    <li>Suitable for precise size design and printing</li>
-                    <li>Calculate based on root font size</li>
-                    <li>Accurate to three decimal places</li>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">mm</span>
+                </div>
+                <div class="formula-display">
+                    <p>Calculation Method: rem × rootFontSize ÷ 3.78 = mm</p>
+                </div>
+            </div>
+
+            <section class="conversion-info">
+                <h2>REM to Millimeter Conversion Instructions</h2>
+                <p>REM is a unit relative to the root element font size. By entering the REM value and the root element font size, you can calculate the corresponding millimeter value.</p>
+                
+                <h3>Common Conversion Values (Based on 16px Root Font):</h3>
+                <ul class="conversion-examples">
+                    <li>1rem = 25.4mm</li>
+                    <li>2rem = 50.8mm</li>
+                    <li>6rem = 152.4mm</li>
                 </ul>
-            </div>
-        </section>
-    </main>
 
-    <script>
-        const remInput = document.getElementById('remValue');
-        const rootFontSizeInput = document.getElementById('rootFontSize');
-        const dpiInput = document.getElementById('dpi');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+                <div class="usage-notes">
+                    <h3>Usage Instructions:</h3>
+                    <ol>
+                        <li>Set the root element font size (default 16px)</li>
+                        <li>Adjust the screen DPI value (default 96)</li>
+                        <li>Enter the REM value</li>
+                        <li>Get the corresponding millimeter value</li>
+                    </ol>
+                </div>
 
-        function convertRemToMm() {
-            const rem = parseFloat(remInput.value);
-            const rootFontSize = parseFloat(rootFontSizeInput.value) || 16;
-            const dpi = parseFloat(dpiInput.value) || 96;
-            
-            if (!isNaN(rem)) {
-                const px = rem * rootFontSize;
-                const mm = px / 3.78; // 1 inch = 25.4 mm, 1 inch = 96 px
-                resultSpan.textContent = mm.toFixed(3);
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+                <div class="tips">
+                    <h3>Usage Tips:</h3>
+                    <ul>
+                        <li>Suitable for precise size design and printing</li>
+                        <li>Calculate based on root font size</li>
+                        <li>Accurate to three decimal places</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            const remInput = document.getElementById('remValue');
+            const rootFontSizeInput = document.getElementById('rootFontSize');
+            const dpiInput = document.getElementById('dpi');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
+
+            function convertRemToMm() {
+                const rem = parseFloat(remInput.value);
+                const rootFontSize = parseFloat(rootFontSizeInput.value) || 16;
+                const dpi = parseFloat(dpiInput.value) || 96;
+                
+                if (!isNaN(rem)) {
+                    const px = rem * rootFontSize;
+                    const mm = px / 3.78; // 1 inch = 25.4 mm, 1 inch = 96 px
+                    resultSpan.textContent = mm.toFixed(3);
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        remInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertRemToMm();
-        });
-        rootFontSizeInput.addEventListener('input', convertRemToMm);
-        dpiInput.addEventListener('input', convertRemToMm);
-        convertBtn.addEventListener('click', convertRemToMm);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            remInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertRemToMm();
+            });
+            rootFontSizeInput.addEventListener('input', convertRemToMm);
+            dpiInput.addEventListener('input', convertRemToMm);
+            convertBtn.addEventListener('click', convertRemToMm);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

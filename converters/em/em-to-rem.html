@@ -5,150 +5,160 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="EM to REM online converter - Accurately calculate the conversion from EM to REM">
     <meta name="keywords" content="em to rem, EM to REM, rem conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/em/em-to-rem" />
     <title>EM to REM Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > EM to REM
-        </nav>
-        <h1>EM to REM Converter</h1>
-        <p>Convert EM to REM, suitable for responsive web design</p>
-    </header>
-
-    <main class="converter-container">
-        <section class="introduction">
-            <h2>What are EM and REM?</h2>
-            <p>EM is a relative unit based on the font size of the parent element. REM (Root EM) is also a relative unit, but it is always based on the font size of the root element (html), making it easier to predict and control in responsive design.</p>
-        </section>
-
-        <section class="usage-guide">
-            <h2>Usage Instructions</h2>
-            <ol>
-                <li>Set the parent element's font size (default is 16px)</li>
-                <li>Set the root element's font size (default is 16px)</li>
-                <li>Input the EM value to convert</li>
-                <li>Click the "Convert" button or press Enter to get the result</li>
-                <li>Use the "Copy" button to copy the conversion result</li>
-            </ol>
-        </section>
-
-        <div class="input-section">
-            <div class="settings">
-                <label for="parentFontSize">Parent Element Font Size:</label>
-                <input type="number" id="parentFontSize" value="16" min="1">
-                <span class="unit">px</span>
-            </div>
-            <div class="settings">
-                <label for="rootFontSize">Root Element Font Size:</label>
-                <input type="number" id="rootFontSize" value="16" min="1">
-                <span class="unit">px</span>
-            </div>
-            <div class="converter">
-                <input type="number" id="emValue" placeholder="Enter EM value">
-                <span class="unit">em</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">rem</span>
+    <div class="page-container">
+        <header>
+            <h1>EM to REM Converter</h1>
+            <p>Convert EM to REM, suitable for responsive web design</p>
+        </header>
+
+        <main class="converter-container">
+            <section class="introduction">
+                <h2>What are EM and REM?</h2>
+                <p>EM is a relative unit based on the font size of the parent element. REM (Root EM) is also a relative unit, but it is always based on the font size of the root element (html), making it easier to predict and control in responsive design.</p>
+            </section>
+
+            <section class="usage-guide">
+                <h2>Usage Instructions</h2>
+                <ol>
+                    <li>Set the parent element's font size (default is 16px)</li>
+                    <li>Set the root element's font size (default is 16px)</li>
+                    <li>Input the EM value to convert</li>
+                    <li>Click the "Convert" button or press Enter to get the result</li>
+                    <li>Use the "Copy" button to copy the conversion result</li>
+                </ol>
+            </section>
+
+            <div class="input-section">
+                <div class="settings">
+                    <label for="parentFontSize">Parent Element Font Size:</label>
+                    <input type="number" id="parentFontSize" value="16" min="1">
+                    <span class="unit">px</span>
+                </div>
+                <div class="settings">
+                    <label for="rootFontSize">Root Element Font Size:</label>
+                    <input type="number" id="rootFontSize" value="16" min="1">
+                    <span class="unit">px</span>
+                </div>
+                <div class="converter">
+                    <input type="number" id="emValue" placeholder="Enter EM value">
+                    <span class="unit">em</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p>Calculation formula: rem = (em × parent element font size) ÷ root element font size</p>
+
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">rem</span>
+                </div>
+                <div class="formula-display">
+                    <p>Calculation formula: rem = (em × parent element font size) ÷ root element font size</p>
+                </div>
             </div>
-        </div>
 
-        <section class="examples-section">
-            <h2>Common Conversion Examples</h2>
-            <ul class="conversion-examples">
-                <li>1em = 1rem (when the parent element's font size equals the root element's font size)</li>
-                <li>1em = 1.25rem (when the parent element's font size is 20px and the root element's font size is 16px)</li>
-                <li>1em = 0.75rem (when the parent element's font size is 12px and the root element's font size is 16px)</li>
-                <li>2em = 2rem (when the parent element's font size equals the root element's font size)</li>
-            </ul>
-        </section>
+            <section class="examples-section">
+                <h2>Common Conversion Examples</h2>
+                <ul class="conversion-examples">
+                    <li>1em = 1rem (when the parent element's font size equals the root element's font size)</li>
+                    <li>1em = 1.25rem (when the parent element's font size is 20px and the root element's font size is 16px)</li>
+                    <li>1em = 0.75rem (when the parent element's font size is 12px and the root element's font size is 16px)</li>
+                    <li>2em = 2rem (when the parent element's font size equals the root element's font size)</li>
+                </ul>
+            </section>
 
-        <section class="tips-section">
-            <h2>Usage Tips</h2>
-            <ul class="tips-list">
-                <li>
-                    <strong>Responsive Design:</strong>
-                    REM units are suitable for setting text sizes and spacing in responsive design, as they are relative to the root element's font size.
-                </li>
-                <li>
-                    <strong>Nested Elements:</strong>
-                    Be cautious of how EM values are calculated when used in nested elements, as EM values accumulate relative to the parent element.
-                </li>
-                <li>
-                    <strong>Default Value:</strong>
-                    Most browsers have a default root element font size of 16px, which is a good baseline.
-                </li>
-                <li>
-                    <strong>Mixing Units:</strong>
-                    In practical development, you can mix EM and REM. For example, use REM for the main typography scale and EM for handling relative sizes within components.
-                </li>
-            </ul>
-        </section>
+            <section class="tips-section">
+                <h2>Usage Tips</h2>
+                <ul class="tips-list">
+                    <li>
+                        <strong>Responsive Design:</strong>
+                        REM units are suitable for setting text sizes and spacing in responsive design, as they are relative to the root element's font size.
+                    </li>
+                    <li>
+                        <strong>Nested Elements:</strong>
+                        Be cautious of how EM values are calculated when used in nested elements, as EM values accumulate relative to the parent element.
+                    </li>
+                    <li>
+                        <strong>Default Value:</strong>
+                        Most browsers have a default root element font size of 16px, which is a good baseline.
+                    </li>
+                    <li>
+                        <strong>Mixing Units:</strong>
+                        In practical development, you can mix EM and REM. For example, use REM for the main typography scale and EM for handling relative sizes within components.
+                    </li>
+                </ul>
+            </section>
 
-        <section class="notes-section">
-            <h2>Notes</h2>
-            <ul class="notes-list">
-                <li>EM values are affected by the font size of the parent element, so be especially careful when used in nested elements.</li>
-                <li>REM values are only affected by the font size of the root element (html), making them easier to control.</li>
-                <li>In responsive design, it's recommended to use REM as the primary relative unit.</li>
-                <li>Conversion results are rounded to three decimal places for accuracy.</li>
-            </ul>
-        </section>
-    </main>
+            <section class="notes-section">
+                <h2>Notes</h2>
+                <ul class="notes-list">
+                    <li>EM values are affected by the font size of the parent element, so be especially careful when used in nested elements.</li>
+                    <li>REM values are only affected by the font size of the root element (html), making them easier to control.</li>
+                    <li>In responsive design, it's recommended to use REM as the primary relative unit.</li>
+                    <li>Conversion results are rounded to three decimal places for accuracy.</li>
+                </ul>
+            </section>
+        </main>
 
-    <script>
-        const emInput = document.getElementById('emValue');
-        const parentFontSizeInput = document.getElementById('parentFontSize');
-        const rootFontSizeInput = document.getElementById('rootFontSize');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+        <script>
+            const emInput = document.getElementById('emValue');
+            const parentFontSizeInput = document.getElementById('parentFontSize');
+            const rootFontSizeInput = document.getElementById('rootFontSize');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
 
-        function convertEmToRem() {
-            const em = parseFloat(emInput.value);
-            const parentFontSize = parseFloat(parentFontSizeInput.value) || 16;
-            const rootFontSize = parseFloat(rootFontSizeInput.value) || 16;
-            
-            if (!isNaN(em)) {
-                const px = em * parentFontSize;
-                const rem = px / rootFontSize;
-                resultSpan.textContent = rem.toFixed(3);
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+            function convertEmToRem() {
+                const em = parseFloat(emInput.value);
+                const parentFontSize = parseFloat(parentFontSizeInput.value) || 16;
+                const rootFontSize = parseFloat(rootFontSizeInput.value) || 16;
+                
+                if (!isNaN(em)) {
+                    const px = em * parentFontSize;
+                    const rem = px / rootFontSize;
+                    resultSpan.textContent = rem.toFixed(3);
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        emInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertEmToRem();
-        });
-        parentFontSizeInput.addEventListener('input', convertEmToRem);
-        rootFontSizeInput.addEventListener('input', convertEmToRem);
-        convertBtn.addEventListener('click', convertEmToRem);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            emInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertEmToRem();
+            });
+            parentFontSizeInput.addEventListener('input', convertEmToRem);
+            rootFontSizeInput.addEventListener('input', convertEmToRem);
+            convertBtn.addEventListener('click', convertEmToRem);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

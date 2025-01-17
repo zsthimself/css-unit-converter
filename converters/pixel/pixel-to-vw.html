@@ -5,141 +5,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pixel (px) to Viewport Width (vw) online converter - Accurately calculate the conversion from pixels to vw">
     <meta name="keywords" content="px to vw, pixel to viewport width, vw conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/pixel/pixel-to-vw" />
     <title>Pixel to Viewport Width Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Pixel to Viewport Width
-        </nav>
-        <h1>Pixel (PX) to Viewport Width (VW) Converter</h1>
-        <p>Accurately convert pixels (px) to viewport width units (vw), suitable for responsive web design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="settings">
-                <label for="viewportWidth">Current Viewport Width:</label>
-                <input type="number" id="viewportWidth" readonly>
-                <span class="unit">px</span>
-            </div>
-            <div class="converter">
-                <input type="number" id="pxValue" placeholder="Enter pixel value">
-                <span class="unit">px</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">vw</span>
-            </div>
-            <div class="formula-display">
-                <p>Conversion formula: 1vw = 1% of viewport width</p>
-                <p>Calculation method: (px ÷ viewport width) × 100 = vw</p>
-            </div>
-        </div>
+    <div class="page-container">
+        <header>
+            <h1>Pixel to Viewport Width Converter</h1>
+            <p>Accurately convert pixels (px) to viewport width (vw), suitable for responsive web design</p>
+        </header>
 
-        <section class="conversion-info">
-            <h2>Pixel to Viewport Width Conversion Instructions</h2>
-            <p>Viewport width units (vw) are relative to the width of the browser viewport. 1vw is equal to 1% of the viewport width. This value changes as the browser window size changes.</p>
-            
-            <h3>Common Conversion Values (Based on Current Viewport Width):</h3>
-            <ul class="conversion-examples" id="examples">
-                <li>Calculating...</li>
-            </ul>
-
-            <div class="usage-notes">
-                <h3>Usage Instructions:</h3>
-                <ol>
-                    <li>Check the current viewport width</li>
-                    <li>Enter the pixel value in the input field</li>
-                    <li>Click "Convert" or press Enter</li>
-                    <li>Get the corresponding vw value</li>
-                    <li>The value will automatically update when the window size changes</li>
-                </ol>
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="settings">
+                    <label for="viewportWidth">Current Viewport Width:</label>
+                    <input type="number" id="viewportWidth" readonly>
+                    <span class="unit">px</span>
+                </div>
+                <div class="converter">
+                    <input type="number" id="pxValue" placeholder="Enter pixel value">
+                    <span class="unit">px</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
 
-            <div class="tips">
-                <h3>Usage Tips:</h3>
-                <ul>
-                    <li>vw units are ideal for responsive design</li>
-                    <li>100vw equals the full viewport width</li>
-                    <li>Useful for setting widths and margins</li>
-                    <li>Can be used in combination with other units</li>
-                    <li>Consider performance on very small or very large screens</li>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">vw</span>
+                </div>
+                <div class="formula-display">
+                    <p>Conversion formula: 1vw = 1% of viewport width</p>
+                    <p>Calculation method: (px ÷ viewport width) × 100 = vw</p>
+                </div>
+            </div>
+
+            <section class="conversion-info">
+                <h2>Pixel to Viewport Width Conversion Instructions</h2>
+                <p>Viewport width units (vw) are relative to the width of the browser viewport. 1vw is equal to 1% of the viewport width. This value changes as the browser window size changes.</p>
+                
+                <h3>Common Conversion Values (Based on Current Viewport Width):</h3>
+                <ul class="conversion-examples" id="examples">
+                    <li>Calculating...</li>
                 </ul>
-            </div>
-        </section>
-    </main>
 
-    <script>
-        const pxInput = document.getElementById('pxValue');
-        const viewportWidthInput = document.getElementById('viewportWidth');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
-        const examplesList = document.getElementById('examples');
+                <div class="usage-notes">
+                    <h3>Usage Instructions:</h3>
+                    <ol>
+                        <li>Check the current viewport width</li>
+                        <li>Enter the pixel value in the input field</li>
+                        <li>Click "Convert" or press Enter</li>
+                        <li>Get the corresponding vw value</li>
+                        <li>The value will automatically update when the window size changes</li>
+                    </ol>
+                </div>
 
-        function updateViewportWidth() {
-            const width = window.innerWidth;
-            viewportWidthInput.value = width;
-            updateExamples(width);
-            if (pxInput.value) {
-                convertPxToVw();
+                <div class="tips">
+                    <h3>Usage Tips:</h3>
+                    <ul>
+                        <li>vw units are ideal for responsive design</li>
+                        <li>100vw equals the full viewport width</li>
+                        <li>Useful for setting widths and margins</li>
+                        <li>Can be used in combination with other units</li>
+                        <li>Consider performance on very small or very large screens</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            const pxInput = document.getElementById('pxValue');
+            const viewportWidthInput = document.getElementById('viewportWidth');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
+            const examplesList = document.getElementById('examples');
+
+            function updateViewportWidth() {
+                const width = window.innerWidth;
+                viewportWidthInput.value = width;
+                updateExamples(width);
+                if (pxInput.value) {
+                    convertPxToVw();
+                }
             }
-        }
 
-        function updateExamples(width) {
-            const examples = [
-                { px: width / 4, text: '25%' },
-                { px: width / 2, text: '50%' },
-                { px: width * 0.75, text: '75%' },
-                { px: width, text: '100%' }
-            ];
+            function updateExamples(width) {
+                const examples = [
+                    { px: width / 4, text: '25%' },
+                    { px: width / 2, text: '50%' },
+                    { px: width * 0.75, text: '75%' },
+                    { px: width, text: '100%' }
+                ];
 
-            examplesList.innerHTML = examples.map(ex => 
-                `<li>${ex.px.toFixed(0)}px = ${ex.text} (${(ex.px/width*100).toFixed(1)}vw)</li>`
-            ).join('');
-        }
-
-        function convertPxToVw() {
-            const px = parseFloat(pxInput.value);
-            const width = window.innerWidth;
-            
-            if (!isNaN(px)) {
-                const vw = (px / width) * 100;
-                resultSpan.textContent = vw.toFixed(3);
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+                examplesList.innerHTML = examples.map(ex => 
+                    `<li>${ex.px.toFixed(0)}px = ${ex.text} (${(ex.px/width*100).toFixed(1)}vw)</li>`
+                ).join('');
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function convertPxToVw() {
+                const px = parseFloat(pxInput.value);
+                const width = window.innerWidth;
+                
+                if (!isNaN(px)) {
+                    const vw = (px / width) * 100;
+                    resultSpan.textContent = vw.toFixed(3);
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
+            }
 
-        // Initial setup and event listeners
-        updateViewportWidth();
-        window.addEventListener('resize', updateViewportWidth);
-        pxInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertPxToVw();
-        });
-        convertBtn.addEventListener('click', convertPxToVw);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
+
+            // Initial setup and event listeners
+            updateViewportWidth();
+            window.addEventListener('resize', updateViewportWidth);
+            pxInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertPxToVw();
+            });
+            convertBtn.addEventListener('click', convertPxToVw);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

@@ -5,98 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Centimeter to percent online converter - Accurately calculate the conversion from centimeters to percent">
     <meta name="keywords" content="cm to %, centimeter to percent, centimeter conversion, percentage conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/cm/cm-to-percent" />
     <title>Centimeter to Percent Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Centimeter to Percent
-        </nav>
-        <h1>Centimeter to Percent Converter</h1>
-        <p>Convert centimeters (CM) to percent (%), suitable for typesetting and design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="cmValue" placeholder="Enter centimeter value">
-                <span class="unit">cm</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">%</span>
+    <div class="page-container">
+        <header>
+            <h1>Centimeter to Percent Converter</h1>
+            <p>Convert centimeters (CM) to percentage (%), suitable for typesetting and design</p>
+        </header>
+
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="cmValue" placeholder="Enter centimeter value">
+                    <span class="unit">cm</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p id="formula">Calculation formula: </p>
+
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">%</span>
+                </div>
+                <div class="formula-display">
+                    <p id="formula">Calculation formula: </p>
+                </div>
             </div>
-        </div>
 
-        <section class="introduction">
-            <h2>What are Centimeters (CM) and Percent (%)?</h2>
-            <p>Centimeters (CM) are a commonly used unit of length. Percent (%) is a unit of ratio relative to a certain baseline.</p>
-        </section>
+            <section class="introduction">
+                <h2>What are Centimeters (CM) and Percent (%)?</h2>
+                <p>Centimeters (CM) are a commonly used unit of length. Percent (%) is a unit of ratio relative to a certain baseline.</p>
+            </section>
 
-        <section class="usage-guide">
-            <h2>Usage Instructions</h2>
-            <ol>
-                <li>Enter the centimeter value to convert</li>
-                <li>Use the "Copy" button to copy the conversion result</li>
-            </ol>
-        </section>
+            <section class="usage-guide">
+                <h2>Usage Instructions</h2>
+                <ol>
+                    <li>Enter the centimeter value to convert</li>
+                    <li>Use the "Copy" button to copy the conversion result</li>
+                </ol>
+            </section>
 
-        <section class="examples-section">
-            <h2>Common Conversion Examples</h2>
-            <ul class="conversion-examples">
-                <li>1cm = 1%</li>
-                <li>2cm = 2%</li>
-                <li>5cm = 5%</li>
-                <li>10cm = 10%</li>
-            </ul>
-        </section>
-    </main>
+            <section class="examples-section">
+                <h2>Common Conversion Examples</h2>
+                <ul class="conversion-examples">
+                    <li>1cm = 1%</li>
+                    <li>2cm = 2%</li>
+                    <li>5cm = 5%</li>
+                    <li>10cm = 10%</li>
+                </ul>
+            </section>
+        </main>
 
-    <script>
-        const cmInput = document.getElementById('cmValue');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+        <script>
+            const cmInput = document.getElementById('cmValue');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
 
-        function convertCmToPercent() {
-            const cm = parseFloat(cmInput.value);
-            if (!isNaN(cm)) {
-                const percent = cm; // assuming 1cm = 1%
-                resultSpan.textContent = percent.toFixed(2);
-                document.getElementById('formula').textContent = `Calculation formula: % = ${cm}cm`;
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+            function convertCmToPercent() {
+                const cm = parseFloat(cmInput.value);
+                if (!isNaN(cm)) {
+                    const percent = cm; // assuming 1cm = 1%
+                    resultSpan.textContent = percent.toFixed(2);
+                    document.getElementById('formula').textContent = `Calculation formula: % = ${cm}cm`;
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        cmInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertCmToPercent();
-        });
-        convertBtn.addEventListener('click', convertCmToPercent);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            cmInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertCmToPercent();
+            });
+            convertBtn.addEventListener('click', convertCmToPercent);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

@@ -5,109 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Inch (in) to Millimeter (mm) online converter - Accurately calculate the conversion from inches to millimeters">
     <meta name="keywords" content="in to mm, inch to millimeter, inch to mm, millimeter conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/inch/inch-to-mm" />
     <title>Inch to Millimeter Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Inch to Millimeter
-        </nav>
-        <h1>Inch (IN) to Millimeter (MM) Converter</h1>
-        <p>Accurately convert inches (in) to millimeters (mm), suitable for precise length unit conversion</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="inchValue" placeholder="Enter inch value">
-                <span class="unit">in</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">mm</span>
-            </div>
-            <div class="formula-display">
-                <p>Conversion formula: 1 inch = 25.4 millimeters</p>
-                <p>Calculation method: inch × 25.4 = mm</p>
-            </div>
-        </div>
+    <div class="page-container">
+        <header>
+            <h1>Inch to Millimeter Converter</h1>
+            <p>Accurately convert inches (in) to millimeters (mm), suitable for length unit conversion</p>
+        </header>
 
-        <section class="conversion-info">
-            <h2>Inch to Millimeter Conversion Instructions</h2>
-            <p>Inch (in) is a unit of length in the imperial system, and 1 inch is precisely equal to 25.4 millimeters. This is a standard international conversion relationship commonly used for precise measurements.</p>
-            
-            <h3>Common conversion values:</h3>
-            <ul class="conversion-examples">
-                <li>1in = 25.4mm</li>
-                <li>0.5in = 12.7mm</li>
-                <li>0.25in = 6.35mm</li>
-                <li>12in = 304.8mm (1 inch)</li>
-            </ul>
-
-            <div class="usage-notes">
-                <h3>Usage:</h3>
-                <ol>
-                    <li>Enter the inch value</li>
-                    <li>Click "Convert" or press Enter</li>
-                    <li>Get the corresponding millimeter value</li>
-                    <li>Click "Copy" to copy the result</li>
-                </ol>
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="inchValue" placeholder="Enter inch value">
+                    <span class="unit">in</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
 
-            <div class="tips">
-                <h3>Usage Tips:</h3>
-                <ul>
-                    <li>Suitable for precise measurements</li>
-                    <li>Commonly used in machining</li>
-                    <li>Accurate to one decimal place</li>
-                    <li>Common unit in engineering design</li>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">mm</span>
+                </div>
+                <div class="formula-display">
+                    <p>Conversion formula: 1 inch = 25.4 millimeters</p>
+                    <p>Calculation method: inch × 25.4 = mm</p>
+                </div>
+            </div>
+
+            <section class="conversion-info">
+                <h2>Inch to Millimeter Conversion Instructions</h2>
+                <p>Inch (in) is a unit of length in the imperial system, and 1 inch is precisely equal to 25.4 millimeters. This is a standard international conversion relationship commonly used for precise measurements.</p>
+                
+                <h3>Common conversion values:</h3>
+                <ul class="conversion-examples">
+                    <li>1in = 25.4mm</li>
+                    <li>0.5in = 12.7mm</li>
+                    <li>0.25in = 6.35mm</li>
+                    <li>12in = 304.8mm (1 inch)</li>
                 </ul>
-            </div>
-        </section>
-    </main>
 
-    <script>
-        const inchInput = document.getElementById('inchValue');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+                <div class="usage-notes">
+                    <h3>Usage:</h3>
+                    <ol>
+                        <li>Enter the inch value</li>
+                        <li>Click "Convert" or press Enter</li>
+                        <li>Get the corresponding millimeter value</li>
+                        <li>Click "Copy" to copy the result</li>
+                    </ol>
+                </div>
 
-        function convertInchToMm() {
-            const inch = parseFloat(inchInput.value);
-            
-            if (!isNaN(inch)) {
-                const mm = inch * 25.4;
-                resultSpan.textContent = mm.toFixed(3);
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+                <div class="tips">
+                    <h3>Usage Tips:</h3>
+                    <ul>
+                        <li>Suitable for precise measurements</li>
+                        <li>Commonly used in machining</li>
+                        <li>Accurate to one decimal place</li>
+                        <li>Common unit in engineering design</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            const inchInput = document.getElementById('inchValue');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
+
+            function convertInchToMm() {
+                const inch = parseFloat(inchInput.value);
+                
+                if (!isNaN(inch)) {
+                    const mm = inch * 25.4;
+                    resultSpan.textContent = mm.toFixed(3);
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        inchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertInchToMm();
-        });
-        convertBtn.addEventListener('click', convertInchToMm);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            inchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertInchToMm();
+            });
+            convertBtn.addEventListener('click', convertInchToMm);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

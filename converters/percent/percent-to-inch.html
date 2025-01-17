@@ -5,99 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Percentage to inch online converter - Accurately calculate the conversion from percentage to inches">
     <meta name="keywords" content="% to in, percentage to inches, percent to inch, inch conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/percent/percent-to-inch" />
     <title>Percentage to Inch Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Percentage to Inch
-        </nav>
-        <h1>Percentage to Inch Converter</h1>
-        <p>Convert percentage (%) to inches (IN), suitable for typesetting and design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="percentValue" placeholder="Enter percentage value">
-                <span class="unit">%</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">in</span>
+    <div class="page-container">
+        <header>
+            <h1>Percentage to Inch Converter</h1>
+            <p>Convert percentage (%) to inches (IN), suitable for typesetting and design</p>
+        </header>
+
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="percentValue" placeholder="Enter percentage value">
+                    <span class="unit">%</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p id="formula">Calculation formula: </p>
+
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">in</span>
+                </div>
+                <div class="formula-display">
+                    <p id="formula">Calculation formula: </p>
+                </div>
             </div>
-        </div>
 
-        <section class="introduction">
-            <h2>What are Percentage (%) and Inch (IN)?</h2>
-            <p>Percentage (%) is a unit relative to a certain benchmark. Inch (IN) is a unit of length.</p>
-        </section>
+            <section class="introduction">
+                <h2>What are Percentage (%) and Inch (IN)?</h2>
+                <p>Percentage (%) is a unit relative to a certain benchmark. Inch (IN) is a unit of length.</p>
+            </section>
 
-        <section class="usage-guide">
-            <h2>Usage Instructions</h2>
-            <ol>
-                <li>Enter the percentage value to convert</li>
-                <li>Click the "Convert" button or press Enter to get the result</li>
-                <li>Use the "Copy" button to copy the conversion result</li>
-            </ol>
-        </section>
+            <section class="usage-guide">
+                <h2>Usage Instructions</h2>
+                <ol>
+                    <li>Enter the percentage value to convert</li>
+                    <li>Click the "Convert" button or press Enter to get the result</li>
+                    <li>Use the "Copy" button to copy the conversion result</li>
+                </ol>
+            </section>
 
-        <section class="examples-section">
-            <h2>Common Conversion Examples</h2>
-            <ul class="conversion-examples">
-                <li>100% = 1in</li>
-                <li>50% = 0.5in</li>
-                <li>25% = 0.25in</li>
-                <li>10% = 0.1in</li>
-            </ul>
-        </section>
-    </main>
+            <section class="examples-section">
+                <h2>Common Conversion Examples</h2>
+                <ul class="conversion-examples">
+                    <li>100% = 1in</li>
+                    <li>50% = 0.5in</li>
+                    <li>25% = 0.25in</li>
+                    <li>10% = 0.1in</li>
+                </ul>
+            </section>
+        </main>
 
-    <script>
-        const percentInput = document.getElementById('percentValue');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+        <script>
+            const percentInput = document.getElementById('percentValue');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
 
-        function convertPercentToInch() {
-            const percent = parseFloat(percentInput.value);
-            if (!isNaN(percent)) {
-                const inch = (percent / 100) * 1; // 100% = 1in
-                resultSpan.textContent = inch.toFixed(4);
-                document.getElementById('formula').textContent = `Calculation formula: in = (${percent}% ÷ 100) × 1`;
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+            function convertPercentToInch() {
+                const percent = parseFloat(percentInput.value);
+                if (!isNaN(percent)) {
+                    const inch = (percent / 100) * 1; // 100% = 1in
+                    resultSpan.textContent = inch.toFixed(4);
+                    document.getElementById('formula').textContent = `Calculation formula: in = (${percent}% ÷ 100) × 1`;
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        percentInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertPercentToInch();
-        });
-        convertBtn.addEventListener('click', convertPercentToInch);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            percentInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertPercentToInch();
+            });
+            convertBtn.addEventListener('click', convertPercentToInch);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

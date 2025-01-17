@@ -5,65 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Viewport height to millimeter online converter - Accurately calculate the conversion from viewport height to millimeters">
     <meta name="keywords" content="vh to mm, viewport height to millimeters, viewport height conversion, millimeter conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/vh/vh-to-mm" />
     <title>Viewport Height to Millimeter Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Viewport Height to Millimeter
-        </nav>
-        <h1>Viewport Height to Millimeter Converter</h1>
-        <p>Convert viewport height (VH) to millimeters (MM), suitable for typesetting and design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="vhValue" placeholder="Enter viewport height value">
-                <span class="unit">vh</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">mm</span>
+    <div class="page-container">
+        <header>
+            <h1>Viewport Height to Millimeter Converter</h1>
+            <p>Convert viewport height (VH) to millimeters (MM), suitable for typesetting and design</p>
+        </header>
+
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="vhValue" placeholder="Enter viewport height value">
+                    <span class="unit">vh</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p id="formula">Calculation formula: </p>
+
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">mm</span>
+                </div>
+                <div class="formula-display">
+                    <p id="formula">Calculation formula: </p>
+                </div>
             </div>
-        </div>
 
-        <section class="introduction">
-            <h2>What are Viewport Height (VH) and Millimeters (MM)?</h2>
-            <p>Viewport height (VH) is a percentage unit relative to the height of the viewport. Millimeters (MM) is a commonly used unit of length.</p>
-        </section>
+            <section class="introduction">
+                <h2>What are Viewport Height (VH) and Millimeters (MM)?</h2>
+                <p>Viewport height (VH) is a percentage unit relative to the height of the viewport. Millimeters (MM) is a commonly used unit of length.</p>
+            </section>
 
-        <section class="usage-guide">
-            <h2>Usage Instructions</h2>
-            <ol>
-                <li>Enter the viewport height value to convert</li>
-                <li>Click the "Convert" button or press Enter to get the result</li>
-                <li>Use the "Copy" button to copy the conversion result</li>
-            </ol>
-        </section>
+            <section class="usage-guide">
+                <h2>Usage Instructions</h2>
+                <ol>
+                    <li>Enter the viewport height value to convert</li>
+                    <li>Click the "Convert" button or press Enter to get the result</li>
+                    <li>Use the "Copy" button to copy the conversion result</li>
+                </ol>
+            </section>
 
-        <section class="examples-section">
-            <h2>Common Conversion Examples</h2>
-            <ul class="conversion-examples">
-                <li>1vh = 25.4mm (assuming viewport height is 1000px)</li>
-                <li>2vh = 50.8mm</li>
-                <li>5vh = 127mm</li>
-                <li>10vh = 254mm</li>
-            </ul>
-        </section>
-    </main>
+            <section class="examples-section">
+                <h2>Common Conversion Examples</h2>
+                <ul class="conversion-examples">
+                    <li>1vh = 25.4mm (assuming viewport height is 1000px)</li>
+                    <li>2vh = 50.8mm</li>
+                    <li>5vh = 127mm</li>
+                    <li>10vh = 254mm</li>
+                </ul>
+            </section>
+        </main>
+    </div>
 
     <script>
         const vhInput = document.getElementById('vhValue');

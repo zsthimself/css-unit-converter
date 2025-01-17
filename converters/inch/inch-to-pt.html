@@ -5,75 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Inch (in) to Point (pt) online converter - Accurately calculate the conversion from inches to points">
     <meta name="keywords" content="in to pt, inch to point, point conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/inch/inch-to-pt" />
     <title>Inch to Point Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Inch to Point
-        </nav>
-        <h1>Inch (IN) to Point (PT) Converter</h1>
-        <p>Accurately convert inches (in) to points (pt), suitable for printing and typesetting design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="inchValue" placeholder="Enter inch value">
-                <span class="unit">in</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">pt</span>
-            </div>
-            <div class="formula-display">
-                <p>Conversion formula: 1 inch = 72 points</p>
-                <p>Calculation method: inch × 72 = pt</p>
-            </div>
-        </div>
+    <div class="page-container">
+        <header>
+            <h1>Inch to Point Converter</h1>
+            <p>Accurately convert inches (in) to points (pt), suitable for typographic unit conversion</p>
+        </header>
 
-        <section class="conversion-info">
-            <h2>Inch to Point Conversion Instructions</h2>
-            <p>In printing and typesetting, 1 inch equals 72 points. This is a standard conversion relationship commonly used for setting font sizes and page layouts.</p>
-            
-            <h3>Common conversion values:</h3>
-            <ul class="conversion-examples">
-                <li>1in = 72pt</li>
-                <li>0.5in = 36pt</li>
-                <li>0.25in = 18pt</li>
-                <li>0.0139in = 1pt</li>
-            </ul>
-
-            <div class="usage-notes">
-                <h3>Usage:</h3>
-                <ol>
-                    <li>Enter the inch value in the input field</li>
-                    <li>Click "Convert" or press Enter</li>
-                    <li>Get the corresponding point value</li>
-                    <li>Click "Copy" to copy the result</li>
-                </ol>
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="inchValue" placeholder="Enter inch value">
+                    <span class="unit">in</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
 
-            <div class="tips">
-                <h3>Usage Tips:</h3>
-                <ul>
-                    <li>Suitable for printing design</li>
-                    <li>Commonly used for font sizes</li>
-                    <li>Accurate to one decimal place</li>
-                    <li>Common unit in professional typesetting</li>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">pt</span>
+                </div>
+                <div class="formula-display">
+                    <p>Conversion formula: 1 inch = 72 points</p>
+                    <p>Calculation method: inch × 72 = pt</p>
+                </div>
+            </div>
+
+            <section class="conversion-info">
+                <h2>Inch to Point Conversion Instructions</h2>
+                <p>In printing and typesetting, 1 inch equals 72 points. This is a standard conversion relationship commonly used for setting font sizes and page layouts.</p>
+                
+                <h3>Common conversion values:</h3>
+                <ul class="conversion-examples">
+                    <li>1in = 72pt</li>
+                    <li>0.5in = 36pt</li>
+                    <li>0.25in = 18pt</li>
+                    <li>0.0139in = 1pt</li>
                 </ul>
-            </div>
-        </section>
-    </main>
+
+                <div class="usage-notes">
+                    <h3>Usage:</h3>
+                    <ol>
+                        <li>Enter the inch value in the input field</li>
+                        <li>Click "Convert" or press Enter</li>
+                        <li>Get the corresponding point value</li>
+                        <li>Click "Copy" to copy the result</li>
+                    </ol>
+                </div>
+
+                <div class="tips">
+                    <h3>Usage Tips:</h3>
+                    <ul>
+                        <li>Suitable for printing design</li>
+                        <li>Commonly used for font sizes</li>
+                        <li>Accurate to one decimal place</li>
+                        <li>Common unit in professional typesetting</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <script>
         const inchInput = document.getElementById('inchValue');

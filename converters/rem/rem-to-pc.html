@@ -5,113 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="REM to Pica online converter - Accurately calculate the conversion from REM to pica">
     <meta name="keywords" content="rem to pc, REM to pica, pica conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/rem/rem-to-pc" />
     <title>REM to Pica Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > REM to Pica
-        </nav>
-        <h1>REM to Pica (PC) Converter</h1>
-        <p>Convert REM to pica, suitable for print design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="settings">
-                <label for="rootFontSize">Root Element Font Size:</label>
-                <input type="number" id="rootFontSize" value="16" min="1">
-                <span class="unit">px</span>
-            </div>
-            <div class="converter">
-                <input type="number" id="remValue" placeholder="Enter REM value">
-                <span class="unit">rem</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy Result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">pc</span>
-            </div>
-            <div class="formula-display">
-                <p>Calculation Method: rem × 6 = pc</p>
-            </div>
-        </div>
+    <div class="page-container">
+        <header>
+            <h1>REM to Pica Converter</h1>
+            <p>Convert REM to picas (PC), suitable for typesetting</p>
+        </header>
 
-        <section class="conversion-info">
-            <h2>REM to Pica Conversion Instructions</h2>
-            <p>Pica is a commonly used unit in the printing industry. By entering a REM value, you can calculate the corresponding pica value.</p>
-            
-            <h3>Common Conversion Values Reference:</h3>
-            <ul class="conversion-examples">
-                <li>1rem = 6pc</li>
-                <li>2rem = 12pc</li>
-                <li>0.5rem = 3pc</li>
-            </ul>
-
-            <div class="usage-notes">
-                <h3>Usage Instructions:</h3>
-                <ol>
-                    <li>Set the root element font size (default 16px)</li>
-                    <li>Enter the REM value</li>
-                    <li>Get the corresponding pica value</li>
-                </ol>
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="settings">
+                    <label for="rootFontSize">Root Element Font Size:</label>
+                    <input type="number" id="rootFontSize" value="16" min="1">
+                    <span class="unit">px</span>
+                </div>
+                <div class="converter">
+                    <input type="number" id="remValue" placeholder="Enter REM value">
+                    <span class="unit">rem</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy Result">Copy</button>
+                </div>
             </div>
 
-            <div class="tips">
-                <h3>Usage Tips:</h3>
-                <ul>
-                    <li>Suitable for print design</li>
-                    <li>Calculated based on the root font size</li>
-                    <li>Accurate to three decimal places</li>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">pc</span>
+                </div>
+                <div class="formula-display">
+                    <p>Calculation Method: rem × 6 = pc</p>
+                </div>
+            </div>
+
+            <section class="conversion-info">
+                <h2>REM to Pica Conversion Instructions</h2>
+                <p>Pica is a commonly used unit in the printing industry. By entering a REM value, you can calculate the corresponding pica value.</p>
+                
+                <h3>Common Conversion Values Reference:</h3>
+                <ul class="conversion-examples">
+                    <li>1rem = 6pc</li>
+                    <li>2rem = 12pc</li>
+                    <li>0.5rem = 3pc</li>
                 </ul>
-            </div>
-        </section>
-    </main>
 
-    <script>
-        const remInput = document.getElementById('remValue');
-        const rootFontSizeInput = document.getElementById('rootFontSize');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+                <div class="usage-notes">
+                    <h3>Usage Instructions:</h3>
+                    <ol>
+                        <li>Set the root element font size (default 16px)</li>
+                        <li>Enter the REM value</li>
+                        <li>Get the corresponding pica value</li>
+                    </ol>
+                </div>
 
-        function convertRemToPc() {
-            const rem = parseFloat(remInput.value);
-            const rootFontSize = parseFloat(rootFontSizeInput.value) || 16;
-            
-            if (!isNaN(rem)) {
-                const pc = rem * 6; // 1rem = 6pc
-                resultSpan.textContent = pc.toFixed(3);
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+                <div class="tips">
+                    <h3>Usage Tips:</h3>
+                    <ul>
+                        <li>Suitable for print design</li>
+                        <li>Calculated based on the root font size</li>
+                        <li>Accurate to three decimal places</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            const remInput = document.getElementById('remValue');
+            const rootFontSizeInput = document.getElementById('rootFontSize');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
+
+            function convertRemToPc() {
+                const rem = parseFloat(remInput.value);
+                const rootFontSize = parseFloat(rootFontSizeInput.value) || 16;
+                
+                if (!isNaN(rem)) {
+                    const pc = rem * 6; // 1rem = 6pc
+                    resultSpan.textContent = pc.toFixed(3);
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        remInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertRemToPc();
-        });
-        rootFontSizeInput.addEventListener('input', convertRemToPc);
-        convertBtn.addEventListener('click', convertRemToPc);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            remInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertRemToPc();
+            });
+            rootFontSizeInput.addEventListener('input', convertRemToPc);
+            convertBtn.addEventListener('click', convertRemToPc);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

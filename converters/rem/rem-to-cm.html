@@ -5,82 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="REM to Centimeter online converter - Accurately calculate the conversion from REM to centimeters">
     <meta name="keywords" content="rem to cm, REM to centimeters, cm conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/rem/rem-to-cm" />
     <title>REM to Centimeter Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > REM to Centimeter
-        </nav>
-        <h1>REM to Centimeter (CM) Converter</h1>
-        <p>Convert REM to centimeters, suitable for print design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="settings">
-                <label for="rootFontSize">Root Element Font Size:</label>
-                <input type="number" id="rootFontSize" value="16" min="1">
-                <span class="unit">px</span>
-            </div>
-            <div class="settings">
-                <label for="dpi">Screen DPI:</label>
-                <input type="number" id="dpi" value="96" min="1">
-                <span class="unit">dpi</span>
-            </div>
-            <div class="converter">
-                <input type="number" id="remValue" placeholder="Enter REM value">
-                <span class="unit">rem</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">cm</span>
-            </div>
-            <div class="formula-display">
-                <p>Calculation method: rem × rootFontSize ÷ 37.8 = cm</p>
-            </div>
-        </div>
+    <div class="page-container">
+        <header>
+            <h1>REM to Centimeter (CM) Converter</h1>
+            <p>Convert REM to centimeters, suitable for print design</p>
+        </header>
 
-        <section class="conversion-info">
-            <h2>REM to Centimeter Conversion Instructions</h2>
-            <p>REM is a unit relative to the font size of the root element. By entering a REM value and the font size of the root element, you can calculate the corresponding centimeter value.</p>
-            
-            <h3>Common Conversion Values (Based on 16px Root Font):</h3>
-            <ul class="conversion-examples">
-                <li>1rem = 2.54cm</li>
-                <li>2rem = 5.08cm</li>
-                <li>6rem = 15.24cm</li>
-            </ul>
-
-            <div class="usage-notes">
-                <h3>Usage Instructions:</h3>
-                <ol>
-                    <li>Set the font size of the root element (default 16px)</li>
-                    <li>Adjust the screen DPI value (default 96)</li>
-                    <li>Enter the REM value</li>
-                    <li>Get the corresponding centimeter value</li>
-                </ol>
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="settings">
+                    <label for="rootFontSize">Root Element Font Size:</label>
+                    <input type="number" id="rootFontSize" value="16" min="1">
+                    <span class="unit">px</span>
+                </div>
+                <div class="settings">
+                    <label for="dpi">Screen DPI:</label>
+                    <input type="number" id="dpi" value="96" min="1">
+                    <span class="unit">dpi</span>
+                </div>
+                <div class="converter">
+                    <input type="number" id="remValue" placeholder="Enter REM value">
+                    <span class="unit">rem</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
 
-            <div class="tips">
-                <h3>Usage Tips:</h3>
-                <ul>
-                    <li>Suitable for print design</li>
-                    <li>Calculate based on the font size of the root element</li>
-                    <li>Accurate to 3 decimal places</li>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">cm</span>
+                </div>
+                <div class="formula-display">
+                    <p>Calculation method: rem × rootFontSize ÷ 37.8 = cm</p>
+                </div>
+            </div>
+
+            <section class="conversion-info">
+                <h2>REM to Centimeter Conversion Instructions</h2>
+                <p>REM is a unit relative to the font size of the root element. By entering a REM value and the font size of the root element, you can calculate the corresponding centimeter value.</p>
+                
+                <h3>Common Conversion Values (Based on 16px Root Font):</h3>
+                <ul class="conversion-examples">
+                    <li>1rem = 2.54cm</li>
+                    <li>2rem = 5.08cm</li>
+                    <li>6rem = 15.24cm</li>
                 </ul>
-            </div>
-        </section>
-    </main>
+
+                <div class="usage-notes">
+                    <h3>Usage Instructions:</h3>
+                    <ol>
+                        <li>Set the font size of the root element (default 16px)</li>
+                        <li>Adjust the screen DPI value (default 96)</li>
+                        <li>Enter the REM value</li>
+                        <li>Get the corresponding centimeter value</li>
+                    </ol>
+                </div>
+
+                <div class="tips">
+                    <h3>Usage Tips:</h3>
+                    <ul>
+                        <li>Suitable for print design</li>
+                        <li>Calculate based on the font size of the root element</li>
+                        <li>Accurate to 3 decimal places</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <script>
         const remInput = document.getElementById('remValue');

@@ -5,100 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Viewport height to feet online converter - Accurately calculate the conversion from viewport height to feet">
     <meta name="keywords" content="vh to ft, viewport height to feet, viewport height conversion, feet conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/vh/vh-to-ft" />
     <title>Viewport Height to Feet Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Viewport Height to Feet
-        </nav>
-        <h1>Viewport Height to Feet Converter</h1>
-        <p>Convert viewport height (VH) to feet (FT), suitable for typesetting and design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="vhValue" placeholder="Enter viewport height value">
-                <span class="unit">vh</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">ft</span>
+    <div class="page-container">
+        <header>
+            <h1>Viewport Height to Feet Converter</h1>
+            <p>Convert viewport height (VH) to feet (FT), suitable for typesetting and design</p>
+        </header>
+
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="vhValue" placeholder="Enter viewport height value">
+                    <span class="unit">vh</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p id="formula">Calculation formula: </p>
+
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">ft</span>
+                </div>
+                <div class="formula-display">
+                    <p id="formula">Calculation formula: </p>
+                </div>
             </div>
-        </div>
 
-        <section class="introduction">
-            <h2>What are Viewport Height (VH) and Feet (FT)?</h2>
-            <p>Viewport height (VH) is a percentage unit relative to the height of the viewport. Feet (FT) is a commonly used unit of length.</p>
-        </section>
+            <section class="introduction">
+                <h2>What are Viewport Height (VH) and Feet (FT)?</h2>
+                <p>Viewport height (VH) is a percentage unit relative to the height of the viewport. Feet (FT) is a commonly used unit of length.</p>
+            </section>
 
-        <section class="usage-guide">
-            <h2>Usage Instructions</h2>
-            <ol>
-                <li>Enter the viewport height value to convert</li>
-                <li>Click the "Convert" button or press Enter to get the result</li>
-                <li>Use the "Copy" button to copy the conversion result</li>
-            </ol>
-        </section>
+            <section class="usage-guide">
+                <h2>Usage Instructions</h2>
+                <ol>
+                    <li>Enter the viewport height value to convert</li>
+                    <li>Click the "Convert" button or press Enter to get the result</li>
+                    <li>Use the "Copy" button to copy the conversion result</li>
+                </ol>
+            </section>
 
-        <section class="examples-section">
-            <h2>Common Conversion Examples</h2>
-            <ul class="conversion-examples">
-                <li>1vh = 0.0328ft (assuming viewport height is 1000px)</li>
-                <li>2vh = 0.0656ft</li>
-                <li>5vh = 0.1640ft</li>
-                <li>10vh = 0.3281ft</li>
-            </ul>
-        </section>
-    </main>
+            <section class="examples-section">
+                <h2>Common Conversion Examples</h2>
+                <ul class="conversion-examples">
+                    <li>1vh = 0.0328ft (assuming viewport height is 1000px)</li>
+                    <li>2vh = 0.0656ft</li>
+                    <li>5vh = 0.1640ft</li>
+                    <li>10vh = 0.3281ft</li>
+                </ul>
+            </section>
+        </main>
 
-    <script>
-        const vhInput = document.getElementById('vhValue');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+        <script>
+            const vhInput = document.getElementById('vhValue');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
 
-        function convertVhToFt() {
-            const vh = parseFloat(vhInput.value);
-            const viewportHeight = 1000; // Assuming viewport height is 1000px
-            if (!isNaN(vh)) {
-                const ft = (vh / 100) * viewportHeight / 12; // 1ft = 12in
-                resultSpan.textContent = ft.toFixed(4);
-                document.getElementById('formula').textContent = `Calculation formula: ft = (${vh}vh × ${viewportHeight} ÷ 100) ÷ 12`;
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+            function convertVhToFt() {
+                const vh = parseFloat(vhInput.value);
+                const viewportHeight = 1000; // Assuming viewport height is 1000px
+                if (!isNaN(vh)) {
+                    const ft = (vh / 100) * viewportHeight / 12; // 1ft = 12in
+                    resultSpan.textContent = ft.toFixed(4);
+                    document.getElementById('formula').textContent = `Calculation formula: ft = (${vh}vh × ${viewportHeight} ÷ 100) ÷ 12`;
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        vhInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertVhToFt();
-        });
-        convertBtn.addEventListener('click', convertVhToFt);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            vhInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertVhToFt();
+            });
+            convertBtn.addEventListener('click', convertVhToFt);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

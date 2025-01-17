@@ -8,100 +8,110 @@
     <title>Pixel to Inch Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/pixel/pixel-to-inch" />
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Pixel to Inch
-        </nav>
-        <h1>Pixel (PX) to Inch (IN) Converter</h1>
-        <p>Accurately convert pixels (px) to inches (in), suitable for web design and print layout</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="settings">
-                <label for="dpi">Screen DPI:</label>
-                <input type="number" id="dpi" value="96" min="1">
-                <span class="unit">dpi</span>
-            </div>
-            <div class="converter">
-                <input type="number" id="pxValue" placeholder="Enter pixel value">
-                <span class="unit">px</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">in</span>
+    <div class="page-container">
+        <header>
+            <h1>Pixel to Inch Converter</h1>
+            <p>Accurately convert pixels (px) to inches (in), suitable for print design</p>
+        </header>
+
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="settings">
+                    <label for="dpi">Screen DPI:</label>
+                    <input type="number" id="dpi" value="96" min="1">
+                    <span class="unit">dpi</span>
+                </div>
+                <div class="converter">
+                    <input type="number" id="pxValue" placeholder="Enter pixel value">
+                    <span class="unit">px</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p>Conversion formula: 1 inch = 96 pixels</p>
-                <p>Calculation method: px ÷ 96 = in</p>
+
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">in</span>
+                </div>
+                <div class="formula-display">
+                    <p>Conversion formula: 1 inch = 96 pixels</p>
+                    <p>Calculation method: px ÷ 96 = in</p>
+                </div>
             </div>
-        </div>
 
-        <section class="conversion-info">
-            <h2>Pixel to Inch Conversion Instructions</h2>
-            <p>In digital devices, 1 inch is typically equal to 96 pixels. This standard DPI (pixels per inch) is widely used in most modern display devices.</p>
-            
-            <h3>Common Conversion Values Reference:</h3>
-            <ul class="conversion-examples">
-                <li>96px = 1in</li>
-                <li>48px = 0.5in</li>
-                <li>192px = 2in</li>
-                <li>24px = 0.25in</li>
-            </ul>
+            <section class="conversion-info">
+                <h2>Pixel to Inch Conversion Instructions</h2>
+                <p>In digital devices, 1 inch is typically equal to 96 pixels. This standard DPI (pixels per inch) is widely used in most modern display devices.</p>
+                
+                <h3>Common Conversion Values Reference:</h3>
+                <ul class="conversion-examples">
+                    <li>96px = 1in</li>
+                    <li>48px = 0.5in</li>
+                    <li>192px = 2in</li>
+                    <li>24px = 0.25in</li>
+                </ul>
 
-            <div class="usage-notes">
-                <h3>Usage Instructions:</h3>
-                <ol>
-                    <li>Enter the pixel value in the input field</li>
-                    <li>Click "Convert" button or press Enter</li>
-                    <li>Get the corresponding inch value</li>
-                    <li>Click "Copy" button to copy the result</li>
-                </ol>
-            </div>
-        </section>
-    </main>
+                <div class="usage-notes">
+                    <h3>Usage Instructions:</h3>
+                    <ol>
+                        <li>Enter the pixel value in the input field</li>
+                        <li>Click "Convert" button or press Enter</li>
+                        <li>Get the corresponding inch value</li>
+                        <li>Click "Copy" button to copy the result</li>
+                    </ol>
+                </div>
+            </section>
+        </main>
 
-    <script>
-        const pxInput = document.getElementById('pxValue');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+        <script>
+            const pxInput = document.getElementById('pxValue');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
 
-        function convertPxToInch() {
-            const px = parseFloat(pxInput.value);
-            if (!isNaN(px)) {
-                const inches = px / 96;
-                resultSpan.textContent = inches.toFixed(3);
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+            function convertPxToInch() {
+                const px = parseFloat(pxInput.value);
+                if (!isNaN(px)) {
+                    const inches = px / 96;
+                    resultSpan.textContent = inches.toFixed(3);
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        pxInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertPxToInch();
-        });
-        convertBtn.addEventListener('click', convertPxToInch);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            pxInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertPxToInch();
+            });
+            convertBtn.addEventListener('click', convertPxToInch);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

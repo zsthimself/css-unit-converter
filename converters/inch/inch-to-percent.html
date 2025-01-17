@@ -8,121 +8,131 @@
     <title>Inch to Percent Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/inch/inch-to-percent" />
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Inch to Percent
-        </nav>
-        <h1>Inch (IN) to Percent (%) Converter</h1>
-        <p>Accurately convert inches (in) to percent (%), suitable for relative unit design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="settings">
-                <label for="parentSize">Parent Element Size:</label>
-                <input type="number" id="parentSize" placeholder="Enter parent element size" value="100" min="0">
-                <span class="unit">px</span>
-            </div>
-            <div class="settings">
-                <label for="dpi">Screen DPI:</label>
-                <input type="number" id="dpi" value="96" min="1">
-                <span class="unit">dpi</span>
-            </div>
-            <div class="converter">
-                <input type="number" id="inchValue" placeholder="Enter inch value">
-                <span class="unit">in</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">%</span>
-            </div>
-            <div class="formula-display">
-                <p>Conversion formula: (inch × dpi) ÷ parentSize × 100 = %</p>
-            </div>
-        </div>
+    <div class="page-container">
+        <header>
+            <h1>Inch to Percent Converter</h1>
+            <p>Accurately convert inches (in) to percentage (%), suitable for responsive design</p>
+        </header>
 
-        <section class="conversion-info">
-            <h2>Inch to Percent Conversion Instructions</h2>
-            <p>Percent (%) is a unit of measurement relative to the parent element size, commonly used in responsive design. By entering the inch value and the parent element size, you can calculate the corresponding percentage.</p>
-            
-            <h3>Common Conversion Values:</h3>
-            <ul class="conversion-examples">
-                <li>1in = 1% (assuming parent element size is 100px)</li>
-                <li>2in = 2% (assuming parent element size is 100px)</li>
-                <li>0.5in = 0.5% (assuming parent element size is 100px)</li>
-            </ul>
-
-            <div class="usage-notes">
-                <h3>Usage Instructions:</h3>
-                <ol>
-                    <li>Set the parent element size (default 100px)</li>
-                    <li>Adjust the screen DPI value (default 96)</li>
-                    <li>Enter the inch value</li>
-                    <li>Get the corresponding percentage value</li>
-                </ol>
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="settings">
+                    <label for="parentSize">Parent Element Size:</label>
+                    <input type="number" id="parentSize" placeholder="Enter parent element size" value="100" min="0">
+                    <span class="unit">px</span>
+                </div>
+                <div class="settings">
+                    <label for="dpi">Screen DPI:</label>
+                    <input type="number" id="dpi" value="96" min="1">
+                    <span class="unit">dpi</span>
+                </div>
+                <div class="converter">
+                    <input type="number" id="inchValue" placeholder="Enter inch value">
+                    <span class="unit">in</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
 
-            <div class="tips">
-                <h3>Usage Tips:</h3>
-                <ul>
-                    <li>Suitable for responsive design</li>
-                    <li>Calculates based on parent element size</li>
-                    <li>Accurate to three decimal places</li>
-                    <li>Commonly used in layout and typesetting</li>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">%</span>
+                </div>
+                <div class="formula-display">
+                    <p>Conversion formula: (inch × dpi) ÷ parentSize × 100 = %</p>
+                </div>
+            </div>
+
+            <section class="conversion-info">
+                <h2>Inch to Percent Conversion Instructions</h2>
+                <p>Percent (%) is a unit of measurement relative to the parent element size, commonly used in responsive design. By entering the inch value and the parent element size, you can calculate the corresponding percentage.</p>
+                
+                <h3>Common Conversion Values:</h3>
+                <ul class="conversion-examples">
+                    <li>1in = 1% (assuming parent element size is 100px)</li>
+                    <li>2in = 2% (assuming parent element size is 100px)</li>
+                    <li>0.5in = 0.5% (assuming parent element size is 100px)</li>
                 </ul>
-            </div>
-        </section>
-    </main>
 
-    <script>
-        const inchInput = document.getElementById('inchValue');
-        const parentSizeInput = document.getElementById('parentSize');
-        const dpiInput = document.getElementById('dpi');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+                <div class="usage-notes">
+                    <h3>Usage Instructions:</h3>
+                    <ol>
+                        <li>Set the parent element size (default 100px)</li>
+                        <li>Adjust the screen DPI value (default 96)</li>
+                        <li>Enter the inch value</li>
+                        <li>Get the corresponding percentage value</li>
+                    </ol>
+                </div>
 
-        function convertInchToPercent() {
-            const inch = parseFloat(inchInput.value);
-            const parentSize = parseFloat(parentSizeInput.value) || 100;
-            const dpi = parseFloat(dpiInput.value) || 96;
-            
-            if (!isNaN(inch)) {
-                const px = inch * dpi;
-                const percent = (px / parentSize) * 100;
-                resultSpan.textContent = percent.toFixed(3);
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+                <div class="tips">
+                    <h3>Usage Tips:</h3>
+                    <ul>
+                        <li>Suitable for responsive design</li>
+                        <li>Calculates based on parent element size</li>
+                        <li>Accurate to three decimal places</li>
+                        <li>Commonly used in layout and typesetting</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            const inchInput = document.getElementById('inchValue');
+            const parentSizeInput = document.getElementById('parentSize');
+            const dpiInput = document.getElementById('dpi');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
+
+            function convertInchToPercent() {
+                const inch = parseFloat(inchInput.value);
+                const parentSize = parseFloat(parentSizeInput.value) || 100;
+                const dpi = parseFloat(dpiInput.value) || 96;
+                
+                if (!isNaN(inch)) {
+                    const px = inch * dpi;
+                    const percent = (px / parentSize) * 100;
+                    resultSpan.textContent = percent.toFixed(3);
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        inchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertInchToPercent();
-        });
-        parentSizeInput.addEventListener('input', convertInchToPercent);
-        dpiInput.addEventListener('input', convertInchToPercent);
-        convertBtn.addEventListener('click', convertInchToPercent);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            inchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertInchToPercent();
+            });
+            parentSizeInput.addEventListener('input', convertInchToPercent);
+            dpiInput.addEventListener('input', convertInchToPercent);
+            convertBtn.addEventListener('click', convertInchToPercent);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

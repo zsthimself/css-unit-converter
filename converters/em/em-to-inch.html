@@ -5,108 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="EM to Inch online converter - Accurately calculate the conversion from EM to inches">
     <meta name="keywords" content="em to in, EM to inches, inches conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/em/em-to-inch" />
     <title>EM to Inch Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > EM to Inch
-        </nav>
-        <h1>EM to Inch Converter</h1>
-        <p>Convert EM to inches, suitable for responsive web design</p>
-    </header>
-
-    <main class="converter-container">
-        <section class="introduction">
-            <h2>What are EM and Inches?</h2>
-            <p>EM is a relative unit based on the font size of the parent element. Inches are an absolute unit typically used for physical measurements.</p>
-        </section>
-
-        <section class="usage-guide">
-            <h2>Usage Instructions</h2>
-            <ol>
-                <li>Set the parent element's font size (default is 16px)</li>
-                <li>Input the EM value to convert</li>
-                <li>Click the "Convert" button or press Enter to get the result</li>
-                <li>Use the "Copy" button to copy the conversion result</li>
-            </ol>
-        </section>
-
-        <div class="input-section">
-            <div class="settings">
-                <label for="parentFontSize">Parent Element Font Size:</label>
-                <input type="number" id="parentFontSize" value="16" min="1">
-                <span class="unit">px</span>
-            </div>
-            <div class="converter">
-                <input type="number" id="emValue" placeholder="Enter EM value">
-                <span class="unit">em</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">in</span>
+    <div class="page-container">
+        <header>
+            <h1>EM to Inch Converter</h1>
+            <p>Convert EM to inches, suitable for responsive web design</p>
+        </header>
+
+        <main class="converter-container">
+            <section class="introduction">
+                <h2>What are EM and Inches?</h2>
+                <p>EM is a relative unit based on the font size of the parent element. Inches are an absolute unit typically used for physical measurements.</p>
+            </section>
+
+            <section class="usage-guide">
+                <h2>Usage Instructions</h2>
+                <ol>
+                    <li>Set the parent element's font size (default is 16px)</li>
+                    <li>Input the EM value to convert</li>
+                    <li>Click the "Convert" button or press Enter to get the result</li>
+                    <li>Use the "Copy" button to copy the conversion result</li>
+                </ol>
+            </section>
+
+            <div class="input-section">
+                <div class="settings">
+                    <label for="parentFontSize">Parent Element Font Size:</label>
+                    <input type="number" id="parentFontSize" value="16" min="1">
+                    <span class="unit">px</span>
+                </div>
+                <div class="converter">
+                    <input type="number" id="emValue" placeholder="Enter EM value">
+                    <span class="unit">em</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p>Calculation formula: in = (em × parent element font size) ÷ 96</p>
+
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">in</span>
+                </div>
+                <div class="formula-display">
+                    <p>Calculation formula: in = (em × parent element font size) ÷ 96</p>
+                </div>
             </div>
-        </div>
 
-        <section class="examples-section">
-            <h2>Common conversion examples</h2>
-            <ul class="conversion-examples">
-                <li>1em = 0.167in (when the parent element's font size is 16px)</li>
-                <li>2em = 0.333in</li>
-                <li>0.5em = 0.083in</li>
-                <li>1.5em = 0.25in</li>
-            </ul>
-        </section>
-    </main>
+            <section class="examples-section">
+                <h2>Common conversion examples</h2>
+                <ul class="conversion-examples">
+                    <li>1em = 0.167in (when the parent element's font size is 16px)</li>
+                    <li>2em = 0.333in</li>
+                    <li>0.5em = 0.083in</li>
+                    <li>1.5em = 0.25in</li>
+                </ul>
+            </section>
+        </main>
 
-    <script>
-        const emInput = document.getElementById('emValue');
-        const parentFontSizeInput = document.getElementById('parentFontSize');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+        <script>
+            const emInput = document.getElementById('emValue');
+            const parentFontSizeInput = document.getElementById('parentFontSize');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
 
-        function convertEmToInch() {
-            const em = parseFloat(emInput.value);
-            const parentFontSize = parseFloat(parentFontSizeInput.value) || 16;
-            
-            if (!isNaN(em)) {
-                const inches = (em * parentFontSize) / 96; // 1 inch = 96 pixels
-                resultSpan.textContent = inches.toFixed(3);
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+            function convertEmToInch() {
+                const em = parseFloat(emInput.value);
+                const parentFontSize = parseFloat(parentFontSizeInput.value) || 16;
+                
+                if (!isNaN(em)) {
+                    const inches = (em * parentFontSize) / 96; // 1 inch = 96 pixels
+                    resultSpan.textContent = inches.toFixed(3);
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        emInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertEmToInch();
-        });
-        parentFontSizeInput.addEventListener('input', convertEmToInch);
-        convertBtn.addEventListener('click', convertEmToInch);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            emInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertEmToInch();
+            });
+            parentFontSizeInput.addEventListener('input', convertEmToInch);
+            convertBtn.addEventListener('click', convertEmToInch);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

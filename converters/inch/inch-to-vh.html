@@ -5,85 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Inch (in) to Viewport Height (vh) online converter - Accurately calculate the conversion from inches to vh">
     <meta name="keywords" content="in to vh, inch to viewport height, viewport height conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/inch/inch-to-vh" />
     <title>Inch to Viewport Height Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Inch to Viewport Height
-        </nav>
-        <h1>Inch (IN) to Viewport Height (VH) Converter</h1>
-        <p>Accurately convert inches (in) to viewport height (vh), suitable for responsive web design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="settings">
-                <label for="dpi">Screen DPI:</label>
-                <input type="number" id="dpi" value="96" min="1">
-                <span class="unit">dpi</span>
-            </div>
-            <div class="settings">
-                <label for="viewportHeight">Viewport Height:</label>
-                <input type="number" id="viewportHeight" readonly>
-                <span class="unit">px</span>
-            </div>
-            <div class="converter">
-                <input type="number" id="inchValue" placeholder="Enter inch value">
-                <span class="unit">in</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">vh</span>
-            </div>
-            <div class="formula-display">
-                <p>Conversion formula: 1vh = 1% Viewport Height</p>
-                <p>Calculation method: (inch × dpi ÷ viewportHeight) × 100 = vh</p>
-            </div>
-        </div>
+    <div class="page-container">
+        <header>
+            <h1>Inch to Viewport Height Converter</h1>
+            <p>Accurately convert inches (in) to viewport height (vh), suitable for responsive web design</p>
+        </header>
 
-        <section class="conversion-info">
-            <h2>Inch to Viewport Height Conversion Instructions</h2>
-            <p>Viewport height (vh) is a unit of measurement for height relative to the viewport. 1vh equals 1% of the viewport height. Conversion will consider screen DPI and current viewport height.</p>
-            
-            <h3>Common Conversion Values (Based on 1080px Height):</h3>
-            <ul class="conversion-examples">
-                <li>1in = 8vh (96dpi)</li>
-                <li>2in = 16vh (96dpi)</li>
-                <li>9.6in = 80vh (96dpi)</li>
-                <li>19.2in = 160vh (96dpi)</li>
-            </ul>
-
-            <div class="usage-notes">
-                <h3>Usage Instructions:</h3>
-                <ol>
-                    <li>Adjust the screen DPI value (default 96)</li>
-                    <li>Note the current viewport height</li>
-                    <li>Enter the inch value</li>
-                    <li>Get the corresponding VH value</li>
-                </ol>
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="settings">
+                    <label for="dpi">Screen DPI:</label>
+                    <input type="number" id="dpi" value="96" min="1">
+                    <span class="unit">dpi</span>
+                </div>
+                <div class="settings">
+                    <label for="viewportHeight">Viewport Height:</label>
+                    <input type="number" id="viewportHeight" readonly>
+                    <span class="unit">px</span>
+                </div>
+                <div class="converter">
+                    <input type="number" id="inchValue" placeholder="Enter inch value">
+                    <span class="unit">in</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
 
-            <div class="tips">
-                <h3>Usage Tips:</h3>
-                <ul>
-                    <li>Suitable for responsive layouts</li>
-                    <li>Changes with viewport height</li>
-                    <li>Accurate to three decimal places</li>
-                    <li>Commonly used in fluid layouts</li>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">vh</span>
+                </div>
+                <div class="formula-display">
+                    <p>Conversion formula: 1vh = 1% Viewport Height</p>
+                    <p>Calculation method: (inch × dpi ÷ viewportHeight) × 100 = vh</p>
+                </div>
+            </div>
+
+            <section class="conversion-info">
+                <h2>Inch to Viewport Height Conversion Instructions</h2>
+                <p>Viewport height (vh) is a unit of measurement for height relative to the viewport. 1vh equals 1% of the viewport height. Conversion will consider screen DPI and current viewport height.</p>
+                
+                <h3>Common Conversion Values (Based on 1080px Height):</h3>
+                <ul class="conversion-examples">
+                    <li>1in = 8vh (96dpi)</li>
+                    <li>2in = 16vh (96dpi)</li>
+                    <li>9.6in = 80vh (96dpi)</li>
+                    <li>19.2in = 160vh (96dpi)</li>
                 </ul>
-            </div>
-        </section>
-    </main>
+
+                <div class="usage-notes">
+                    <h3>Usage Instructions:</h3>
+                    <ol>
+                        <li>Adjust the screen DPI value (default 96)</li>
+                        <li>Note the current viewport height</li>
+                        <li>Enter the inch value</li>
+                        <li>Get the corresponding VH value</li>
+                    </ol>
+                </div>
+
+                <div class="tips">
+                    <h3>Usage Tips:</h3>
+                    <ul>
+                        <li>Suitable for responsive layouts</li>
+                        <li>Changes with viewport height</li>
+                        <li>Accurate to three decimal places</li>
+                        <li>Commonly used in fluid layouts</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <script>
         const inchInput = document.getElementById('inchValue');

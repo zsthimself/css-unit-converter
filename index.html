@@ -11,608 +11,614 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <link rel="canonical" href="https://cssunitconverter.org" />
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo">CSS Unit Converter</a>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">CSS Unit Converter</a>
             <div class="nav-links">
-                <a href="index.html">Home</a>
+                <a href="index.html" class="active">Home</a>
                 <a href="about.html">About</a>
             </div>
-        </nav>
-        <h1>CSS Unit Converter</h1>
-        <p>Supports conversion between various CSS units, making front-end development easier.</p>
-    </header>
-
-    <main class="unit-grid">
-        <!-- Pixel (PX) -->
-        <div class="unit-card">
-            <h2>PIXEL (PX)</h2>
-            <p class="unit-description">Pixel unit converter</p>
-            <div class="conversion-options">
-                <a href="converters/pixel/pixel-to-inch.html" class="conversion-option">
-                    <span class="option-label">px → inches</span>
-                    <span class="option-example">96px = 1in</span>
-                </a>
-                <a href="converters/pixel/pixel-to-rem.html" class="conversion-option">
-                    <span class="option-label">px → rem</span>
-                    <span class="option-example">16px = 1rem</span>
-                </a>
-                <a href="converters/pixel/pixel-to-em.html" class="conversion-option">
-                    <span class="option-label">px → em</span>
-                    <span class="option-example">16px = 1em</span>
-                </a>
-                <a href="converters/pixel/pixel-to-cm.html" class="conversion-option">
-                    <span class="option-label">px → cm</span>
-                    <span class="option-example">37.8px = 1cm</span>
-                </a>
-                <a href="converters/pixel/pixel-to-mm.html" class="conversion-option">
-                    <span class="option-label">px → mm</span>
-                    <span class="option-example">3.78px = 1mm</span>
-                </a>
-                <a href="converters/pixel/pixel-to-pt.html" class="conversion-option">
-                    <span class="option-label">px → pt</span>
-                    <span class="option-example">1.33px = 1pt</span>
-                </a>
-                <a href="converters/pixel/pixel-to-pc.html" class="conversion-option">
-                    <span class="option-label">px → pc</span>
-                    <span class="option-example">16px = 1pc</span>
-                </a>
-                <a href="converters/pixel/pixel-to-vw.html" class="conversion-option">
-                    <span class="option-label">px → vw</span>
-                    <span class="option-example">Based on viewport width</span>
-                </a>
-                <a href="converters/pixel/pixel-to-vh.html" class="conversion-option">
-                    <span class="option-label">px → vh</span>
-                    <span class="option-example">Based on viewport height</span>
-                </a>
-                <a href="converters/pixel/pixel-to-ft.html" class="conversion-option">
-                    <span class="option-label">px → ft</span>
-                    <span class="option-example">1152px = 1ft</span>
-                </a>
-                <a href="converters/pixel/pixel-to-percent.html" class="conversion-option">
-                    <span class="option-label">px → %</span>
-                    <span class="option-example">Based on parent element</span>
-                </a>
-            </div>
         </div>
+    </nav>
 
-        <!-- Inch (IN) -->
-        <div class="unit-card">
-            <h2>INCH (IN)</h2>
-            <p class="unit-description">Inch unit converter</p>
-            <div class="conversion-options">
-                <a href="converters/inch/inch-to-pixel.html" class="conversion-option">
-                    <span class="option-label">in → pixels</span>
-                    <span class="option-example">1in = 96px</span>
-                </a>
-                <a href="converters/inch/inch-to-cm.html" class="conversion-option">
-                    <span class="option-label">in → cm</span>
-                    <span class="option-example">1in = 2.54cm</span>
-                </a>
-                <a href="converters/inch/inch-to-mm.html" class="conversion-option">
-                    <span class="option-label">in → mm</span>
-                    <span class="option-example">1in = 25.4mm</span>
-                </a>
-                <a href="converters/inch/inch-to-pt.html" class="conversion-option">
-                    <span class="option-label">in → pt</span>
-                    <span class="option-example">1in = 72pt</span>
-                </a>
-                <a href="converters/inch/inch-to-pc.html" class="conversion-option">
-                    <span class="option-label">in → pc</span>
-                    <span class="option-example">1in = 6pc</span>
-                </a>
-                <a href="converters/inch/inch-to-ft.html" class="conversion-option">
-                    <span class="option-label">in → ft</span>
-                    <span class="option-example">12in = 1ft</span>
-                </a>
-                <a href="converters/inch/inch-to-rem.html" class="conversion-option">
-                    <span class="option-label">in → rem</span>
-                    <span class="option-example">1in = 6rem</span>
-                </a>
-                <a href="converters/inch/inch-to-em.html" class="conversion-option">
-                    <span class="option-label">in → em</span>
-                    <span class="option-example">1in = 6em</span>
-                </a>
-                <a href="converters/inch/inch-to-vw.html" class="conversion-option">
-                    <span class="option-label">in → vw</span>
-                    <span class="option-example">Based on viewport width</span>
-                </a>
-                <a href="converters/inch/inch-to-vh.html" class="conversion-option">
-                    <span class="option-label">in → vh</span>
-                    <span class="option-example">Based on viewport height</span>
-                </a>
-                <a href="converters/inch/inch-to-percent.html" class="conversion-option">
-                    <span class="option-label">in → %</span>
-                    <span class="option-example">Based on parent element</span>
-                </a>
+    <div class="page-container">
+        <header>
+            <h1>CSS Unit Converter</h1>
+            <p>Supports conversion between various CSS units, making front-end development easier.</p>
+        </header>
+
+        <main class="unit-grid">
+            <!-- Pixel (PX) -->
+            <div class="unit-card">
+                <h2>PIXEL (PX)</h2>
+                <p class="unit-description">Pixel unit converter</p>
+                <div class="conversion-options">
+                    <a href="converters/pixel/pixel-to-inch.html" class="conversion-option">
+                        <span class="option-label">px → inches</span>
+                        <span class="option-example">96px = 1in</span>
+                    </a>
+                    <a href="converters/pixel/pixel-to-rem.html" class="conversion-option">
+                        <span class="option-label">px → rem</span>
+                        <span class="option-example">16px = 1rem</span>
+                    </a>
+                    <a href="converters/pixel/pixel-to-em.html" class="conversion-option">
+                        <span class="option-label">px → em</span>
+                        <span class="option-example">16px = 1em</span>
+                    </a>
+                    <a href="converters/pixel/pixel-to-cm.html" class="conversion-option">
+                        <span class="option-label">px → cm</span>
+                        <span class="option-example">37.8px = 1cm</span>
+                    </a>
+                    <a href="converters/pixel/pixel-to-mm.html" class="conversion-option">
+                        <span class="option-label">px → mm</span>
+                        <span class="option-example">3.78px = 1mm</span>
+                    </a>
+                    <a href="converters/pixel/pixel-to-pt.html" class="conversion-option">
+                        <span class="option-label">px → pt</span>
+                        <span class="option-example">1.33px = 1pt</span>
+                    </a>
+                    <a href="converters/pixel/pixel-to-pc.html" class="conversion-option">
+                        <span class="option-label">px → pc</span>
+                        <span class="option-example">16px = 1pc</span>
+                    </a>
+                    <a href="converters/pixel/pixel-to-vw.html" class="conversion-option">
+                        <span class="option-label">px → vw</span>
+                        <span class="option-example">Based on viewport width</span>
+                    </a>
+                    <a href="converters/pixel/pixel-to-vh.html" class="conversion-option">
+                        <span class="option-label">px → vh</span>
+                        <span class="option-example">Based on viewport height</span>
+                    </a>
+                    <a href="converters/pixel/pixel-to-ft.html" class="conversion-option">
+                        <span class="option-label">px → ft</span>
+                        <span class="option-example">1152px = 1ft</span>
+                    </a>
+                    <a href="converters/pixel/pixel-to-percent.html" class="conversion-option">
+                        <span class="option-label">px → %</span>
+                        <span class="option-example">Based on parent element</span>
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <!-- REM -->
-        <div class="unit-card">
-            <h2>REM</h2>
-            <p class="unit-description">Root element relative unit converter</p>
-            <div class="conversion-options">
-                <a href="converters/rem/rem-to-px.html" class="conversion-option">
-                    <span class="option-label">rem → pixels</span>
-                    <span class="option-example">1rem = 16px</span>
-                </a>
-                <a href="converters/rem/rem-to-em.html" class="conversion-option">
-                    <span class="option-label">rem → em</span>
-                    <span class="option-example">1rem = 1em</span>
-                </a>
-                <a href="converters/rem/rem-to-percent.html" class="conversion-option">
-                    <span class="option-label">rem → %</span>
-                    <span class="option-example">Based on parent element</span>
-                </a>
-                <a href="converters/rem/rem-to-inch.html" class="conversion-option">
-                    <span class="option-label">rem → inches</span>
-                    <span class="option-example">1rem = 0.167in</span>
-                </a>
-                <a href="converters/rem/rem-to-cm.html" class="conversion-option">
-                    <span class="option-label">rem → cm</span>
-                    <span class="option-example">1rem = 0.423cm</span>
-                </a>
-                <a href="converters/rem/rem-to-mm.html" class="conversion-option">
-                    <span class="option-label">rem → mm</span>
-                    <span class="option-example">1rem = 4.23mm</span>
-                </a>
-                <a href="converters/rem/rem-to-pt.html" class="conversion-option">
-                    <span class="option-label">rem → pt</span>
-                    <span class="option-example">1rem = 12pt</span>
-                </a>
-                <a href="converters/rem/rem-to-pc.html" class="conversion-option">
-                    <span class="option-label">rem → pc</span>
-                    <span class="option-example">1rem = 1pc</span>
-                </a>
-                <a href="converters/rem/rem-to-vw.html" class="conversion-option">
-                    <span class="option-label">rem → vw</span>
-                    <span class="option-example">Based on viewport width</span>
-                </a>
-                <a href="converters/rem/rem-to-vh.html" class="conversion-option">
-                    <span class="option-label">rem → vh</span>
-                    <span class="option-example">Based on viewport height</span>
-                </a>
-                <a href="converters/rem/rem-to-ft.html" class="conversion-option">
-                    <span class="option-label">rem → ft</span>
-                    <span class="option-example">1rem = 0.014ft</span>
-                </a>
+            <!-- Inch (IN) -->
+            <div class="unit-card">
+                <h2>INCH (IN)</h2>
+                <p class="unit-description">Inch unit converter</p>
+                <div class="conversion-options">
+                    <a href="converters/inch/inch-to-pixel.html" class="conversion-option">
+                        <span class="option-label">in → pixels</span>
+                        <span class="option-example">1in = 96px</span>
+                    </a>
+                    <a href="converters/inch/inch-to-cm.html" class="conversion-option">
+                        <span class="option-label">in → cm</span>
+                        <span class="option-example">1in = 2.54cm</span>
+                    </a>
+                    <a href="converters/inch/inch-to-mm.html" class="conversion-option">
+                        <span class="option-label">in → mm</span>
+                        <span class="option-example">1in = 25.4mm</span>
+                    </a>
+                    <a href="converters/inch/inch-to-pt.html" class="conversion-option">
+                        <span class="option-label">in → pt</span>
+                        <span class="option-example">1in = 72pt</span>
+                    </a>
+                    <a href="converters/inch/inch-to-pc.html" class="conversion-option">
+                        <span class="option-label">in → pc</span>
+                        <span class="option-example">1in = 6pc</span>
+                    </a>
+                    <a href="converters/inch/inch-to-ft.html" class="conversion-option">
+                        <span class="option-label">in → ft</span>
+                        <span class="option-example">12in = 1ft</span>
+                    </a>
+                    <a href="converters/inch/inch-to-rem.html" class="conversion-option">
+                        <span class="option-label">in → rem</span>
+                        <span class="option-example">1in = 6rem</span>
+                    </a>
+                    <a href="converters/inch/inch-to-em.html" class="conversion-option">
+                        <span class="option-label">in → em</span>
+                        <span class="option-example">1in = 6em</span>
+                    </a>
+                    <a href="converters/inch/inch-to-vw.html" class="conversion-option">
+                        <span class="option-label">in → vw</span>
+                        <span class="option-example">Based on viewport width</span>
+                    </a>
+                    <a href="converters/inch/inch-to-vh.html" class="conversion-option">
+                        <span class="option-label">in → vh</span>
+                        <span class="option-example">Based on viewport height</span>
+                    </a>
+                    <a href="converters/inch/inch-to-percent.html" class="conversion-option">
+                        <span class="option-label">in → %</span>
+                        <span class="option-example">Based on parent element</span>
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <!-- EM -->
-        <div class="unit-card">
-            <h2>EM</h2>
-            <p class="unit-description">Unit converter relative to the font size of the parent element</p>
-            <div class="conversion-options">
-                <a href="converters/em/em-to-px.html" class="conversion-option">
-                    <span class="option-label">em → px</span>
-                    <span class="option-example">1em = 16px</span>
-                </a>
-                <a href="converters/em/em-to-rem.html" class="conversion-option">
-                    <span class="option-label">em → rem</span>
-                    <span class="option-example">1em = 1rem</span>
-                </a>
-                <a href="converters/em/em-to-inch.html" class="conversion-option">
-                    <span class="option-label">em → inches</span>
-                    <span class="option-example">1em = 0.167in</span>
-                </a>
-                <a href="converters/em/em-to-cm.html" class="conversion-option">
-                    <span class="option-label">em → cm</span>
-                    <span class="option-example">1em = 0.423cm</span>
-                </a>
-                <a href="converters/em/em-to-mm.html" class="conversion-option">
-                    <span class="option-label">em → mm</span>
-                    <span class="option-example">1em = 4.23mm</span>
-                </a>
-                <a href="converters/em/em-to-pt.html" class="conversion-option">
-                    <span class="option-label">em → pt</span>
-                    <span class="option-example">1em = 12pt</span>
-                </a>
-                <a href="converters/em/em-to-pc.html" class="conversion-option">
-                    <span class="option-label">em → pc</span>
-                    <span class="option-example">1em = 1pc</span>
-                </a>
-                <a href="converters/em/em-to-ft.html" class="conversion-option">
-                    <span class="option-label">em → ft</span>
-                    <span class="option-example">1em = 0.0139ft</span>
-                </a>
-                <a href="converters/em/em-to-vw.html" class="conversion-option">
-                    <span class="option-label">em → vw</span>
-                    <span class="option-example">Based on viewport width</span>
-                </a>
-                <a href="converters/em/em-to-vh.html" class="conversion-option">
-                    <span class="option-label">em → vh</span>
-                    <span class="option-example">Based on viewport height</span>
-                </a>
-                <a href="converters/em/em-to-percent.html" class="conversion-option">
-                    <span class="option-label">em → %</span>
-                    <span class="option-example">Based on parent element</span>
-                </a>
+            <!-- REM -->
+            <div class="unit-card">
+                <h2>REM</h2>
+                <p class="unit-description">Root element relative unit converter</p>
+                <div class="conversion-options">
+                    <a href="converters/rem/rem-to-px.html" class="conversion-option">
+                        <span class="option-label">rem → pixels</span>
+                        <span class="option-example">1rem = 16px</span>
+                    </a>
+                    <a href="converters/rem/rem-to-em.html" class="conversion-option">
+                        <span class="option-label">rem → em</span>
+                        <span class="option-example">1rem = 1em</span>
+                    </a>
+                    <a href="converters/rem/rem-to-percent.html" class="conversion-option">
+                        <span class="option-label">rem → %</span>
+                        <span class="option-example">Based on parent element</span>
+                    </a>
+                    <a href="converters/rem/rem-to-inch.html" class="conversion-option">
+                        <span class="option-label">rem → inches</span>
+                        <span class="option-example">1rem = 0.167in</span>
+                    </a>
+                    <a href="converters/rem/rem-to-cm.html" class="conversion-option">
+                        <span class="option-label">rem → cm</span>
+                        <span class="option-example">1rem = 0.423cm</span>
+                    </a>
+                    <a href="converters/rem/rem-to-mm.html" class="conversion-option">
+                        <span class="option-label">rem → mm</span>
+                        <span class="option-example">1rem = 4.23mm</span>
+                    </a>
+                    <a href="converters/rem/rem-to-pt.html" class="conversion-option">
+                        <span class="option-label">rem → pt</span>
+                        <span class="option-example">1rem = 12pt</span>
+                    </a>
+                    <a href="converters/rem/rem-to-pc.html" class="conversion-option">
+                        <span class="option-label">rem → pc</span>
+                        <span class="option-example">1rem = 1pc</span>
+                    </a>
+                    <a href="converters/rem/rem-to-vw.html" class="conversion-option">
+                        <span class="option-label">rem → vw</span>
+                        <span class="option-example">Based on viewport width</span>
+                    </a>
+                    <a href="converters/rem/rem-to-vh.html" class="conversion-option">
+                        <span class="option-label">rem → vh</span>
+                        <span class="option-example">Based on viewport height</span>
+                    </a>
+                    <a href="converters/rem/rem-to-ft.html" class="conversion-option">
+                        <span class="option-label">rem → ft</span>
+                        <span class="option-example">1rem = 0.014ft</span>
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <!-- Point (PT) -->
-        <div class="unit-card">
-            <h2>POINT (PT)</h2>
-            <p class="unit-description">Point unit converter</p>
-            <div class="conversion-options">
-                <a href="converters/point/pt-to-px.html" class="conversion-option">
-                    <span class="option-label">pt → px</span>
-                    <span class="option-example">1pt = 1.33px</span>
-                </a>
-                <a href="converters/point/pt-to-em.html" class="conversion-option">
-                    <span class="option-label">pt → em</span>
-                    <span class="option-example">Based on parent element font size</span>
-                </a>
-                <a href="converters/point/pt-to-rem.html" class="conversion-option">
-                    <span class="option-label">pt → rem</span>
-                    <span class="option-example">Based on root element font size</span>
-                </a>
-                <a href="converters/point/pt-to-inch.html" class="conversion-option">
-                    <span class="option-label">pt → inches</span>
-                    <span class="option-example">72pt = 1in</span>
-                </a>
-                <a href="converters/point/pt-to-cm.html" class="conversion-option">
-                    <span class="option-label">pt → cm</span>
-                    <span class="option-example">28.35pt = 1cm</span>
-                </a>
-                <a href="converters/point/pt-to-mm.html" class="conversion-option">
-                    <span class="option-label">pt → mm</span>
-                    <span class="option-example">2.835pt = 1mm</span>
-                </a>
-                <a href="converters/point/pt-to-pc.html" class="conversion-option">
-                    <span class="option-label">pt → pc</span>
-                    <span class="option-example">12pt = 1pc</span>
-                </a>
-                <a href="converters/point/pt-to-ft.html" class="conversion-option">
-                    <span class="option-label">pt → ft</span>
-                    <span class="option-example">864pt = 1ft</span>
-                </a>
-                <a href="converters/point/pt-to-vw.html" class="conversion-option">
-                    <span class="option-label">pt → vw</span>
-                    <span class="option-example">Based on viewport width</span>
-                </a>
-                <a href="converters/point/pt-to-vh.html" class="conversion-option">
-                    <span class="option-label">pt → vh</span>
-                    <span class="option-example">Based on viewport height</span>
-                </a>
-                <a href="converters/point/pt-to-percent.html" class="conversion-option">
-                    <span class="option-label">pt → %</span>
-                    <span class="option-example">Based on parent element</span>
-                </a>
+            <!-- EM -->
+            <div class="unit-card">
+                <h2>EM</h2>
+                <p class="unit-description">Unit converter relative to the font size of the parent element</p>
+                <div class="conversion-options">
+                    <a href="converters/em/em-to-px.html" class="conversion-option">
+                        <span class="option-label">em → px</span>
+                        <span class="option-example">1em = 16px</span>
+                    </a>
+                    <a href="converters/em/em-to-rem.html" class="conversion-option">
+                        <span class="option-label">em → rem</span>
+                        <span class="option-example">1em = 1rem</span>
+                    </a>
+                    <a href="converters/em/em-to-inch.html" class="conversion-option">
+                        <span class="option-label">em → inches</span>
+                        <span class="option-example">1em = 0.167in</span>
+                    </a>
+                    <a href="converters/em/em-to-cm.html" class="conversion-option">
+                        <span class="option-label">em → cm</span>
+                        <span class="option-example">1em = 0.423cm</span>
+                    </a>
+                    <a href="converters/em/em-to-mm.html" class="conversion-option">
+                        <span class="option-label">em → mm</span>
+                        <span class="option-example">1em = 4.23mm</span>
+                    </a>
+                    <a href="converters/em/em-to-pt.html" class="conversion-option">
+                        <span class="option-label">em → pt</span>
+                        <span class="option-example">1em = 12pt</span>
+                    </a>
+                    <a href="converters/em/em-to-pc.html" class="conversion-option">
+                        <span class="option-label">em → pc</span>
+                        <span class="option-example">1em = 1pc</span>
+                    </a>
+                    <a href="converters/em/em-to-ft.html" class="conversion-option">
+                        <span class="option-label">em → ft</span>
+                        <span class="option-example">1em = 0.0139ft</span>
+                    </a>
+                    <a href="converters/em/em-to-vw.html" class="conversion-option">
+                        <span class="option-label">em → vw</span>
+                        <span class="option-example">Based on viewport width</span>
+                    </a>
+                    <a href="converters/em/em-to-vh.html" class="conversion-option">
+                        <span class="option-label">em → vh</span>
+                        <span class="option-example">Based on viewport height</span>
+                    </a>
+                    <a href="converters/em/em-to-percent.html" class="conversion-option">
+                        <span class="option-label">em → %</span>
+                        <span class="option-example">Based on parent element</span>
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <!-- Centimeter (CM) -->
-        <div class="unit-card">
-            <h2>CENTIMETER (CM)</h2>
-            <p class="unit-description">Centimeter unit converter</p>
-            <div class="conversion-options">
-                <a href="converters/cm/cm-to-pt.html" class="conversion-option">
-                    <span class="option-label">cm → pt</span>
-                    <span class="option-example">1cm = 28.35pt</span>
-                </a>
-                <a href="converters/cm/cm-to-px.html" class="conversion-option">
-                    <span class="option-label">cm → px</span>
-                    <span class="option-example">1cm = 37.8px</span>
-                </a>
-                <a href="converters/cm/cm-to-em.html" class="conversion-option">
-                    <span class="option-label">cm → em</span>
-                    <span class="option-example">1cm = 2.36em</span>
-                </a>
-                <a href="converters/cm/cm-to-rem.html" class="conversion-option">
-                    <span class="option-label">cm → rem</span>
-                    <span class="option-example">1cm = 2.36rem</span>
-                </a>
-                <a href="converters/cm/cm-to-inch.html" class="conversion-option">
-                    <span class="option-label">cm → inches</span>
-                    <span class="option-example">2.54cm = 1in</span>
-                </a>
-                <a href="converters/cm/cm-to-mm.html" class="conversion-option">
-                    <span class="option-label">cm → mm</span>
-                    <span class="option-example">1cm = 10mm</span>
-                </a>
-                <a href="converters/cm/cm-to-pc.html" class="conversion-option">
-                    <span class="option-label">cm → pc</span>
-                    <span class="option-example">1cm = 2.36pc</span>
-                </a>
-                <a href="converters/cm/cm-to-ft.html" class="conversion-option">
-                    <span class="option-label">cm → ft</span>
-                    <span class="option-example">30.48cm = 1ft</span>
-                </a>
-                <a href="converters/cm/cm-to-vw.html" class="conversion-option">
-                    <span class="option-label">cm → vw</span>
-                    <span class="option-example">Based on viewport width</span>
-                </a>
-                <a href="converters/cm/cm-to-vh.html" class="conversion-option">
-                    <span class="option-label">cm → vh</span>
-                    <span class="option-example">Based on viewport height</span>
-                </a>
-                <a href="converters/cm/cm-to-percent.html" class="conversion-option">
-                    <span class="option-label">cm → %</span>
-                    <span class="option-example">Based on parent element</span>
-                </a>
+            <!-- Point (PT) -->
+            <div class="unit-card">
+                <h2>POINT (PT)</h2>
+                <p class="unit-description">Point unit converter</p>
+                <div class="conversion-options">
+                    <a href="converters/point/pt-to-px.html" class="conversion-option">
+                        <span class="option-label">pt → px</span>
+                        <span class="option-example">1pt = 1.33px</span>
+                    </a>
+                    <a href="converters/point/pt-to-em.html" class="conversion-option">
+                        <span class="option-label">pt → em</span>
+                        <span class="option-example">Based on parent element font size</span>
+                    </a>
+                    <a href="converters/point/pt-to-rem.html" class="conversion-option">
+                        <span class="option-label">pt → rem</span>
+                        <span class="option-example">Based on root element font size</span>
+                    </a>
+                    <a href="converters/point/pt-to-inch.html" class="conversion-option">
+                        <span class="option-label">pt → inches</span>
+                        <span class="option-example">72pt = 1in</span>
+                    </a>
+                    <a href="converters/point/pt-to-cm.html" class="conversion-option">
+                        <span class="option-label">pt → cm</span>
+                        <span class="option-example">28.35pt = 1cm</span>
+                    </a>
+                    <a href="converters/point/pt-to-mm.html" class="conversion-option">
+                        <span class="option-label">pt → mm</span>
+                        <span class="option-example">2.835pt = 1mm</span>
+                    </a>
+                    <a href="converters/point/pt-to-pc.html" class="conversion-option">
+                        <span class="option-label">pt → pc</span>
+                        <span class="option-example">12pt = 1pc</span>
+                    </a>
+                    <a href="converters/point/pt-to-ft.html" class="conversion-option">
+                        <span class="option-label">pt → ft</span>
+                        <span class="option-example">864pt = 1ft</span>
+                    </a>
+                    <a href="converters/point/pt-to-vw.html" class="conversion-option">
+                        <span class="option-label">pt → vw</span>
+                        <span class="option-example">Based on viewport width</span>
+                    </a>
+                    <a href="converters/point/pt-to-vh.html" class="conversion-option">
+                        <span class="option-label">pt → vh</span>
+                        <span class="option-example">Based on viewport height</span>
+                    </a>
+                    <a href="converters/point/pt-to-percent.html" class="conversion-option">
+                        <span class="option-label">pt → %</span>
+                        <span class="option-example">Based on parent element</span>
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <!-- Viewport Width (VW) -->
-        <div class="unit-card">
-            <h2>VIEWPORT WIDTH (VW)</h2>
-            <p class="unit-description">Viewport width unit converter</p>
-            <div class="conversion-options">
-                <a href="converters/vw/vw-to-cm.html" class="conversion-option">
-                    <span class="option-label">vw → cm</span>
-                    <span class="option-example">1vw = 0.01cm (assuming viewport width is 1000px)</span>
-                </a>
-                <a href="converters/vw/vw-to-px.html" class="conversion-option">
-                    <span class="option-label">vw → px</span>
-                    <span class="option-example">1vw = 10px (assuming viewport width is 1000px)</span>
-                </a>
-                <a href="converters/vw/vw-to-em.html" class="conversion-option">
-                    <span class="option-label">vw → em</span>
-                    <span class="option-example">Based on parent element's font size</span>
-                </a>
-                <a href="converters/vw/vw-to-rem.html" class="conversion-option">
-                    <span class="option-label">vw → rem</span>
-                    <span class="option-example">Based on root element's font size</span>
-                </a>
-                <a href="converters/vw/vw-to-in.html" class="conversion-option">
-                    <span class="option-label">vw → in</span>
-                    <span class="option-example">1vw = 0.0328in (assuming viewport width is 1000px)</span>
-                </a>
-                <a href="converters/vw/vw-to-mm.html" class="conversion-option">
-                    <span class="option-label">vw → mm</span>
-                    <span class="option-example">1vw = 0.254mm (assuming viewport width is 1000px)</span>
-                </a>
-                <a href="converters/vw/vw-to-pt.html" class="conversion-option">
-                    <span class="option-label">vw → pt</span>
-                    <span class="option-example">1vw = 0.75pt (assuming viewport width is 1000px)</span>
-                </a>
-                <a href="converters/vw/vw-to-ft.html" class="conversion-option">
-                    <span class="option-label">vw → ft</span>
-                    <span class="option-example">1vw = 0.0328ft (assuming viewport width is 1000px)</span>
-                </a>
-                <a href="converters/vw/vw-to-percent.html" class="conversion-option">
-                    <span class="option-label">vw → %</span>
-                    <span class="option-example">1vw = 1%</span>
-                </a>
-                <a href="converters/vw/vw-to-vh.html" class="conversion-option">
-                    <span class="option-label">vw → vh</span>
-                    <span class="option-example">Based on viewport height</span>
-                </a>
-                <a href="converters/vw/vw-to-pc.html" class="conversion-option">
-                    <span class="option-label">vw → pc</span>
-                    <span class="option-example">1vw = 0.01pc (assuming viewport width is 1000px)</span>
-                </a>
+            <!-- Centimeter (CM) -->
+            <div class="unit-card">
+                <h2>CENTIMETER (CM)</h2>
+                <p class="unit-description">Centimeter unit converter</p>
+                <div class="conversion-options">
+                    <a href="converters/cm/cm-to-pt.html" class="conversion-option">
+                        <span class="option-label">cm → pt</span>
+                        <span class="option-example">1cm = 28.35pt</span>
+                    </a>
+                    <a href="converters/cm/cm-to-px.html" class="conversion-option">
+                        <span class="option-label">cm → px</span>
+                        <span class="option-example">1cm = 37.8px</span>
+                    </a>
+                    <a href="converters/cm/cm-to-em.html" class="conversion-option">
+                        <span class="option-label">cm → em</span>
+                        <span class="option-example">1cm = 2.36em</span>
+                    </a>
+                    <a href="converters/cm/cm-to-rem.html" class="conversion-option">
+                        <span class="option-label">cm → rem</span>
+                        <span class="option-example">1cm = 2.36rem</span>
+                    </a>
+                    <a href="converters/cm/cm-to-inch.html" class="conversion-option">
+                        <span class="option-label">cm → inches</span>
+                        <span class="option-example">2.54cm = 1in</span>
+                    </a>
+                    <a href="converters/cm/cm-to-mm.html" class="conversion-option">
+                        <span class="option-label">cm → mm</span>
+                        <span class="option-example">1cm = 10mm</span>
+                    </a>
+                    <a href="converters/cm/cm-to-pc.html" class="conversion-option">
+                        <span class="option-label">cm → pc</span>
+                        <span class="option-example">1cm = 2.36pc</span>
+                    </a>
+                    <a href="converters/cm/cm-to-ft.html" class="conversion-option">
+                        <span class="option-label">cm → ft</span>
+                        <span class="option-example">30.48cm = 1ft</span>
+                    </a>
+                    <a href="converters/cm/cm-to-vw.html" class="conversion-option">
+                        <span class="option-label">cm → vw</span>
+                        <span class="option-example">Based on viewport width</span>
+                    </a>
+                    <a href="converters/cm/cm-to-vh.html" class="conversion-option">
+                        <span class="option-label">cm → vh</span>
+                        <span class="option-example">Based on viewport height</span>
+                    </a>
+                    <a href="converters/cm/cm-to-percent.html" class="conversion-option">
+                        <span class="option-label">cm → %</span>
+                        <span class="option-example">Based on parent element</span>
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <!-- Viewport Height (VH) -->
-        <div class="unit-card">
-            <h2>VIEWPORT HEIGHT (VH)</h2>
-            <p class="unit-description">Viewport height unit converter</p>
-            <div class="conversion-options">
-                <a href="converters/vh/vh-to-px.html" class="conversion-option">
-                    <span class="option-label">vh → px</span>
-                    <span class="option-example">1vh = 10px (assuming viewport height is 1000px)</span>
-                </a>
-                <a href="converters/vh/vh-to-em.html" class="conversion-option">
-                    <span class="option-label">vh → em</span>
-                    <span class="option-example">Based on parent element's font size</span>
-                </a>
-                <a href="converters/vh/vh-to-rem.html" class="conversion-option">
-                    <span class="option-label">vh → rem</span>
-                    <span class="option-example">Based on root element's font size</span>
-                </a>
-                <a href="converters/vh/vh-to-in.html" class="conversion-option">
-                    <span class="option-label">vh → in</span>
-                    <span class="option-example">1vh = 0.0328in (assuming viewport height is 1000px)</span>
-                </a>
-                <a href="converters/vh/vh-to-mm.html" class="conversion-option">
-                    <span class="option-label">vh → mm</span>
-                    <span class="option-example">1vh = 0.254mm (assuming viewport height is 1000px)</span>
-                </a>
-                <a href="converters/vh/vh-to-pt.html" class="conversion-option">
-                    <span class="option-label">vh → pt</span>
-                    <span class="option-example">1vh = 0.75pt (assuming viewport height is 1000px)</span>
-                </a>
-                <a href="converters/vh/vh-to-ft.html" class="conversion-option">
-                    <span class="option-label">vh → ft</span>
-                    <span class="option-example">1vh = 0.0328ft (assuming viewport height is 1000px)</span>
-                </a>
-                <a href="converters/vh/vh-to-percent.html" class="conversion-option">
-                    <span class="option-label">vh → %</span>
-                    <span class="option-example">1vh = 1%</span>
-                </a>
-                <a href="converters/vh/vh-to-vw.html" class="conversion-option">
-                    <span class="option-label">vh → vw</span>
-                    <span class="option-example">Based on viewport width</span>
-                </a>
+            <!-- Viewport Width (VW) -->
+            <div class="unit-card">
+                <h2>VIEWPORT WIDTH (VW)</h2>
+                <p class="unit-description">Viewport width unit converter</p>
+                <div class="conversion-options">
+                    <a href="converters/vw/vw-to-cm.html" class="conversion-option">
+                        <span class="option-label">vw → cm</span>
+                        <span class="option-example">1vw = 0.01cm (assuming viewport width is 1000px)</span>
+                    </a>
+                    <a href="converters/vw/vw-to-px.html" class="conversion-option">
+                        <span class="option-label">vw → px</span>
+                        <span class="option-example">1vw = 10px (assuming viewport width is 1000px)</span>
+                    </a>
+                    <a href="converters/vw/vw-to-em.html" class="conversion-option">
+                        <span class="option-label">vw → em</span>
+                        <span class="option-example">Based on parent element's font size</span>
+                    </a>
+                    <a href="converters/vw/vw-to-rem.html" class="conversion-option">
+                        <span class="option-label">vw → rem</span>
+                        <span class="option-example">Based on root element's font size</span>
+                    </a>
+                    <a href="converters/vw/vw-to-in.html" class="conversion-option">
+                        <span class="option-label">vw → in</span>
+                        <span class="option-example">1vw = 0.0328in (assuming viewport width is 1000px)</span>
+                    </a>
+                    <a href="converters/vw/vw-to-mm.html" class="conversion-option">
+                        <span class="option-label">vw → mm</span>
+                        <span class="option-example">1vw = 0.254mm (assuming viewport width is 1000px)</span>
+                    </a>
+                    <a href="converters/vw/vw-to-pt.html" class="conversion-option">
+                        <span class="option-label">vw → pt</span>
+                        <span class="option-example">1vw = 0.75pt (assuming viewport width is 1000px)</span>
+                    </a>
+                    <a href="converters/vw/vw-to-ft.html" class="conversion-option">
+                        <span class="option-label">vw → ft</span>
+                        <span class="option-example">1vw = 0.0328ft (assuming viewport width is 1000px)</span>
+                    </a>
+                    <a href="converters/vw/vw-to-percent.html" class="conversion-option">
+                        <span class="option-label">vw → %</span>
+                        <span class="option-example">1vw = 1%</span>
+                    </a>
+                    <a href="converters/vw/vw-to-vh.html" class="conversion-option">
+                        <span class="option-label">vw → vh</span>
+                        <span class="option-example">Based on viewport height</span>
+                    </a>
+                    <a href="converters/vw/vw-to-pc.html" class="conversion-option">
+                        <span class="option-label">vw → pc</span>
+                        <span class="option-example">1vw = 0.01pc (assuming viewport width is 1000px)</span>
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <!-- Millimeter (MM) -->
-        <div class="unit-card">
-            <h2>MILLIMETER (MM)</h2>
-            <p class="unit-description">Millimeter unit converter</p>
-            <div class="conversion-options">
-                <a href="converters/mm/mm-to-px.html" class="conversion-option">
-                    <span class="option-label">mm → px</span>
-                    <span class="option-example">1mm = 3.779px (assuming 96dpi)</span>
-                </a>
-                <a href="converters/mm/mm-to-em.html" class="conversion-option">
-                    <span class="option-label">mm → em</span>
-                    <span class="option-example">Based on parent element's font size</span>
-                </a>
-                <a href="converters/mm/mm-to-rem.html" class="conversion-option">
-                    <span class="option-label">mm → rem</span>
-                    <span class="option-example">Based on root element's font size</span>
-                </a>
-                <a href="converters/mm/mm-to-in.html" class="conversion-option">
-                    <span class="option-label">mm → in</span>
-                    <span class="option-example">1mm = 0.03937in</span>
-                </a>
-                <a href="converters/mm/mm-to-pt.html" class="conversion-option">
-                    <span class="option-label">mm → pt</span>
-                    <span class="option-example">1mm = 2.8346pt</span>
-                </a>
-                <a href="converters/mm/mm-to-ft.html" class="conversion-option">
-                    <span class="option-label">mm → ft</span>
-                    <span class="option-example">1mm = 0.003281ft</span>
-                </a>
-                <a href="converters/mm/mm-to-percent.html" class="conversion-option">
-                    <span class="option-label">mm → %</span>
-                    <span class="option-example">Based on a certain baseline</span>
-                </a>
-                <a href="converters/mm/mm-to-vh.html" class="conversion-option">
-                    <span class="option-label">mm → vh</span>
-                    <span class="option-example">Based on viewport height</span>
-                </a>
-                <a href="converters/mm/mm-to-vw.html" class="conversion-option">
-                    <span class="option-label">mm → vw</span>
-                    <span class="option-example">Based on viewport width</span>
-                </a>
+            <!-- Viewport Height (VH) -->
+            <div class="unit-card">
+                <h2>VIEWPORT HEIGHT (VH)</h2>
+                <p class="unit-description">Viewport height unit converter</p>
+                <div class="conversion-options">
+                    <a href="converters/vh/vh-to-px.html" class="conversion-option">
+                        <span class="option-label">vh → px</span>
+                        <span class="option-example">1vh = 10px (assuming viewport height is 1000px)</span>
+                    </a>
+                    <a href="converters/vh/vh-to-em.html" class="conversion-option">
+                        <span class="option-label">vh → em</span>
+                        <span class="option-example">Based on parent element's font size</span>
+                    </a>
+                    <a href="converters/vh/vh-to-rem.html" class="conversion-option">
+                        <span class="option-label">vh → rem</span>
+                        <span class="option-example">Based on root element's font size</span>
+                    </a>
+                    <a href="converters/vh/vh-to-in.html" class="conversion-option">
+                        <span class="option-label">vh → in</span>
+                        <span class="option-example">1vh = 0.0328in (assuming viewport height is 1000px)</span>
+                    </a>
+                    <a href="converters/vh/vh-to-mm.html" class="conversion-option">
+                        <span class="option-label">vh → mm</span>
+                        <span class="option-example">1vh = 0.254mm (assuming viewport height is 1000px)</span>
+                    </a>
+                    <a href="converters/vh/vh-to-pt.html" class="conversion-option">
+                        <span class="option-label">vh → pt</span>
+                        <span class="option-example">1vh = 0.75pt (assuming viewport height is 1000px)</span>
+                    </a>
+                    <a href="converters/vh/vh-to-ft.html" class="conversion-option">
+                        <span class="option-label">vh → ft</span>
+                        <span class="option-example">1vh = 0.0328ft (assuming viewport height is 1000px)</span>
+                    </a>
+                    <a href="converters/vh/vh-to-percent.html" class="conversion-option">
+                        <span class="option-label">vh → %</span>
+                        <span class="option-example">1vh = 1%</span>
+                    </a>
+                    <a href="converters/vh/vh-to-vw.html" class="conversion-option">
+                        <span class="option-label">vh → vw</span>
+                        <span class="option-example">Based on viewport width</span>
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <!-- Pica (PC) -->
-        <div class="unit-card">
-            <h2>PICA (PC)</h2>
-            <p class="unit-description">Pica unit converter</p>
-            <div class="conversion-options">
-                <a href="converters/pc/pc-to-mm.html" class="conversion-option">
-                    <span class="option-label">pc → mm</span>
-                    <span class="option-example">1pc = 16.6667mm</span>
-                </a>
-                <a href="converters/pc/pc-to-px.html" class="conversion-option">
-                    <span class="option-label">pc → px</span>
-                    <span class="option-example">1pc = 16px</span>
-                </a>
-                <a href="converters/pc/pc-to-in.html" class="conversion-option">
-                    <span class="option-label">pc → in</span>
-                    <span class="option-example">1pc = 0.1667in</span>
-                </a>
-                <a href="converters/pc/pc-to-pt.html" class="conversion-option">
-                    <span class="option-label">pc → pt</span>
-                    <span class="option-example">1pc = 12pt</span>
-                </a>
-                <a href="converters/pc/pc-to-em.html" class="conversion-option">
-                    <span class="option-label">pc → em</span>
-                    <span class="option-example">Based on parent element's font size</span>
-                </a>
-                <a href="converters/pc/pc-to-rem.html" class="conversion-option">
-                    <span class="option-label">pc → rem</span>
-                    <span class="option-example">Based on root element's font size</span>
-                </a>
-                <a href="converters/pc/pc-to-ft.html" class="conversion-option">
-                    <span class="option-label">pc → ft</span>
-                    <span class="option-example">1pc = 0.0139ft</span>
-                </a>
-                <a href="converters/pc/pc-to-percent.html" class="conversion-option">
-                    <span class="option-label">pc → %</span>
-                    <span class="option-example">Based on a certain baseline</span>
-                </a>
-                <a href="converters/pc/pc-to-vh.html" class="conversion-option">
-                    <span class="option-label">pc → vh</span>
-                    <span class="option-example">Based on viewport height</span>
-                </a>
-                <a href="converters/pc/pc-to-vw.html" class="conversion-option">
-                    <span class="option-label">pc → vw</span>
-                    <span class="option-example">Based on viewport width</span>
-                </a>
+            <!-- Millimeter (MM) -->
+            <div class="unit-card">
+                <h2>MILLIMETER (MM)</h2>
+                <p class="unit-description">Millimeter unit converter</p>
+                <div class="conversion-options">
+                    <a href="converters/mm/mm-to-px.html" class="conversion-option">
+                        <span class="option-label">mm → px</span>
+                        <span class="option-example">1mm = 3.779px (assuming 96dpi)</span>
+                    </a>
+                    <a href="converters/mm/mm-to-em.html" class="conversion-option">
+                        <span class="option-label">mm → em</span>
+                        <span class="option-example">Based on parent element's font size</span>
+                    </a>
+                    <a href="converters/mm/mm-to-rem.html" class="conversion-option">
+                        <span class="option-label">mm → rem</span>
+                        <span class="option-example">Based on root element's font size</span>
+                    </a>
+                    <a href="converters/mm/mm-to-in.html" class="conversion-option">
+                        <span class="option-label">mm → in</span>
+                        <span class="option-example">1mm = 0.03937in</span>
+                    </a>
+                    <a href="converters/mm/mm-to-pt.html" class="conversion-option">
+                        <span class="option-label">mm → pt</span>
+                        <span class="option-example">1mm = 2.8346pt</span>
+                    </a>
+                    <a href="converters/mm/mm-to-ft.html" class="conversion-option">
+                        <span class="option-label">mm → ft</span>
+                        <span class="option-example">1mm = 0.003281ft</span>
+                    </a>
+                    <a href="converters/mm/mm-to-percent.html" class="conversion-option">
+                        <span class="option-label">mm → %</span>
+                        <span class="option-example">Based on a certain baseline</span>
+                    </a>
+                    <a href="converters/mm/mm-to-vh.html" class="conversion-option">
+                        <span class="option-label">mm → vh</span>
+                        <span class="option-example">Based on viewport height</span>
+                    </a>
+                    <a href="converters/mm/mm-to-vw.html" class="conversion-option">
+                        <span class="option-label">mm → vw</span>
+                        <span class="option-example">Based on viewport width</span>
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <!-- Percentage (%) -->
-        <div class="unit-card">
-            <h2>PERCENTAGE (%)</h2>
-            <p class="unit-description">Percentage unit converter</p>
-            <div class="conversion-options">
-                <a href="converters/percent/percent-to-pc.html" class="conversion-option">
-                    <span class="option-label">% → pc</span>
-                    <span class="option-example">100% = 1pc</span>
-                </a>
-                <a href="converters/percent/percent-to-vh.html" class="conversion-option">
-                    <span class="option-label">% → vh</span>
-                    <span class="option-example">50% = 50vh</span>
-                </a>
-                <a href="converters/percent/percent-to-vw.html" class="conversion-option">
-                    <span class="option-label">% → vw</span>
-                    <span class="option-example">50% = 50vw</span>
-                </a>
-                <a href="converters/percent/percent-to-em.html" class="conversion-option">
-                    <span class="option-label">% → em</span>
-                    <span class="option-example">100% = 1em</span>
-                </a>
-                <a href="converters/percent/percent-to-rem.html" class="conversion-option">
-                    <span class="option-label">% → rem</span>
-                    <span class="option-example">100% = 1rem</span>
-                </a>
-                <a href="converters/percent/percent-to-pt.html" class="conversion-option">
-                    <span class="option-label">% → pt</span>
-                    <span class="option-example">100% = 12pt</span>
-                </a>
-                <a href="converters/percent/percent-to-mm.html" class="conversion-option">
-                    <span class="option-label">% → mm</span>
-                    <span class="option-example">100% = 25.4mm</span>
-                </a>
-                <a href="converters/percent/percent-to-inch.html" class="conversion-option">
-                    <span class="option-label">% → in</span>
-                    <span class="option-example">100% = 1in</span>
-                </a>
-                <a href="converters/percent/percent-to-ft.html" class="conversion-option">
-                    <span class="option-label">% → ft</span>
-                    <span class="option-example">100% = 0.0833ft</span>
-                </a>
-                <a href="converters/percent/percent-to-px.html" class="conversion-option">
-                    <span class="option-label">% → px</span>
-                    <span class="option-example">100% = 16px (assuming baseline font size is 16px)</span>
-                </a>
-                <a href="converters/percent/percent-to-cm.html" class="conversion-option">
-                    <span class="option-label">% → cm</span>
-                    <span class="option-example">100% = 2.54cm</span>
-                </a>
+            <!-- Pica (PC) -->
+            <div class="unit-card">
+                <h2>PICA (PC)</h2>
+                <p class="unit-description">Pica unit converter</p>
+                <div class="conversion-options">
+                    <a href="converters/pc/pc-to-mm.html" class="conversion-option">
+                        <span class="option-label">pc → mm</span>
+                        <span class="option-example">1pc = 16.6667mm</span>
+                    </a>
+                    <a href="converters/pc/pc-to-px.html" class="conversion-option">
+                        <span class="option-label">pc → px</span>
+                        <span class="option-example">1pc = 16px</span>
+                    </a>
+                    <a href="converters/pc/pc-to-in.html" class="conversion-option">
+                        <span class="option-label">pc → in</span>
+                        <span class="option-example">1pc = 0.1667in</span>
+                    </a>
+                    <a href="converters/pc/pc-to-pt.html" class="conversion-option">
+                        <span class="option-label">pc → pt</span>
+                        <span class="option-example">1pc = 12pt</span>
+                    </a>
+                    <a href="converters/pc/pc-to-em.html" class="conversion-option">
+                        <span class="option-label">pc → em</span>
+                        <span class="option-example">Based on parent element's font size</span>
+                    </a>
+                    <a href="converters/pc/pc-to-rem.html" class="conversion-option">
+                        <span class="option-label">pc → rem</span>
+                        <span class="option-example">Based on root element's font size</span>
+                    </a>
+                    <a href="converters/pc/pc-to-ft.html" class="conversion-option">
+                        <span class="option-label">pc → ft</span>
+                        <span class="option-example">1pc = 0.0139ft</span>
+                    </a>
+                    <a href="converters/pc/pc-to-percent.html" class="conversion-option">
+                        <span class="option-label">pc → %</span>
+                        <span class="option-example">Based on a certain baseline</span>
+                    </a>
+                    <a href="converters/pc/pc-to-vh.html" class="conversion-option">
+                        <span class="option-label">pc → vh</span>
+                        <span class="option-example">Based on viewport height</span>
+                    </a>
+                    <a href="converters/pc/pc-to-vw.html" class="conversion-option">
+                        <span class="option-label">pc → vw</span>
+                        <span class="option-example">Based on viewport width</span>
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <!-- Paper Size -->
-        <div class="unit-card">
-            <h2>PAPER SIZE</h2>
-            <p class="unit-description">Paper size converter</p>
-            <div class="conversion-options">
-                <a href="converters/paper/A4-to-px.html" class="conversion-option">
-                    <span class="option-label">A4 → px</span>
-                    <span class="option-example">210mm x 297mm</span>
-                </a>
-                <a href="converters/paper/Letter-to-px.html" class="conversion-option">
-                    <span class="option-label">Letter → px</span>
-                    <span class="option-example">8.5in x 11in</span>
-                </a>
-                <a href="converters/paper/Legal-to-px.html" class="conversion-option">
-                    <span class="option-label">Legal → px</span>
-                    <span class="option-example">8.5in x 14in</span>
-                </a>
-                <a href="converters/paper/A3-to-px.html" class="conversion-option">
-                    <span class="option-label">A3 → px</span>
-                    <span class="option-example">297mm x 420mm</span>
-                </a>
-                <a href="converters/paper/A5-to-px.html" class="conversion-option">
-                    <span class="option-label">A5 → px</span>
-                    <span class="option-example">148mm x 210mm</span>
-                </a>
+            <!-- Percentage (%) -->
+            <div class="unit-card">
+                <h2>PERCENTAGE (%)</h2>
+                <p class="unit-description">Percentage unit converter</p>
+                <div class="conversion-options">
+                    <a href="converters/percent/percent-to-pc.html" class="conversion-option">
+                        <span class="option-label">% → pc</span>
+                        <span class="option-example">100% = 1pc</span>
+                    </a>
+                    <a href="converters/percent/percent-to-vh.html" class="conversion-option">
+                        <span class="option-label">% → vh</span>
+                        <span class="option-example">50% = 50vh</span>
+                    </a>
+                    <a href="converters/percent/percent-to-vw.html" class="conversion-option">
+                        <span class="option-label">% → vw</span>
+                        <span class="option-example">50% = 50vw</span>
+                    </a>
+                    <a href="converters/percent/percent-to-em.html" class="conversion-option">
+                        <span class="option-label">% → em</span>
+                        <span class="option-example">100% = 1em</span>
+                    </a>
+                    <a href="converters/percent/percent-to-rem.html" class="conversion-option">
+                        <span class="option-label">% → rem</span>
+                        <span class="option-example">100% = 1rem</span>
+                    </a>
+                    <a href="converters/percent/percent-to-pt.html" class="conversion-option">
+                        <span class="option-label">% → pt</span>
+                        <span class="option-example">100% = 12pt</span>
+                    </a>
+                    <a href="converters/percent/percent-to-mm.html" class="conversion-option">
+                        <span class="option-label">% → mm</span>
+                        <span class="option-example">100% = 25.4mm</span>
+                    </a>
+                    <a href="converters/percent/percent-to-inch.html" class="conversion-option">
+                        <span class="option-label">% → in</span>
+                        <span class="option-example">100% = 1in</span>
+                    </a>
+                    <a href="converters/percent/percent-to-ft.html" class="conversion-option">
+                        <span class="option-label">% → ft</span>
+                        <span class="option-example">100% = 0.0833ft</span>
+                    </a>
+                    <a href="converters/percent/percent-to-px.html" class="conversion-option">
+                        <span class="option-label">% → px</span>
+                        <span class="option-example">100% = 16px (assuming baseline font size is 16px)</span>
+                    </a>
+                    <a href="converters/percent/percent-to-cm.html" class="conversion-option">
+                        <span class="option-label">% → cm</span>
+                        <span class="option-example">100% = 2.54cm</span>
+                    </a>
+                </div>
             </div>
-        </div>
+
+            <!-- Paper Size -->
+            <div class="unit-card">
+                <h2>PAPER SIZE</h2>
+                <p class="unit-description">Paper size converter</p>
+                <div class="conversion-options">
+                    <a href="converters/paper/A4-to-px.html" class="conversion-option">
+                        <span class="option-label">A4 → px</span>
+                        <span class="option-example">210mm x 297mm</span>
+                    </a>
+                    <a href="converters/paper/Letter-to-px.html" class="conversion-option">
+                        <span class="option-label">Letter → px</span>
+                        <span class="option-example">8.5in x 11in</span>
+                    </a>
+                    <a href="converters/paper/Legal-to-px.html" class="conversion-option">
+                        <span class="option-label">Legal → px</span>
+                        <span class="option-example">8.5in x 14in</span>
+                    </a>
+                    <a href="converters/paper/A3-to-px.html" class="conversion-option">
+                        <span class="option-label">A3 → px</span>
+                        <span class="option-example">297mm x 420mm</span>
+                    </a>
+                    <a href="converters/paper/A5-to-px.html" class="conversion-option">
+                        <span class="option-label">A5 → px</span>
+                        <span class="option-example">148mm x 210mm</span>
+                    </a>
+                </div>
+            </div>
 
 
-    </main>
+        </main>
 
-    <footer>
-        <p>Select any unit card to enter the detailed conversion page.</p>
-    </footer>
+        <footer>
+            <p>Select any unit card to enter the detailed conversion page.</p>
+        </footer>
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
+    </div>
 </body>
 </html> 

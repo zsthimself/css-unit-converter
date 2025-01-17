@@ -5,98 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Centimeter to viewport height online converter - Accurately calculate the conversion from centimeters to viewport height">
     <meta name="keywords" content="cm to vh, centimeter to viewport height, centimeter conversion, viewport height conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/cm/cm-to-vh" />
     <title>Centimeter to Viewport Height Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Centimeter to Viewport Height
-        </nav>
-        <h1>Centimeter to Viewport Height Converter</h1>
-        <p>Convert centimeters (CM) to viewport height (VH), suitable for typesetting and design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="cmValue" placeholder="Enter centimeter value">
-                <span class="unit">cm</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">vh</span>
+    <div class="page-container">
+        <header>
+            <h1>Centimeter to Viewport Height Converter</h1>
+            <p>Convert centimeters (CM) to viewport height (VH), suitable for typesetting and design</p>
+        </header>
+
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="cmValue" placeholder="Enter centimeter value">
+                    <span class="unit">cm</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p id="formula">Calculation formula: </p>
+
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">vh</span>
+                </div>
+                <div class="formula-display">
+                    <p id="formula">Calculation formula: </p>
+                </div>
             </div>
-        </div>
 
-        <section class="introduction">
-            <h2>What are Centimeters (CM) and Viewport Height (VH)?</h2>
-            <p>Centimeters (CM) are a commonly used unit of length. Viewport height (VH) is a percentage unit relative to the height of the viewport.</p>
-        </section>
+            <section class="introduction">
+                <h2>What are Centimeters (CM) and Viewport Height (VH)?</h2>
+                <p>Centimeters (CM) are a commonly used unit of length. Viewport height (VH) is a percentage unit relative to the height of the viewport.</p>
+            </section>
 
-        <section class="usage-guide">
-            <h2>Usage Instructions</h2>
-            <ol>
-                <li>Enter the centimeter value to convert</li>
-            </ol>
-        </section>
+            <section class="usage-guide">
+                <h2>Usage Instructions</h2>
+                <ol>
+                    <li>Enter the centimeter value to convert</li>
+                </ol>
+            </section>
 
-        <section class="examples-section">
-            <h2>Common Conversion Examples</h2>
-            <ul class="conversion-examples">
-                <li>1cm = 0.0139vh (assuming viewport height is 1000px)</li>
-                <li>2cm = 0.0278vh</li>
-                <li>5cm = 0.0694vh</li>
-                <li>10cm = 0.1389vh</li>
-            </ul>
-        </section>
-    </main>
+            <section class="examples-section">
+                <h2>Common Conversion Examples</h2>
+                <ul class="conversion-examples">
+                    <li>1cm = 0.0139vh (assuming viewport height is 1000px)</li>
+                    <li>2cm = 0.0278vh</li>
+                    <li>5cm = 0.0694vh</li>
+                    <li>10cm = 0.1389vh</li>
+                </ul>
+            </section>
+        </main>
 
-    <script>
-        const cmInput = document.getElementById('cmValue');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+        <script>
+            const cmInput = document.getElementById('cmValue');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
 
-        function convertCmToVh() {
-            const cm = parseFloat(cmInput.value);
-            const viewportHeight = 1000; // assuming viewport height is 1000px
-            if (!isNaN(cm)) {
-                const vh = (cm / 2.54) * (100 / viewportHeight); // 1cm = 0.3937in
-                resultSpan.textContent = vh.toFixed(6);
-                document.getElementById('formula').textContent = `Calculation formula: vh = (${cm}cm ÷ 2.54) × (100 ÷ ${viewportHeight})`;
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+            function convertCmToVh() {
+                const cm = parseFloat(cmInput.value);
+                const viewportHeight = 1000; // assuming viewport height is 1000px
+                if (!isNaN(cm)) {
+                    const vh = (cm / 2.54) * (100 / viewportHeight); // 1cm = 0.3937in
+                    resultSpan.textContent = vh.toFixed(6);
+                    document.getElementById('formula').textContent = `Calculation formula: vh = (${cm}cm ÷ 2.54) × (100 ÷ ${viewportHeight})`;
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        cmInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertCmToVh();
-        });
-        convertBtn.addEventListener('click', convertCmToVh);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            cmInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertCmToVh();
+            });
+            convertBtn.addEventListener('click', convertCmToVh);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

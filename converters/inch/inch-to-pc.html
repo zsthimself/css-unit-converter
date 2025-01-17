@@ -5,109 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Inch (in) to Pica (pc) online converter - Accurately calculate the conversion from inches to pica">
     <meta name="keywords" content="in to pc, inch to pica, pica conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/inch/inch-to-pc" />
     <title>Inch to Pica Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Inch to Pica
-        </nav>
-        <h1>Inch (IN) to Pica (PC) Converter</h1>
-        <p>Accurately convert inches (in) to pica (pc), suitable for professional typesetting design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="inchValue" placeholder="Enter inch value">
-                <span class="unit">in</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">pc</span>
-            </div>
-            <div class="formula-display">
-                <p>Conversion formula: 1 inch = 6 picas</p>
-                <p>Calculation method: inch × 6 = pc</p>
-            </div>
-        </div>
+    <div class="page-container">
+        <header>
+            <h1>Inch to Pica Converter</h1>
+            <p>Accurately convert inches (in) to picas (pc), suitable for typographic unit conversion</p>
+        </header>
 
-        <section class="conversion-info">
-            <h2>Inch to Pica Conversion Instructions</h2>
-            <p>In printing and typesetting, 1 inch equals 6 picas. Pica is a traditional printing unit, and 1 pica equals 12 points, commonly used in professional typesetting design.</p>
-            
-            <h3>Common Conversion References:</h3>
-            <ul class="conversion-examples">
-                <li>1in = 6pc</li>
-                <li>0.5in = 3pc</li>
-                <li>0.167in = 1pc</li>
-                <li>2in = 12pc</li>
-            </ul>
-
-            <div class="usage-notes">
-                <h3>Usage Instructions:</h3>
-                <ol>
-                    <li>Enter the inch value in the input field</li>
-                    <li>Click the "Convert" button or press Enter</li>
-                    <li>Get the corresponding pica value</li>
-                    <li>Click the copy button to copy the result</li>
-                </ol>
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="inchValue" placeholder="Enter inch value">
+                    <span class="unit">in</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
 
-            <div class="tips">
-                <h3>Tips:</h3>
-                <ul>
-                    <li>Suitable for professional typesetting</li>
-                    <li>Commonly used for column width settings</li>
-                    <li>Accurate to 3 decimal places</li>
-                    <li>1 pica equals 12 points</li>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">pc</span>
+                </div>
+                <div class="formula-display">
+                    <p>Conversion formula: 1 inch = 6 picas</p>
+                    <p>Calculation method: inch × 6 = pc</p>
+                </div>
+            </div>
+
+            <section class="conversion-info">
+                <h2>Inch to Pica Conversion Instructions</h2>
+                <p>In printing and typesetting, 1 inch equals 6 picas. Pica is a traditional printing unit, and 1 pica equals 12 points, commonly used in professional typesetting design.</p>
+                
+                <h3>Common Conversion References:</h3>
+                <ul class="conversion-examples">
+                    <li>1in = 6pc</li>
+                    <li>0.5in = 3pc</li>
+                    <li>0.167in = 1pc</li>
+                    <li>2in = 12pc</li>
                 </ul>
-            </div>
-        </section>
-    </main>
 
-    <script>
-        const inchInput = document.getElementById('inchValue');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+                <div class="usage-notes">
+                    <h3>Usage Instructions:</h3>
+                    <ol>
+                        <li>Enter the inch value in the input field</li>
+                        <li>Click the "Convert" button or press Enter</li>
+                        <li>Get the corresponding pica value</li>
+                        <li>Click the copy button to copy the result</li>
+                    </ol>
+                </div>
 
-        function convertInchToPc() {
-            const inch = parseFloat(inchInput.value);
-            
-            if (!isNaN(inch)) {
-                const pc = inch * 6;
-                resultSpan.textContent = pc.toFixed(3);
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+                <div class="tips">
+                    <h3>Tips:</h3>
+                    <ul>
+                        <li>Suitable for professional typesetting</li>
+                        <li>Commonly used for column width settings</li>
+                        <li>Accurate to 3 decimal places</li>
+                        <li>1 pica equals 12 points</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            const inchInput = document.getElementById('inchValue');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
+
+            function convertInchToPc() {
+                const inch = parseFloat(inchInput.value);
+                
+                if (!isNaN(inch)) {
+                    const pc = inch * 6;
+                    resultSpan.textContent = pc.toFixed(3);
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        inchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertInchToPc();
-        });
-        convertBtn.addEventListener('click', convertInchToPc);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            inchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertInchToPc();
+            });
+            convertBtn.addEventListener('click', convertInchToPc);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

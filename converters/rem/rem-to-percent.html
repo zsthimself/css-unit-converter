@@ -5,76 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="REM to Percent online converter - Accurately calculate the conversion from REM to percent">
     <meta name="keywords" content="rem to %, REM to percent, percent conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/rem/rem-to-percent" />
     <title>REM to Percent Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > REM to Percent
-        </nav>
-        <h1>REM to Percent (%) Converter</h1>
-        <p>Convert REM to percent (%), suitable for responsive layout design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="settings">
-                <label for="parentFontSize">Parent Element Font Size:</label>
-                <input type="number" id="parentFontSize" value="16" min="1">
-                <span class="unit">px</span>
-            </div>
-            <div class="converter">
-                <input type="number" id="remValue" placeholder="Enter REM value">
-                <span class="unit">rem</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy Result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">%</span>
-            </div>
-            <div class="formula-display">
-                <p>Calculation Method: (rem × parentFontSize) ÷ parentSize × 100 = %</p>
-            </div>
-        </div>
+    <div class="page-container">
+        <header>
+            <h1>REM to Percentage Converter</h1>
+            <p>Convert REM to percentage (%), suitable for responsive web design</p>
+        </header>
 
-        <section class="conversion-info">
-            <h2>REM to Percent Conversion Instructions</h2>
-            <p>Percent (%) is a unit relative to the parent element size, commonly used in responsive design. By entering the REM value and the parent element font size, you can calculate the corresponding percentage.</p>
-            
-            <h3>Common Conversion Values Reference:</h3>
-            <ul class="conversion-examples">
-                <li>1rem = 100% (assuming parent element is 16px)</li>
-                <li>2rem = 200% (assuming parent element is 16px)</li>
-                <li>0.5rem = 50% (assuming parent element is 16px)</li>
-            </ul>
-
-            <div class="usage-notes">
-                <h3>Usage Instructions:</h3>
-                <ol>
-                    <li>Set the parent element font size (default 16px)</li>
-                    <li>Enter the REM value</li>
-                    <li>Get the corresponding percentage value</li>
-                </ol>
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="settings">
+                    <label for="parentFontSize">Parent Element Font Size:</label>
+                    <input type="number" id="parentFontSize" value="16" min="1">
+                    <span class="unit">px</span>
+                </div>
+                <div class="converter">
+                    <input type="number" id="remValue" placeholder="Enter REM value">
+                    <span class="unit">rem</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy Result">Copy</button>
+                </div>
             </div>
 
-            <div class="tips">
-                <h3>Usage Tips:</h3>
-                <ul>
-                    <li>Suitable for responsive design</li>
-                    <li>Calculate based on parent element font size</li>
-                    <li>Accurate to three decimal places</li>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">%</span>
+                </div>
+                <div class="formula-display">
+                    <p>Calculation Method: (rem × parentFontSize) ÷ parentSize × 100 = %</p>
+                </div>
+            </div>
+
+            <section class="conversion-info">
+                <h2>REM to Percent Conversion Instructions</h2>
+                <p>Percent (%) is a unit relative to the parent element size, commonly used in responsive design. By entering the REM value and the parent element font size, you can calculate the corresponding percentage.</p>
+                
+                <h3>Common Conversion Values Reference:</h3>
+                <ul class="conversion-examples">
+                    <li>1rem = 100% (assuming parent element is 16px)</li>
+                    <li>2rem = 200% (assuming parent element is 16px)</li>
+                    <li>0.5rem = 50% (assuming parent element is 16px)</li>
                 </ul>
-            </div>
-        </section>
-    </main>
+
+                <div class="usage-notes">
+                    <h3>Usage Instructions:</h3>
+                    <ol>
+                        <li>Set the parent element font size (default 16px)</li>
+                        <li>Enter the REM value</li>
+                        <li>Get the corresponding percentage value</li>
+                    </ol>
+                </div>
+
+                <div class="tips">
+                    <h3>Usage Tips:</h3>
+                    <ul>
+                        <li>Suitable for responsive design</li>
+                        <li>Calculate based on parent element font size</li>
+                        <li>Accurate to three decimal places</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <script>
         const remInput = document.getElementById('remValue');

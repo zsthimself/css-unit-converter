@@ -5,109 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Inch (in) to Feet (ft) online converter - Accurately calculate the conversion from inches to feet">
     <meta name="keywords" content="in to ft, inch to feet, inch to ft, feet conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/inch/inch-to-ft" />
     <title>Inch to Feet Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Inch to Feet
-        </nav>
-        <h1>Inch (IN) to Feet (FT) Converter</h1>
-        <p>Accurately convert inches (in) to feet (ft), suitable for imperial unit conversion</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="inchValue" placeholder="Enter inch value">
-                <span class="unit">in</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">ft</span>
-            </div>
-            <div class="formula-display">
-                <p>Conversion formula: 12 inches = 1 foot</p>
-                <p>Calculation method: inch ÷ 12 = ft</p>
-            </div>
-        </div>
+    <div class="page-container">
+        <header>
+            <h1>Inch to Feet Converter</h1>
+            <p>Accurately convert inches (in) to feet (ft), suitable for imperial unit conversion</p>
+        </header>
 
-        <section class="conversion-info">
-            <h2>Inch to Feet Conversion Instructions</h2>
-            <p>In the imperial unit system, 1 foot equals 12 inches. This is a standard conversion relationship commonly used in construction and engineering measurements.</p>
-            
-            <h3>Common conversion values:</h3>
-            <ul class="conversion-examples">
-                <li>12in = 1ft</li>
-                <li>24in = 2ft</li>
-                <li>6in = 0.5ft</li>
-                <li>36in = 3ft (1码)</li>
-            </ul>
-
-            <div class="usage-notes">
-                <h3>Usage:</h3>
-                <ol>
-                    <li>Enter the inch value in the input field</li>
-                    <li>Click "Convert" or press Enter</li>
-                    <li>Get the corresponding feet value</li>
-                    <li>Click the "Copy" button to copy the result</li>
-                </ol>
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="inchValue" placeholder="Enter inch value">
+                    <span class="unit">in</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
 
-            <div class="tips">
-                <h3>Usage Tips:</h3>
-                <ul>
-                    <li>Suitable for construction measurements</li>
-                    <li>Commonly used in the UK and US</li>
-                    <li>Accurate to three decimal places</li>
-                    <li>Common unit in architectural design</li>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">ft</span>
+                </div>
+                <div class="formula-display">
+                    <p>Conversion formula: 12 inches = 1 foot</p>
+                    <p>Calculation method: inch ÷ 12 = ft</p>
+                </div>
+            </div>
+
+            <section class="conversion-info">
+                <h2>Inch to Feet Conversion Instructions</h2>
+                <p>In the imperial unit system, 1 foot equals 12 inches. This is a standard conversion relationship commonly used in construction and engineering measurements.</p>
+                
+                <h3>Common conversion values:</h3>
+                <ul class="conversion-examples">
+                    <li>12in = 1ft</li>
+                    <li>24in = 2ft</li>
+                    <li>6in = 0.5ft</li>
+                    <li>36in = 3ft (1码)</li>
                 </ul>
-            </div>
-        </section>
-    </main>
 
-    <script>
-        const inchInput = document.getElementById('inchValue');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+                <div class="usage-notes">
+                    <h3>Usage:</h3>
+                    <ol>
+                        <li>Enter the inch value in the input field</li>
+                        <li>Click "Convert" or press Enter</li>
+                        <li>Get the corresponding feet value</li>
+                        <li>Click the "Copy" button to copy the result</li>
+                    </ol>
+                </div>
 
-        function convertInchToFt() {
-            const inch = parseFloat(inchInput.value);
-            
-            if (!isNaN(inch)) {
-                const ft = inch / 12;
-                resultSpan.textContent = ft.toFixed(3);
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+                <div class="tips">
+                    <h3>Usage Tips:</h3>
+                    <ul>
+                        <li>Suitable for construction measurements</li>
+                        <li>Commonly used in the UK and US</li>
+                        <li>Accurate to three decimal places</li>
+                        <li>Common unit in architectural design</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            const inchInput = document.getElementById('inchValue');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
+
+            function convertInchToFt() {
+                const inch = parseFloat(inchInput.value);
+                
+                if (!isNaN(inch)) {
+                    const ft = inch / 12;
+                    resultSpan.textContent = ft.toFixed(3);
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        inchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertInchToFt();
-        });
-        convertBtn.addEventListener('click', convertInchToFt);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            inchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertInchToFt();
+            });
+            convertBtn.addEventListener('click', convertInchToFt);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

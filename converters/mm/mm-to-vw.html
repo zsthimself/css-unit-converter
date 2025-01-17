@@ -5,100 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Millimeter to viewport width online converter - Accurately calculate the conversion from millimeters to viewport width">
     <meta name="keywords" content="mm to vw, millimeter to viewport width, millimeter conversion, viewport width conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/mm/mm-to-vw" />
     <title>Millimeter to Viewport Width Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Millimeter to Viewport Width
-        </nav>
-        <h1>Millimeter to Viewport Width Converter</h1>
-        <p>Convert millimeters (MM) to viewport width (VW), suitable for typesetting and design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="mmValue" placeholder="Enter millimeter value">
-                <span class="unit">mm</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">vw</span>
+    <div class="page-container">
+        <header>
+            <h1>Millimeter to Viewport Width Converter</h1>
+            <p>Convert millimeters (MM) to viewport width (VW), suitable for responsive web design</p>
+        </header>
+
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="mmValue" placeholder="Enter millimeter value">
+                    <span class="unit">mm</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p id="formula">Calculation formula: </p>
+
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">vw</span>
+                </div>
+                <div class="formula-display">
+                    <p id="formula">Calculation formula: </p>
+                </div>
             </div>
-        </div>
 
-        <section class="introduction">
-            <h2>What are Millimeters (MM) and Viewport Width (VW)?</h2>
-            <p>Millimeters (MM) are a common unit of length. Viewport width (VW) is a percentage unit relative to the width of the viewport.</p>
-        </section>
+            <section class="introduction">
+                <h2>What are Millimeters (MM) and Viewport Width (VW)?</h2>
+                <p>Millimeters (MM) are a common unit of length. Viewport width (VW) is a percentage unit relative to the width of the viewport.</p>
+            </section>
 
-        <section class="usage-guide">
-            <h2>Usage Instructions</h2>
-            <ol>
-                <li>Enter the millimeter value to convert</li>
-                <li>Click the "Convert" button or press Enter to get the result</li>
-                <li>Use the "Copy" button to copy the conversion result</li>
-            </ol>
-        </section>
+            <section class="usage-guide">
+                <h2>Usage Instructions</h2>
+                <ol>
+                    <li>Enter the millimeter value to convert</li>
+                    <li>Click the "Convert" button or press Enter to get the result</li>
+                    <li>Use the "Copy" button to copy the conversion result</li>
+                </ol>
+            </section>
 
-        <section class="examples-section">
-            <h2>Common Conversion Examples</h2>
-            <ul class="conversion-examples">
-                <li>1mm = 0.1vw (assuming viewport width is 1000px)</li>
-                <li>2mm = 0.2vw</li>
-                <li>5mm = 0.5vw</li>
-                <li>10mm = 1vw</li>
-            </ul>
-        </section>
-    </main>
+            <section class="examples-section">
+                <h2>Common Conversion Examples</h2>
+                <ul class="conversion-examples">
+                    <li>1mm = 0.1vw (assuming viewport width is 1000px)</li>
+                    <li>2mm = 0.2vw</li>
+                    <li>5mm = 0.5vw</li>
+                    <li>10mm = 1vw</li>
+                </ul>
+            </section>
+        </main>
 
-    <script>
-        const mmInput = document.getElementById('mmValue');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+        <script>
+            const mmInput = document.getElementById('mmValue');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
 
-        function convertMmToVw() {
-            const mm = parseFloat(mmInput.value);
-            const viewportWidth = 1000; // Assuming viewport width is 1000px
-            if (!isNaN(mm)) {
-                const vw = (mm / viewportWidth) * 100; // 1vw = 1% of viewport width
-                resultSpan.textContent = vw.toFixed(2);
-                document.getElementById('formula').textContent = `Calculation formula: vw = (${mm}mm ÷ ${viewportWidth}) × 100`;
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+            function convertMmToVw() {
+                const mm = parseFloat(mmInput.value);
+                const viewportWidth = 1000; // Assuming viewport width is 1000px
+                if (!isNaN(mm)) {
+                    const vw = (mm / viewportWidth) * 100; // 1vw = 1% of viewport width
+                    resultSpan.textContent = vw.toFixed(2);
+                    document.getElementById('formula').textContent = `Calculation formula: vw = (${mm}mm ÷ ${viewportWidth}) × 100`;
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        mmInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertMmToVw();
-        });
-        convertBtn.addEventListener('click', convertMmToVw);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            mmInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertMmToVw();
+            });
+            convertBtn.addEventListener('click', convertMmToVw);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

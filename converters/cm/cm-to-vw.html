@@ -5,98 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Centimeter to viewport width online converter - Accurately calculate the conversion from centimeters to viewport width">
     <meta name="keywords" content="cm to vw, centimeter to viewport width, centimeter conversion, viewport width conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/cm/cm-to-vw" />
     <title>Centimeter to Viewport Width Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Centimeter to Viewport Width
-        </nav>
-        <h1>Centimeter to Viewport Width Converter</h1>
-        <p>Convert centimeters (CM) to viewport width (VW), suitable for typesetting and design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="cmValue" placeholder="Enter centimeter value">
-                <span class="unit">cm</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">vw</span>
+    <div class="page-container">
+        <header>
+            <h1>Centimeter to Viewport Width Converter</h1>
+            <p>Convert centimeters (CM) to viewport width (VW), suitable for typesetting and design</p>
+        </header>
+
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="cmValue" placeholder="Enter centimeter value">
+                    <span class="unit">cm</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p id="formula">Calculation formula: </p>
+
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">vw</span>
+                </div>
+                <div class="formula-display">
+                    <p id="formula">Calculation formula: </p>
+                </div>
             </div>
-        </div>
 
-        <section class="introduction">
-            <h2>What are Centimeters (CM) and Viewport Width (VW)?</h2>
-            <p>Centimeters (CM) are a commonly used unit of length. Viewport width (VW) is a percentage unit relative to the width of the viewport.</p>
-        </section>
+            <section class="introduction">
+                <h2>What are Centimeters (CM) and Viewport Width (VW)?</h2>
+                <p>Centimeters (CM) are a commonly used unit of length. Viewport width (VW) is a percentage unit relative to the width of the viewport.</p>
+            </section>
 
-        <section class="usage-guide">
-            <h2>Usage Instructions</h2>
-            <ol>
-                <li>Enter the centimeter value to convert</li>
-            </ol>
-        </section>
+            <section class="usage-guide">
+                <h2>Usage Instructions</h2>
+                <ol>
+                    <li>Enter the centimeter value to convert</li>
+                </ol>
+            </section>
 
-        <section class="examples-section">
-            <h2>Common Conversion Examples</h2>
-            <ul class="conversion-examples">
-                <li>1cm = 0.0139vw (assuming viewport width is 1000px)</li>
-                <li>2cm = 0.0278vw</li>
-                <li>5cm = 0.0694vw</li>
-                <li>10cm = 0.1389vw</li>
-            </ul>
-        </section>
-    </main>
+            <section class="examples-section">
+                <h2>Common Conversion Examples</h2>
+                <ul class="conversion-examples">
+                    <li>1cm = 0.0139vw (assuming viewport width is 1000px)</li>
+                    <li>2cm = 0.0278vw</li>
+                    <li>5cm = 0.0694vw</li>
+                    <li>10cm = 0.1389vw</li>
+                </ul>
+            </section>
+        </main>
 
-    <script>
-        const cmInput = document.getElementById('cmValue');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+        <script>
+            const cmInput = document.getElementById('cmValue');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
 
-        function convertCmToVw() {
-            const cm = parseFloat(cmInput.value);
-            const viewportWidth = 1000; // assuming viewport width is 1000px
-            if (!isNaN(cm)) {
-                const vw = (cm / 2.54) * (100 / viewportWidth); // 1cm = 0.3937in
-                resultSpan.textContent = vw.toFixed(6);
-                document.getElementById('formula').textContent = `Calculation formula: vw = (${cm}cm ÷ 2.54) × (100 ÷ ${viewportWidth})`;
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+            function convertCmToVw() {
+                const cm = parseFloat(cmInput.value);
+                const viewportWidth = 1000; // assuming viewport width is 1000px
+                if (!isNaN(cm)) {
+                    const vw = (cm / 2.54) * (100 / viewportWidth); // 1cm = 0.3937in
+                    resultSpan.textContent = vw.toFixed(6);
+                    document.getElementById('formula').textContent = `Calculation formula: vw = (${cm}cm ÷ 2.54) × (100 ÷ ${viewportWidth})`;
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        cmInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertCmToVw();
-        });
-        convertBtn.addEventListener('click', convertCmToVw);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            cmInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertCmToVw();
+            });
+            convertBtn.addEventListener('click', convertCmToVw);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

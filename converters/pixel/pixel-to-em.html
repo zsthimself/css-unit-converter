@@ -5,117 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pixel (px) to EM online converter - Accurately calculate the conversion from pixels to em">
     <meta name="keywords" content="px to em, pixel to em, em conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/pixel/pixel-to-em" />
     <title>Pixel to EM Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Pixel to EM
-        </nav>
-        <h1>Pixel (PX) to EM Converter</h1>
-        <p>Accurately convert pixels (px) to em, suitable for responsive design relative to the parent element</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="settings">
-                <label for="parentFontSize">Parent Element Font Size:</label>
-                <input type="number" id="parentFontSize" value="16" min="1">
-                <span class="unit">px</span>
-            </div>
-            <div class="converter">
-                <input type="number" id="pxValue" placeholder="Enter pixel value">
-                <span class="unit">px</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy Result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">em</span>
-            </div>
-            <div class="formula-display">
-                <p>Conversion Formula: 1em = Parent Element Font Size</p>
-                <p>Calculation Method: px ÷ Parent Element Font Size = em</p>
-            </div>
-        </div>
+    <div class="page-container">
+        <header>
+            <h1>Pixel to EM Converter</h1>
+            <p>Accurately convert pixels (px) to em, suitable for responsive design relative to the parent element</p>
+        </header>
 
-        <section class="conversion-info">
-            <h2>Pixel to EM Conversion Instructions</h2>
-            <p>EM is a unit relative to the parent element's font size. If the parent element's font size is 16px, then 1em equals 16 pixels.</p>
-            
-            <h3>Common Conversion Values (Based on 16px Parent Element):</h3>
-            <ul class="conversion-examples">
-                <li>16px = 1em</li>
-                <li>32px = 2em</li>
-                <li>8px = 0.5em</li>
-                <li>24px = 1.5em</li>
-            </ul>
-
-            <div class="usage-notes">
-                <h3>Usage Instructions:</h3>
-                <ol>
-                    <li>You can adjust the parent element's font size (default 16px)</li>
-                    <li>Enter the pixel value in the input field</li>
-                    <li>Click "Convert" button or press Enter</li>
-                    <li>Get the corresponding em value</li>
-                </ol>
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="settings">
+                    <label for="parentFontSize">Parent Element Font Size:</label>
+                    <input type="number" id="parentFontSize" value="16" min="1">
+                    <span class="unit">px</span>
+                </div>
+                <div class="converter">
+                    <input type="number" id="pxValue" placeholder="Enter pixel value">
+                    <span class="unit">px</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy Result">Copy</button>
+                </div>
             </div>
 
-            <div class="tips">
-                <h3>Usage Tips:</h3>
-                <ul>
-                    <li>em units are suitable for local responsive design</li>
-                    <li>Note that em inherits the size of its parent element</li>
-                    <li>Often used for setting font sizes and spacing</li>
-                    <li>em values can sometimes stack up</li>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">em</span>
+                </div>
+                <div class="formula-display">
+                    <p>Conversion Formula: 1em = Parent Element Font Size</p>
+                    <p>Calculation Method: px ÷ Parent Element Font Size = em</p>
+                </div>
+            </div>
+
+            <section class="conversion-info">
+                <h2>Pixel to EM Conversion Instructions</h2>
+                <p>EM is a unit relative to the parent element's font size. If the parent element's font size is 16px, then 1em equals 16 pixels.</p>
+                
+                <h3>Common Conversion Values (Based on 16px Parent Element):</h3>
+                <ul class="conversion-examples">
+                    <li>16px = 1em</li>
+                    <li>32px = 2em</li>
+                    <li>8px = 0.5em</li>
+                    <li>24px = 1.5em</li>
                 </ul>
-            </div>
-        </section>
-    </main>
 
-    <script>
-        const pxInput = document.getElementById('pxValue');
-        const parentFontSizeInput = document.getElementById('parentFontSize');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+                <div class="usage-notes">
+                    <h3>Usage Instructions:</h3>
+                    <ol>
+                        <li>You can adjust the parent element's font size (default 16px)</li>
+                        <li>Enter the pixel value in the input field</li>
+                        <li>Click "Convert" button or press Enter</li>
+                        <li>Get the corresponding em value</li>
+                    </ol>
+                </div>
 
-        function convertPxToEm() {
-            const px = parseFloat(pxInput.value);
-            const parentFontSize = parseFloat(parentFontSizeInput.value) || 16;
-            
-            if (!isNaN(px)) {
-                const em = px / parentFontSize;
-                resultSpan.textContent = em.toFixed(3);
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+                <div class="tips">
+                    <h3>Usage Tips:</h3>
+                    <ul>
+                        <li>em units are suitable for local responsive design</li>
+                        <li>Note that em inherits the size of its parent element</li>
+                        <li>Often used for setting font sizes and spacing</li>
+                        <li>em values can sometimes stack up</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            const pxInput = document.getElementById('pxValue');
+            const parentFontSizeInput = document.getElementById('parentFontSize');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
+
+            function convertPxToEm() {
+                const px = parseFloat(pxInput.value);
+                const parentFontSize = parseFloat(parentFontSizeInput.value) || 16;
+                
+                if (!isNaN(px)) {
+                    const em = px / parentFontSize;
+                    resultSpan.textContent = em.toFixed(3);
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        pxInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertPxToEm();
-        });
-        parentFontSizeInput.addEventListener('input', convertPxToEm);
-        convertBtn.addEventListener('click', convertPxToEm);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            pxInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertPxToEm();
+            });
+            parentFontSizeInput.addEventListener('input', convertPxToEm);
+            convertBtn.addEventListener('click', convertPxToEm);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

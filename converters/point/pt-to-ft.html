@@ -5,99 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Point to Feet online converter - Accurately calculate the conversion from points to feet">
     <meta name="keywords" content="pt to ft, point to feet, feet conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/point/pt-to-ft" />
     <title>Point to Feet Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Point to Feet
-        </nav>
-        <h1>Point to Feet (FT) Converter</h1>
-        <p>Convert points (PT) to feet (FT), suitable for typesetting and design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="ptValue" placeholder="Enter point value">
-                <span class="unit">ft</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">ft</span>
+    <div class="page-container">
+        <header>
+            <h1>Point to Feet (FT) Converter</h1>
+            <p>Convert points (PT) to feet (FT), suitable for typesetting and design</p>
+        </header>
+
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="ptValue" placeholder="Enter point value">
+                    <span class="unit">ft</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p id="formula">Calculation formula: </p>
+
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">ft</span>
+                </div>
+                <div class="formula-display">
+                    <p id="formula">Calculation formula: </p>
+                </div>
             </div>
-        </div>
 
-        <section class="introduction">
-            <h2>What is Point (PT) and Foot (FT)?</h2>
-            <p>Point (PT) is an absolute unit used in printing and typesetting. Foot (FT) is a commonly used length unit.</p>
-        </section>
+            <section class="introduction">
+                <h2>What is Point (PT) and Foot (FT)?</h2>
+                <p>Point (PT) is an absolute unit used in printing and typesetting. Foot (FT) is a commonly used length unit.</p>
+            </section>
 
-        <section class="usage-guide">
-            <h2>Usage Instructions</h2>
-            <ol>
-                <li>Enter the point value to be converted</li>
-                <li>Click "Convert" button or press Enter key to get the result</li>
-                <li>Use "Copy" button to copy the conversion result</li>
-            </ol>
-        </section>
+            <section class="usage-guide">
+                <h2>Usage Instructions</h2>
+                <ol>
+                    <li>Enter the point value to be converted</li>
+                    <li>Click "Convert" button or press Enter key to get the result</li>
+                    <li>Use "Copy" button to copy the conversion result</li>
+                </ol>
+            </section>
 
-        <section class="examples-section">
-            <h2>Common Conversion Examples</h2>
-            <ul class="conversion-examples">
-                <li>1pt = 0.0001ft</li>
-                <li>12pt = 0.001ft</li>
-                <li>24pt = 0.002ft</li>
-                <li>72pt = 0.006ft</li>
-            </ul>
-        </section>
-    </main>
+            <section class="examples-section">
+                <h2>Common Conversion Examples</h2>
+                <ul class="conversion-examples">
+                    <li>1pt = 0.0001ft</li>
+                    <li>12pt = 0.001ft</li>
+                    <li>24pt = 0.002ft</li>
+                    <li>72pt = 0.006ft</li>
+                </ul>
+            </section>
+        </main>
 
-    <script>
-        const ptInput = document.getElementById('ptValue');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+        <script>
+            const ptInput = document.getElementById('ptValue');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
 
-        function convertPtToFt() {
-            const pt = parseFloat(ptInput.value);
-            if (!isNaN(pt)) {
-                const ft = pt / 864; // 1ft = 864pt
-                resultSpan.textContent = ft.toFixed(6);
-                document.getElementById('formula').textContent = `Calculation formula: ft = ${pt}pt ÷ 864`;
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+            function convertPtToFt() {
+                const pt = parseFloat(ptInput.value);
+                if (!isNaN(pt)) {
+                    const ft = pt / 864; // 1ft = 864pt
+                    resultSpan.textContent = ft.toFixed(6);
+                    document.getElementById('formula').textContent = `Calculation formula: ft = ${pt}pt ÷ 864`;
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        ptInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertPtToFt();
-        });
-        convertBtn.addEventListener('click', convertPtToFt);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            ptInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertPtToFt();
+            });
+            convertBtn.addEventListener('click', convertPtToFt);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

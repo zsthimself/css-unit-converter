@@ -5,100 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Point to Viewport Width online converter - Accurately calculate the conversion from points to viewport width">
     <meta name="keywords" content="pt to vw, point to viewport width, vw conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/point/pt-to-vw" />
     <title>Point to Viewport Width Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Point to Viewport Width
-        </nav>
-        <h1>Point to Viewport Width (VW) Converter</h1>
-        <p>Convert points (PT) to viewport width units (VW), suitable for typesetting and design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="ptValue" placeholder="Enter point value">
-                <span class="unit">vw</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">vw</span>
+    <div class="page-container">
+        <header>
+            <h1>Point to Viewport Width Converter</h1>
+            <p>Convert points (PT) to viewport width (VW), suitable for responsive web design</p>
+        </header>
+
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="ptValue" placeholder="Enter point value">
+                    <span class="unit">vw</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p id="formula">Formula: </p>
+
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">vw</span>
+                </div>
+                <div class="formula-display">
+                    <p id="formula">Formula: </p>
+                </div>
             </div>
-        </div>
 
-        <section class="introduction">
-            <h2>What is a Point (PT) and Viewport Width (VW)?</h2>
-            <p>A point (PT) is an absolute unit used in typography and design. Viewport width (VW) is a percentage unit relative to the viewport width.</p>
-        </section>
+            <section class="introduction">
+                <h2>What is a Point (PT) and Viewport Width (VW)?</h2>
+                <p>A point (PT) is an absolute unit used in typography and design. Viewport width (VW) is a percentage unit relative to the viewport width.</p>
+            </section>
 
-        <section class="usage-guide">
-            <h2>Usage Instructions</h2>
-            <ol>
-                <li>Enter the point value</li>
-                <li>Click "Convert" button or press Enter to get the result</li>
-                <li>Use "Copy" button to copy the conversion result</li>
-            </ol>
-        </section>
+            <section class="usage-guide">
+                <h2>Usage Instructions</h2>
+                <ol>
+                    <li>Enter the point value</li>
+                    <li>Click "Convert" button or press Enter to get the result</li>
+                    <li>Use "Copy" button to copy the conversion result</li>
+                </ol>
+            </section>
 
-        <section class="examples-section">
-            <h2>Common Conversion Examples</h2>
-            <ul class="conversion-examples">
-                <li>1pt = 0.0139vw (assuming viewport width is 1000px)</li>
-                <li>12pt = 0.1667vw</li>
-                <li>24pt = 0.3333vw</li>
-                <li>72pt = 0.75vw</li>
-            </ul>
-        </section>
-    </main>
+            <section class="examples-section">
+                <h2>Common Conversion Examples</h2>
+                <ul class="conversion-examples">
+                    <li>1pt = 0.0139vw (assuming viewport width is 1000px)</li>
+                    <li>12pt = 0.1667vw</li>
+                    <li>24pt = 0.3333vw</li>
+                    <li>72pt = 0.75vw</li>
+                </ul>
+            </section>
+        </main>
 
-    <script>
-        const ptInput = document.getElementById('ptValue');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+        <script>
+            const ptInput = document.getElementById('ptValue');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
 
-        function convertPtToVw() {
-            const pt = parseFloat(ptInput.value);
-            const viewportWidth = 1000; // Assuming viewport width is 1000px
-            if (!isNaN(pt)) {
-                const vw = (pt / 72) * (100 / viewportWidth); // 1in = 72pt
-                resultSpan.textContent = vw.toFixed(6);
-                document.getElementById('formula').textContent = `Formula: vw = (${pt}pt ÷ 72) × (100 ÷ ${viewportWidth})`;
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+            function convertPtToVw() {
+                const pt = parseFloat(ptInput.value);
+                const viewportWidth = 1000; // Assuming viewport width is 1000px
+                if (!isNaN(pt)) {
+                    const vw = (pt / 72) * (100 / viewportWidth); // 1in = 72pt
+                    resultSpan.textContent = vw.toFixed(6);
+                    document.getElementById('formula').textContent = `Formula: vw = (${pt}pt ÷ 72) × (100 ÷ ${viewportWidth})`;
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        ptInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertPtToVw();
-        });
-        convertBtn.addEventListener('click', convertPtToVw);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            ptInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertPtToVw();
+            });
+            convertBtn.addEventListener('click', convertPtToVw);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

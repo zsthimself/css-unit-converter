@@ -5,113 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="REM to Point online converter - Accurately calculate the conversion from REM to points">
     <meta name="keywords" content="rem to pt, REM to point, point conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/rem/rem-to-pt" />
     <title>REM to Point Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > REM to Point
-        </nav>
-        <h1>REM to Point (PT) Converter</h1>
-        <p>Convert REM to points (pt), suitable for typesetting and printing design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="settings">
-                <label for="rootFontSize">Root Element Font Size:</label>
-                <input type="number" id="rootFontSize" value="16" min="1">
-                <span class="unit">px</span>
-            </div>
-            <div class="converter">
-                <input type="number" id="remValue" placeholder="Enter REM value">
-                <span class="unit">rem</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy Result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">pt</span>
-            </div>
-            <div class="formula-display">
-                <p>Calculation Method: rem × 12 = pt</p>
-            </div>
-        </div>
+    <div class="page-container">
+        <header>
+            <h1>REM to Point Converter</h1>
+            <p>Convert REM to points (PT), suitable for print design</p>
+        </header>
 
-        <section class="conversion-info">
-            <h2>REM to Point Conversion Information</h2>
-            <p>REM is a unit relative to the font size of the root element. By entering a REM value, you can calculate the corresponding point value.</p>
-            
-            <h3>Common Conversion Values (Based on 16px Root Font):</h3>
-            <ul class="conversion-examples">
-                <li>1rem = 12pt</li>
-                <li>2rem = 24pt</li>
-                <li>0.5rem = 6pt</li>
-            </ul>
-
-            <div class="usage-notes">
-                <h3>Usage Instructions:</h3>
-                <ol>
-                    <li>Set the root element font size (default 16px)</li>
-                    <li>Enter the REM value</li>
-                    <li>Get the corresponding point value</li>
-                </ol>
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="settings">
+                    <label for="rootFontSize">Root Element Font Size:</label>
+                    <input type="number" id="rootFontSize" value="16" min="1">
+                    <span class="unit">px</span>
+                </div>
+                <div class="converter">
+                    <input type="number" id="remValue" placeholder="Enter REM value">
+                    <span class="unit">rem</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy Result">Copy</button>
+                </div>
             </div>
 
-            <div class="tips">
-                <h3>Usage Tips:</h3>
-                <ul>
-                    <li>Suitable for typesetting and printing design</li>
-                    <li>Calculated based on the root font size</li>
-                    <li>Accurate to three decimal places</li>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">pt</span>
+                </div>
+                <div class="formula-display">
+                    <p>Calculation Method: rem × 12 = pt</p>
+                </div>
+            </div>
+
+            <section class="conversion-info">
+                <h2>REM to Point Conversion Information</h2>
+                <p>REM is a unit relative to the font size of the root element. By entering a REM value, you can calculate the corresponding point value.</p>
+                
+                <h3>Common Conversion Values (Based on 16px Root Font):</h3>
+                <ul class="conversion-examples">
+                    <li>1rem = 12pt</li>
+                    <li>2rem = 24pt</li>
+                    <li>0.5rem = 6pt</li>
                 </ul>
-            </div>
-        </section>
-    </main>
 
-    <script>
-        const remInput = document.getElementById('remValue');
-        const rootFontSizeInput = document.getElementById('rootFontSize');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+                <div class="usage-notes">
+                    <h3>Usage Instructions:</h3>
+                    <ol>
+                        <li>Set the root element font size (default 16px)</li>
+                        <li>Enter the REM value</li>
+                        <li>Get the corresponding point value</li>
+                    </ol>
+                </div>
 
-        function convertRemToPt() {
-            const rem = parseFloat(remInput.value);
-            const rootFontSize = parseFloat(rootFontSizeInput.value) || 16;
-            
-            if (!isNaN(rem)) {
-                const pt = rem * 12; // 1rem = 12pt
-                resultSpan.textContent = pt.toFixed(3);
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+                <div class="tips">
+                    <h3>Usage Tips:</h3>
+                    <ul>
+                        <li>Suitable for typesetting and printing design</li>
+                        <li>Calculated based on the root font size</li>
+                        <li>Accurate to three decimal places</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            const remInput = document.getElementById('remValue');
+            const rootFontSizeInput = document.getElementById('rootFontSize');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
+
+            function convertRemToPt() {
+                const rem = parseFloat(remInput.value);
+                const rootFontSize = parseFloat(rootFontSizeInput.value) || 16;
+                
+                if (!isNaN(rem)) {
+                    const pt = rem * 12; // 1rem = 12pt
+                    resultSpan.textContent = pt.toFixed(3);
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        remInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertRemToPt();
-        });
-        rootFontSizeInput.addEventListener('input', convertRemToPt);
-        convertBtn.addEventListener('click', convertRemToPt);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            remInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertRemToPt();
+            });
+            rootFontSizeInput.addEventListener('input', convertRemToPt);
+            convertBtn.addEventListener('click', convertRemToPt);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

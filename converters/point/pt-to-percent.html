@@ -5,100 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Point to Percent online converter - Accurately calculate the conversion from points to percent">
     <meta name="keywords" content="pt to %, point to percent, percent conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/point/pt-to-percent" />
     <title>Point to Percent Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Point to Percent
-        </nav>
-        <h1>Point to Percent (%) Converter</h1>
-        <p>Convert points (PT) to percent (%), suitable for typesetting and design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="ptValue" placeholder="Enter point value">
-                <span class="unit">%</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">%</span>
+    <div class="page-container">
+        <header>
+            <h1>Point to Percentage Converter</h1>
+            <p>Convert points (PT) to percentage (%), suitable for responsive design</p>
+        </header>
+
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="ptValue" placeholder="Enter point value">
+                    <span class="unit">%</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p id="formula">Calculation formula: </p>
+
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">%</span>
+                </div>
+                <div class="formula-display">
+                    <p id="formula">Calculation formula: </p>
+                </div>
             </div>
-        </div>
 
-        <section class="introduction">
-            <h2>What is a point (PT) and a percent (%)?</h2>
-            <p>A point (PT) is an absolute unit used in printing and typesetting. A percent (%) is a relative unit based on a certain base.</p>
-        </section>
+            <section class="introduction">
+                <h2>What is a point (PT) and a percent (%)?</h2>
+                <p>A point (PT) is an absolute unit used in printing and typesetting. A percent (%) is a relative unit based on a certain base.</p>
+            </section>
 
-        <section class="usage-guide">
-            <h2>Usage Instructions</h2>
-            <ol>
-                <li>Enter the point value you want to convert</li>
-                <li>Click "Convert" button or press Enter to get the result</li>
-                <li>Use "Copy" button to copy the conversion result</li>
-            </ol>
-        </section>
+            <section class="usage-guide">
+                <h2>Usage Instructions</h2>
+                <ol>
+                    <li>Enter the point value you want to convert</li>
+                    <li>Click "Convert" button or press Enter to get the result</li>
+                    <li>Use "Copy" button to copy the conversion result</li>
+                </ol>
+            </section>
 
-        <section class="examples-section">
-            <h2>Common Conversion Examples</h2>
-            <ul class="conversion-examples">
-                <li>1pt = 0.75%</li>
-                <li>12pt = 9%</li>
-                <li>24pt = 18%</li>
-                <li>72pt = 100%</li>
-            </ul>
-        </section>
-    </main>
+            <section class="examples-section">
+                <h2>Common Conversion Examples</h2>
+                <ul class="conversion-examples">
+                    <li>1pt = 0.75%</li>
+                    <li>12pt = 9%</li>
+                    <li>24pt = 18%</li>
+                    <li>72pt = 100%</li>
+                </ul>
+            </section>
+        </main>
 
-    <script>
-        const ptInput = document.getElementById('ptValue');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+        <script>
+            const ptInput = document.getElementById('ptValue');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
 
-        function convertPtToPercent() {
-            const pt = parseFloat(ptInput.value);
-            const basePt = 72; // Assuming 72pt is 100%
-            if (!isNaN(pt)) {
-                const percent = (pt / basePt) * 100; // Calculate percentage
-                resultSpan.textContent = percent.toFixed(2);
-                document.getElementById('formula').textContent = `Calculation formula: % = (${pt}pt ÷ ${basePt}) × 100`;
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+            function convertPtToPercent() {
+                const pt = parseFloat(ptInput.value);
+                const basePt = 72; // Assuming 72pt is 100%
+                if (!isNaN(pt)) {
+                    const percent = (pt / basePt) * 100; // Calculate percentage
+                    resultSpan.textContent = percent.toFixed(2);
+                    document.getElementById('formula').textContent = `Calculation formula: % = (${pt}pt ÷ ${basePt}) × 100`;
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        ptInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertPtToPercent();
-        });
-        convertBtn.addEventListener('click', convertPtToPercent);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            ptInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertPtToPercent();
+            });
+            convertBtn.addEventListener('click', convertPtToPercent);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

@@ -5,82 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="REM to Viewport Width online converter - Accurately calculate the conversion from REM to vw">
     <meta name="keywords" content="rem to vw, REM to viewport width, vw conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/rem/rem-to-vw" />
     <title>REM to Viewport Width Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > REM to Viewport Width
-        </nav>
-        <h1>REM to Viewport Width (VW) Converter</h1>
-        <p>Convert REM to viewport width units (vw), suitable for responsive web design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="settings">
-                <label for="rootFontSize">Root Element Font Size:</label>
-                <input type="number" id="rootFontSize" value="16" min="1">
-                <span class="unit">px</span>
-            </div>
-            <div class="settings">
-                <label for="viewportWidth">Viewport Width:</label>
-                <input type="number" id="viewportWidth" readonly>
-                <span class="unit">px</span>
-            </div>
-            <div class="converter">
-                <input type="number" id="remValue" placeholder="Enter REM value">
-                <span class="unit">rem</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy Result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">vw</span>
-            </div>
-            <div class="formula-display">
-                <p>Calculation Method: (rem × rootFontSize ÷ viewportWidth) × 100 = vw</p>
-            </div>
-        </div>
+    <div class="page-container">
+        <header>
+            <h1>REM to Viewport Width Converter</h1>
+            <p>Convert REM to viewport width (VW), suitable for responsive web design</p>
+        </header>
 
-        <section class="conversion-info">
-            <h2>REM to Viewport Width Conversion Information</h2>
-            <p>Viewport width (vw) is a unit relative to the width of the browser viewport, where 1vw is equal to 1% of the viewport width. By entering the REM value and the root element font size, you can calculate the corresponding vw value.</p>
-            
-            <h3>Common Conversion Values (Based on 1920px Width):</h3>
-            <ul class="conversion-examples">
-                <li>1rem = 5vw (Assuming root element font size is 16px)</li>
-                <li>2rem = 10vw (Assuming root element font size is 16px)</li>
-                <li>6rem = 30vw (Assuming root element font size is 16px)</li>
-            </ul>
-
-            <div class="usage-notes">
-                <h3>Usage Instructions:</h3>
-                <ol>
-                    <li>Set the root element font size (default 16px)</li>
-                    <li>Note the current viewport width</li>
-                    <li>Enter the REM value</li>
-                    <li>Get the corresponding vw value</li>
-                </ol>
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="settings">
+                    <label for="rootFontSize">Root Element Font Size:</label>
+                    <input type="number" id="rootFontSize" value="16" min="1">
+                    <span class="unit">px</span>
+                </div>
+                <div class="settings">
+                    <label for="viewportWidth">Viewport Width:</label>
+                    <input type="number" id="viewportWidth" readonly>
+                    <span class="unit">px</span>
+                </div>
+                <div class="converter">
+                    <input type="number" id="remValue" placeholder="Enter REM value">
+                    <span class="unit">rem</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy Result">Copy</button>
+                </div>
             </div>
 
-            <div class="tips">
-                <h3>Usage Tips:</h3>
-                <ul>
-                    <li>Applicable to responsive layouts</li>
-                    <li>Changes with viewport width</li>
-                    <li>Accurate to three decimal places</li>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">vw</span>
+                </div>
+                <div class="formula-display">
+                    <p>Calculation Method: (rem × rootFontSize ÷ viewportWidth) × 100 = vw</p>
+                </div>
+            </div>
+
+            <section class="conversion-info">
+                <h2>REM to Viewport Width Conversion Information</h2>
+                <p>Viewport width (vw) is a unit relative to the width of the browser viewport, where 1vw is equal to 1% of the viewport width. By entering the REM value and the root element font size, you can calculate the corresponding vw value.</p>
+                
+                <h3>Common Conversion Values (Based on 1920px Width):</h3>
+                <ul class="conversion-examples">
+                    <li>1rem = 5vw (Assuming root element font size is 16px)</li>
+                    <li>2rem = 10vw (Assuming root element font size is 16px)</li>
+                    <li>6rem = 30vw (Assuming root element font size is 16px)</li>
                 </ul>
-            </div>
-        </section>
-    </main>
+
+                <div class="usage-notes">
+                    <h3>Usage Instructions:</h3>
+                    <ol>
+                        <li>Set the root element font size (default 16px)</li>
+                        <li>Note the current viewport width</li>
+                        <li>Enter the REM value</li>
+                        <li>Get the corresponding vw value</li>
+                    </ol>
+                </div>
+
+                <div class="tips">
+                    <h3>Usage Tips:</h3>
+                    <ul>
+                        <li>Applicable to responsive layouts</li>
+                        <li>Changes with viewport width</li>
+                        <li>Accurate to three decimal places</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <script>
         const remInput = document.getElementById('remValue');

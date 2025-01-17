@@ -5,100 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Point to REM online converter - Accurately calculate the conversion from points to REM">
     <meta name="keywords" content="pt to rem, point to REM, REM conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/point/pt-to-rem" />
     <title>Point to REM Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Point to REM
-        </nav>
-        <h1>Point to REM Converter</h1>
-        <p>Convert points (PT) to REM, suitable for typesetting and design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="ptValue" placeholder="Enter point value">
-                <span class="unit">rem</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">rem</span>
+    <div class="page-container">
+        <header>
+            <h1>Point to REM Converter</h1>
+            <p>Convert points (PT) to REM, suitable for responsive web design</p>
+        </header>
+
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="ptValue" placeholder="Enter point value">
+                    <span class="unit">rem</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p id="formula">Formula: </p>
+
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">rem</span>
+                </div>
+                <div class="formula-display">
+                    <p id="formula">Formula: </p>
+                </div>
             </div>
-        </div>
 
-        <section class="introduction">
-            <h2>What is Point (PT) and REM?</h2>
-            <p>Point (PT) is an absolute unit, commonly used in printing and typesetting. REM is a relative unit, relative to the font size of the root element.</p>
-        </section>
+            <section class="introduction">
+                <h2>What is Point (PT) and REM?</h2>
+                <p>Point (PT) is an absolute unit, commonly used in printing and typesetting. REM is a relative unit, relative to the font size of the root element.</p>
+            </section>
 
-        <section class="usage-guide">
-            <h2>Usage Instructions</h2>
-            <ol>
-                <li>Enter the point value</li>
-                <li>Click "Convert" button or press Enter key to get the result</li>
-                <li>Use "Copy" button to copy the conversion result</li>
-            </ol>
-        </section>
+            <section class="usage-guide">
+                <h2>Usage Instructions</h2>
+                <ol>
+                    <li>Enter the point value</li>
+                    <li>Click "Convert" button or press Enter key to get the result</li>
+                    <li>Use "Copy" button to copy the conversion result</li>
+                </ol>
+            </section>
 
-        <section class="examples-section">
-            <h2>Common Conversion Examples</h2>
-            <ul class="conversion-examples">
-                <li>1pt = 0.75rem (when root font size is 16px)</li>
-                <li>12pt = 9rem</li>
-                <li>24pt = 18rem</li>
-                <li>6pt = 4.5rem</li>
-            </ul>
-        </section>
-    </main>
+            <section class="examples-section">
+                <h2>Common Conversion Examples</h2>
+                <ul class="conversion-examples">
+                    <li>1pt = 0.75rem (when root font size is 16px)</li>
+                    <li>12pt = 9rem</li>
+                    <li>24pt = 18rem</li>
+                    <li>6pt = 4.5rem</li>
+                </ul>
+            </section>
+        </main>
 
-    <script>
-        const ptInput = document.getElementById('ptValue');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+        <script>
+            const ptInput = document.getElementById('ptValue');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
 
-        function convertPtToRem() {
-            const pt = parseFloat(ptInput.value);
-            const rootFontSize = 16; // Assuming root font size is 16px
-            if (!isNaN(pt)) {
-                const rem = pt / (rootFontSize * 0.75); // 1rem = 12pt
-                resultSpan.textContent = rem.toFixed(3);
-                document.getElementById('formula').textContent = `Formula: rem = ${pt}pt ÷ 0.75`;
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+            function convertPtToRem() {
+                const pt = parseFloat(ptInput.value);
+                const rootFontSize = 16; // Assuming root font size is 16px
+                if (!isNaN(pt)) {
+                    const rem = pt / (rootFontSize * 0.75); // 1rem = 12pt
+                    resultSpan.textContent = rem.toFixed(3);
+                    document.getElementById('formula').textContent = `Formula: rem = ${pt}pt ÷ 0.75`;
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        ptInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertPtToRem();
-        });
-        convertBtn.addEventListener('click', convertPtToRem);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            ptInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertPtToRem();
+            });
+            convertBtn.addEventListener('click', convertPtToRem);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

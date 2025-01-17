@@ -5,98 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Legal paper size to pixel online converter">
     <meta name="keywords" content="Legal,paper,conversion,pixels">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/paper/legal-to-px" />
     <title>Legal Paper Size Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Legal Paper Size Conversion
-        </nav>
-        <h1>Legal Paper Size Converter</h1>
-        <p>Convert Legal paper size to pixels (PX), suitable for typesetting and design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="dpiValue" placeholder="Enter DPI value">
-                <span class="unit">DPI</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">px</span>
+    <div class="page-container">
+        <header>
+            <h1>Legal Paper Size Converter</h1>
+            <p>Convert Legal paper size to pixels (PX), suitable for typesetting and design</p>
+        </header>
+
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="dpiValue" placeholder="Enter DPI value">
+                    <span class="unit">DPI</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p id="formula">Calculation formula: </p>
+
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">px</span>
+                </div>
+                <div class="formula-display">
+                    <p id="formula">Calculation formula: </p>
+                </div>
             </div>
-        </div>
 
-        <section class="introduction">
-            <h2>What is Legal Paper Size?</h2>
-            <p>Legal paper size is 8.5in x 14in, commonly used for printing and documents.</p>
-        </section>
+            <section class="introduction">
+                <h2>What is Legal Paper Size?</h2>
+                <p>Legal paper size is 8.5in x 14in, commonly used for printing and documents.</p>
+            </section>
 
-        <section class="usage-guide">
-            <h2>Usage Instructions</h2>
-            <ol>
-                <li>Enter the DPI value (dots per inch)</li>
-                <li>Click the "Convert" button or press Enter to get the result</li>
-                <li>Use the "Copy" button to copy the conversion result</li>
-            </ol>
-        </section>
+            <section class="usage-guide">
+                <h2>Usage Instructions</h2>
+                <ol>
+                    <li>Enter the DPI value (dots per inch)</li>
+                    <li>Click the "Convert" button or press Enter to get the result</li>
+                    <li>Use the "Copy" button to copy the conversion result</li>
+                </ol>
+            </section>
 
-        <section class="examples-section">
-            <h2>Common Conversion Examples</h2>
-            <ul class="conversion-examples">
-                <li>300 DPI = 2550px x 4200px</li>
-                <li>72 DPI = 612px x 1008px</li>
-            </ul>
-        </section>
-    </main>
+            <section class="examples-section">
+                <h2>Common Conversion Examples</h2>
+                <ul class="conversion-examples">
+                    <li>300 DPI = 2550px x 4200px</li>
+                    <li>72 DPI = 612px x 1008px</li>
+                </ul>
+            </section>
+        </main>
 
-    <script>
-        const dpiInput = document.getElementById('dpiValue');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+        <script>
+            const dpiInput = document.getElementById('dpiValue');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
 
-        function convertLegalToPx() {
-            const dpi = parseFloat(dpiInput.value);
-            if (!isNaN(dpi)) {
-                const widthPx = (8.5 * 25.4 / 25.4) * dpi; // 8.5in to px
-                const heightPx = (14 * 25.4 / 25.4) * dpi; // 14in to px
-                resultSpan.textContent = `${Math.round(widthPx)} x ${Math.round(heightPx)}`;
-                document.getElementById('formula').textContent = `Calculation formula: px = (size / 25.4) × DPI`;
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+            function convertLegalToPx() {
+                const dpi = parseFloat(dpiInput.value);
+                if (!isNaN(dpi)) {
+                    const widthPx = (8.5 * 25.4 / 25.4) * dpi; // 8.5in to px
+                    const heightPx = (14 * 25.4 / 25.4) * dpi; // 14in to px
+                    resultSpan.textContent = `${Math.round(widthPx)} x ${Math.round(heightPx)}`;
+                    document.getElementById('formula').textContent = `Calculation formula: px = (size / 25.4) × DPI`;
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        dpiInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertLegalToPx();
-        });
-        convertBtn.addEventListener('click', convertLegalToPx);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            dpiInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertLegalToPx();
+            });
+            convertBtn.addEventListener('click', convertLegalToPx);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

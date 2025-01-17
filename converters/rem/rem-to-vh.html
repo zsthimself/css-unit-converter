@@ -5,82 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="REM to Viewport Height online converter - Accurately calculate the conversion from REM to vh">
     <meta name="keywords" content="rem to vh, REM to viewport height, vh conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/rem/rem-to-vh" />
     <title>REM to Viewport Height Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > REM to Viewport Height
-        </nav>
-        <h1>REM to Viewport Height (VH) Converter</h1>
-        <p>Convert REM to viewport height units (vh), suitable for responsive web design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="settings">
-                <label for="rootFontSize">Root Element Font Size:</label>
-                <input type="number" id="rootFontSize" value="16" min="1">
-                <span class="unit">px</span>
-            </div>
-            <div class="settings">
-                <label for="viewportHeight">Viewport Height:</label>
-                <input type="number" id="viewportHeight" readonly>
-                <span class="unit">px</span>
-            </div>
-            <div class="converter">
-                <input type="number" id="remValue" placeholder="Enter REM value">
-                <span class="unit">rem</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy Result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">vh</span>
-            </div>
-            <div class="formula-display">
-                <p>Calculation Method: (rem × rootFontSize ÷ viewportHeight) × 100 = vh</p>
-            </div>
-        </div>
+    <div class="page-container">
+        <header>
+            <h1>REM to Viewport Height Converter</h1>
+            <p>Convert REM to viewport height (VH), suitable for responsive web design</p>
+        </header>
 
-        <section class="conversion-info">
-            <h2>REM to Viewport Height Conversion Information</h2>
-            <p>Viewport height (vh) is a unit relative to the browser viewport height, where 1vh equals 1% of the viewport height. By entering the REM value and the root element font size, you can calculate the corresponding vh value.</p>
-            
-            <h3>Common Conversion Values (Based on 1080px Height):</h3>
-            <ul class="conversion-examples">
-                <li>1rem = 8vh (Assuming root element is 16px)</li>
-                <li>2rem = 16vh (Assuming root element is 16px)</li>
-                <li>6rem = 48vh (Assuming root element is 16px)</li>
-            </ul>
-
-            <div class="usage-notes">
-                <h3>Usage Instructions:</h3>
-                <ol>
-                    <li>Set the root element font size (default 16px)</li>
-                    <li>Note the current viewport height</li>
-                    <li>Enter the REM value</li>
-                    <li>Get the corresponding vh value</li>
-                </ol>
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="settings">
+                    <label for="rootFontSize">Root Element Font Size:</label>
+                    <input type="number" id="rootFontSize" value="16" min="1">
+                    <span class="unit">px</span>
+                </div>
+                <div class="settings">
+                    <label for="viewportHeight">Viewport Height:</label>
+                    <input type="number" id="viewportHeight" readonly>
+                    <span class="unit">px</span>
+                </div>
+                <div class="converter">
+                    <input type="number" id="remValue" placeholder="Enter REM value">
+                    <span class="unit">rem</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy Result">Copy</button>
+                </div>
             </div>
 
-            <div class="tips">
-                <h3>Usage Tips:</h3>
-                <ul>
-                    <li>Suitable for responsive layout</li>
-                    <li>Changes with viewport height</li>
-                    <li>Accurate to three decimal places</li>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">vh</span>
+                </div>
+                <div class="formula-display">
+                    <p>Calculation Method: (rem × rootFontSize ÷ viewportHeight) × 100 = vh</p>
+                </div>
+            </div>
+
+            <section class="conversion-info">
+                <h2>REM to Viewport Height Conversion Information</h2>
+                <p>Viewport height (vh) is a unit relative to the browser viewport height, where 1vh equals 1% of the viewport height. By entering the REM value and the root element font size, you can calculate the corresponding vh value.</p>
+                
+                <h3>Common Conversion Values (Based on 1080px Height):</h3>
+                <ul class="conversion-examples">
+                    <li>1rem = 8vh (Assuming root element is 16px)</li>
+                    <li>2rem = 16vh (Assuming root element is 16px)</li>
+                    <li>6rem = 48vh (Assuming root element is 16px)</li>
                 </ul>
-            </div>
-        </section>
-    </main>
+
+                <div class="usage-notes">
+                    <h3>Usage Instructions:</h3>
+                    <ol>
+                        <li>Set the root element font size (default 16px)</li>
+                        <li>Note the current viewport height</li>
+                        <li>Enter the REM value</li>
+                        <li>Get the corresponding vh value</li>
+                    </ol>
+                </div>
+
+                <div class="tips">
+                    <h3>Usage Tips:</h3>
+                    <ul>
+                        <li>Suitable for responsive layout</li>
+                        <li>Changes with viewport height</li>
+                        <li>Accurate to three decimal places</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <script>
         const remInput = document.getElementById('remValue');

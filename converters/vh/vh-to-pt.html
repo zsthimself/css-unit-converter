@@ -5,65 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Viewport height to point online converter - Accurately calculate the conversion from viewport height to points">
     <meta name="keywords" content="vh to pt, viewport height to points, viewport height conversion, point conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/vh/vh-to-pt" />
     <title>Viewport Height to Point Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Viewport Height to Point
-        </nav>
-        <h1>Viewport Height to Point Converter</h1>
-        <p>Convert viewport height (VH) to points (PT), suitable for typesetting and design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="vhValue" placeholder="Enter viewport height value">
-                <span class="unit">vh</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">pt</span>
+    <div class="page-container">
+        <header>
+            <h1>Viewport Height to Point Converter</h1>
+            <p>Convert viewport height (VH) to points (PT), suitable for typesetting and design</p>
+        </header>
+
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="vhValue" placeholder="Enter viewport height value">
+                    <span class="unit">vh</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p id="formula">Calculation formula: </p>
+
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">pt</span>
+                </div>
+                <div class="formula-display">
+                    <p id="formula">Calculation formula: </p>
+                </div>
             </div>
-        </div>
 
-        <section class="introduction">
-            <h2>What are Viewport Height (VH) and Points (PT)?</h2>
-            <p>Viewport height (VH) is a percentage unit relative to the height of the viewport. Points (PT) are commonly used units in printing and typesetting.</p>
-        </section>
+            <section class="introduction">
+                <h2>What are Viewport Height (VH) and Points (PT)?</h2>
+                <p>Viewport height (VH) is a percentage unit relative to the height of the viewport. Points (PT) are commonly used units in printing and typesetting.</p>
+            </section>
 
-        <section class="usage-guide">
-            <h2>Usage Instructions</h2>
-            <ol>
-                <li>Enter the viewport height value to convert</li>
-                <li>Click the "Convert" button or press Enter to get the result</li>
-                <li>Use the "Copy" button to copy the conversion result</li>
-            </ol>
-        </section>
+            <section class="usage-guide">
+                <h2>Usage Instructions</h2>
+                <ol>
+                    <li>Enter the viewport height value to convert</li>
+                    <li>Click the "Convert" button or press Enter to get the result</li>
+                    <li>Use the "Copy" button to copy the conversion result</li>
+                </ol>
+            </section>
 
-        <section class="examples-section">
-            <h2>Common Conversion Examples</h2>
-            <ul class="conversion-examples">
-                <li>1vh = 0.75pt (assuming viewport height is 1000px)</li>
-                <li>2vh = 1.5pt</li>
-                <li>5vh = 3.75pt</li>
-                <li>10vh = 7.5pt</li>
-            </ul>
-        </section>
-    </main>
+            <section class="examples-section">
+                <h2>Common Conversion Examples</h2>
+                <ul class="conversion-examples">
+                    <li>1vh = 0.75pt (assuming viewport height is 1000px)</li>
+                    <li>2vh = 1.5pt</li>
+                    <li>5vh = 3.75pt</li>
+                    <li>10vh = 7.5pt</li>
+                </ul>
+            </section>
+        </main>
+    </div>
 
     <script>
         const vhInput = document.getElementById('vhValue');

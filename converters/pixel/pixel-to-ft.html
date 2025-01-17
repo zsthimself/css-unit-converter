@@ -5,119 +5,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pixel (px) to Feet (ft) online converter - Accurately calculate the conversion from pixels to feet">
     <meta name="keywords" content="px to ft, pixel to feet, feet conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/pixel/pixel-to-ft" />
     <title>Pixel to Feet Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Pixel to Feet
-        </nav>
-        <h1>Pixel (PX) to Feet (FT) Converter</h1>
-        <p>Accurately convert pixels (px) to feet (ft), suitable for actual size design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="settings">
-                <label for="dpi">Screen DPI:</label>
-                <input type="number" id="dpi" value="96" min="1">
-                <span class="unit">dpi</span>
-            </div>
-            <div class="converter">
-                <input type="number" id="pxValue" placeholder="Enter pixel value">
-                <span class="unit">px</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">ft</span>
-            </div>
-            <div class="formula-display">
-                <p>Conversion formula: 1ft = 1152px (96dpi)</p>
-                <p>Calculation method: px ÷ (dpi × 12) = ft</p>
-            </div>
-        </div>
+    <div class="page-container">
+        <header>
+            <h1>Pixel to Feet Converter</h1>
+            <p>Accurately convert pixels (px) to feet (ft), suitable for actual size design</p>
+        </header>
 
-        <section class="conversion-info">
-            <h2>Pixel to Feet Conversion Instructions</h2>
-            <p>Feet (ft) is a physical length unit, 1 foot equals 12 inches. On a standard 96 DPI display, 1 foot is approximately equal to 1152 pixels.</p>
-            
-            <h3>Common Conversion Values (Based on 96 DPI):</h3>
-            <ul class="conversion-examples">
-                <li>1152px = 1ft</li>
-                <li>576px = 0.5ft</li>
-                <li>2304px = 2ft</li>
-                <li>96px = 1in = 0.0833ft</li>
-            </ul>
-
-            <div class="usage-notes">
-                <h3>Usage Instructions:</h3>
-                <ol>
-                    <li>You can adjust the Screen DPI value (default 96)</li>
-                    <li>Enter the pixel value in the input box</li>
-                    <li>Click "Convert" button or press Enter</li>
-                    <li>Get the corresponding feet value</li>
-                </ol>
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="settings">
+                    <label for="dpi">Screen DPI:</label>
+                    <input type="number" id="dpi" value="96" min="1">
+                    <span class="unit">dpi</span>
+                </div>
+                <div class="converter">
+                    <input type="number" id="pxValue" placeholder="Enter pixel value">
+                    <span class="unit">px</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
 
-            <div class="tips">
-                <h3>Usage Tips:</h3>
-                <ul>
-                    <li>Feet unit is commonly used for actual size design</li>
-                    <li>1 foot = 12 inches</li>
-                    <li>Suitable for large size design</li>
-                    <li>Note the DPI differences between different devices</li>
-                    <li>Can be used in conjunction with inches</li>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">ft</span>
+                </div>
+                <div class="formula-display">
+                    <p>Conversion formula: 1ft = 1152px (96dpi)</p>
+                    <p>Calculation method: px ÷ (dpi × 12) = ft</p>
+                </div>
+            </div>
+
+            <section class="conversion-info">
+                <h2>Pixel to Feet Conversion Instructions</h2>
+                <p>Feet (ft) is a physical length unit, 1 foot equals 12 inches. On a standard 96 DPI display, 1 foot is approximately equal to 1152 pixels.</p>
+                
+                <h3>Common Conversion Values (Based on 96 DPI):</h3>
+                <ul class="conversion-examples">
+                    <li>1152px = 1ft</li>
+                    <li>576px = 0.5ft</li>
+                    <li>2304px = 2ft</li>
+                    <li>96px = 1in = 0.0833ft</li>
                 </ul>
-            </div>
-        </section>
-    </main>
 
-    <script>
-        const pxInput = document.getElementById('pxValue');
-        const dpiInput = document.getElementById('dpi');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+                <div class="usage-notes">
+                    <h3>Usage Instructions:</h3>
+                    <ol>
+                        <li>You can adjust the Screen DPI value (default 96)</li>
+                        <li>Enter the pixel value in the input box</li>
+                        <li>Click "Convert" button or press Enter</li>
+                        <li>Get the corresponding feet value</li>
+                    </ol>
+                </div>
 
-        function convertPxToFt() {
-            const px = parseFloat(pxInput.value);
-            const dpi = parseFloat(dpiInput.value) || 96;
-            
-            if (!isNaN(px)) {
-                // 1ft = 12in, 1in = dpi pixels
-                const ft = px / (dpi * 12);
-                resultSpan.textContent = ft.toFixed(3);
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+                <div class="tips">
+                    <h3>Usage Tips:</h3>
+                    <ul>
+                        <li>Feet unit is commonly used for actual size design</li>
+                        <li>1 foot = 12 inches</li>
+                        <li>Suitable for large size design</li>
+                        <li>Note the DPI differences between different devices</li>
+                        <li>Can be used in conjunction with inches</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            const pxInput = document.getElementById('pxValue');
+            const dpiInput = document.getElementById('dpi');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
+
+            function convertPxToFt() {
+                const px = parseFloat(pxInput.value);
+                const dpi = parseFloat(dpiInput.value) || 96;
+                
+                if (!isNaN(px)) {
+                    // 1ft = 12in, 1in = dpi pixels
+                    const ft = px / (dpi * 12);
+                    resultSpan.textContent = ft.toFixed(3);
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        pxInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertPxToFt();
-        });
-        dpiInput.addEventListener('input', convertPxToFt);
-        convertBtn.addEventListener('click', convertPxToFt);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            pxInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertPxToFt();
+            });
+            dpiInput.addEventListener('input', convertPxToFt);
+            convertBtn.addEventListener('click', convertPxToFt);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

@@ -5,65 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pica to millimeter online converter - Accurately calculate the conversion from pica to millimeters">
     <meta name="keywords" content="pc to mm, pica to millimeters, pica conversion, millimeter conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/pc/pc-to-mm" />
     <title>Pica to Millimeter Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Pica to Millimeter
-        </nav>
-        <h1>Pica to Millimeter Converter</h1>
-        <p>Convert pica (PC) to millimeters (MM), suitable for typesetting and design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="pcValue" placeholder="Enter pica value">
-                <span class="unit">pc</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">mm</span>
+    <div class="page-container">
+        <header>
+            <h1>Pica to Millimeter Converter</h1>
+            <p>Convert pica (PC) to millimeters (MM), suitable for typesetting and design</p>
+        </header>
+
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="pcValue" placeholder="Enter pica value">
+                    <span class="unit">pc</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p id="formula">Calculation formula: </p>
+
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">mm</span>
+                </div>
+                <div class="formula-display">
+                    <p id="formula">Calculation formula: </p>
+                </div>
             </div>
-        </div>
 
-        <section class="introduction">
-            <h2>What are Pica (PC) and Millimeters (MM)?</h2>
-            <p>Pica (PC) is a unit commonly used in printing and typesetting. Millimeters (MM) is a commonly used unit of length.</p>
-        </section>
+            <section class="introduction">
+                <h2>What are Pica (PC) and Millimeters (MM)?</h2>
+                <p>Pica (PC) is a unit commonly used in printing and typesetting. Millimeters (MM) is a commonly used unit of length.</p>
+            </section>
 
-        <section class="usage-guide">
-            <h2>Usage Instructions</h2>
-            <ol>
-                <li>Enter the pica value to convert</li>
-                <li>Click the "Convert" button or press Enter to get the result</li>
-                <li>Use the "Copy" button to copy the conversion result</li>
-            </ol>
-        </section>
+            <section class="usage-guide">
+                <h2>Usage Instructions</h2>
+                <ol>
+                    <li>Enter the pica value to convert</li>
+                    <li>Click the "Convert" button or press Enter to get the result</li>
+                    <li>Use the "Copy" button to copy the conversion result</li>
+                </ol>
+            </section>
 
-        <section class="examples-section">
-            <h2>Common Conversion Examples</h2>
-            <ul class="conversion-examples">
-                <li>1pc = 16.6667mm</li>
-                <li>2pc = 33.3333mm</li>
-                <li>5pc = 83.3333mm</li>
-                <li>10pc = 166.6667mm</li>
-            </ul>
-        </section>
-    </main>
+            <section class="examples-section">
+                <h2>Common Conversion Examples</h2>
+                <ul class="conversion-examples">
+                    <li>1pc = 16.6667mm</li>
+                    <li>2pc = 33.3333mm</li>
+                    <li>5pc = 83.3333mm</li>
+                    <li>10pc = 166.6667mm</li>
+                </ul>
+            </section>
+        </main>
+    </div>
 
     <script>
         const pcInput = document.getElementById('pcValue');

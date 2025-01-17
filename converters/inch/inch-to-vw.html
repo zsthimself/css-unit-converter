@@ -5,135 +5,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Inch (in) to Viewport Width (vw) online converter - Accurately calculate the conversion from inches to vw">
     <meta name="keywords" content="in to vw, inch to viewport width, viewport width conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/inch/inch-to-vw" />
     <title>Inch to Viewport Width Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Inch to Viewport Width
-        </nav>
-        <h1>Inch (IN) to Viewport Width (VW) Converter</h1>
-        <p>Accurately convert inches (in) to viewport width (vw), suitable for responsive web design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="settings">
-                <label for="dpi">Screen DPI:</label>
-                <input type="number" id="dpi" value="96" min="1">
-                <span class="unit">dpi</span>
-            </div>
-            <div class="settings">
-                <label for="viewportWidth">Viewport Width:</label>
-                <input type="number" id="viewportWidth" readonly>
-                <span class="unit">px</span>
-            </div>
-            <div class="converter">
-                <input type="number" id="inchValue" placeholder="Enter inch value">
-                <span class="unit">in</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">vw</span>
-            </div>
-            <div class="formula-display">
-                <p>Conversion formula: (inch × dpi ÷ viewportWidth) × 100 = vw</p>
-            </div>
-        </div>
+    <div class="page-container">
+        <header>
+            <h1>Inch to Viewport Width Converter</h1>
+            <p>Accurately convert inches (in) to viewport width (vw), suitable for responsive web design</p>
+        </header>
 
-        <section class="conversion-info">
-            <h2>Inch to Viewport Width Conversion Instructions</h2>
-            <p>Viewport width (vw) is a unit relative to the browser viewport width, where 1vw equals 1% of the viewport width.</p>
-            
-            <h3>Common Conversion Values Reference (based on 1920px width):</h3>
-            <ul class="conversion-examples">
-                <li>1in = 5vw (96dpi)</li>
-                <li>2in = 10vw (96dpi)</li>
-                <li>9.6in = 48vw (96dpi)</li>
-                <li>19.2in = 96vw (96dpi)</li>
-            </ul>
-
-            <div class="usage-notes">
-                <h3>Usage Instructions:</h3>
-                <ol>
-                    <li>Adjust the screen DPI value (default 96)</li>
-                    <li>Input the inch value</li>
-                    <li>Click the "Convert" button or press Enter</li>
-                    <li>Get the corresponding VW value</li>
-                </ol>
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="settings">
+                    <label for="dpi">Screen DPI:</label>
+                    <input type="number" id="dpi" value="96" min="1">
+                    <span class="unit">dpi</span>
+                </div>
+                <div class="settings">
+                    <label for="viewportWidth">Viewport Width:</label>
+                    <input type="number" id="viewportWidth" readonly>
+                    <span class="unit">px</span>
+                </div>
+                <div class="converter">
+                    <input type="number" id="inchValue" placeholder="Enter inch value">
+                    <span class="unit">in</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
 
-            <div class="tips">
-                <h3>Usage Tips:</h3>
-                <ul>
-                    <li>Suitable for responsive layouts</li>
-                    <li>Changes with viewport width</li>
-                    <li>Accurate to three decimal places</li>
-                    <li>Commonly used for fluid layouts</li>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">vw</span>
+                </div>
+                <div class="formula-display">
+                    <p>Conversion formula: (inch × dpi ÷ viewportWidth) × 100 = vw</p>
+                </div>
+            </div>
+
+            <section class="conversion-info">
+                <h2>Inch to Viewport Width Conversion Instructions</h2>
+                <p>Viewport width (vw) is a unit relative to the browser viewport width, where 1vw equals 1% of the viewport width.</p>
+                
+                <h3>Common Conversion Values Reference (based on 1920px width):</h3>
+                <ul class="conversion-examples">
+                    <li>1in = 5vw (96dpi)</li>
+                    <li>2in = 10vw (96dpi)</li>
+                    <li>9.6in = 48vw (96dpi)</li>
+                    <li>19.2in = 96vw (96dpi)</li>
                 </ul>
-            </div>
-        </section>
-    </main>
 
-    <script>
-        const inchInput = document.getElementById('inchValue');
-        const dpiInput = document.getElementById('dpi');
-        const viewportWidthInput = document.getElementById('viewportWidth');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+                <div class="usage-notes">
+                    <h3>Usage Instructions:</h3>
+                    <ol>
+                        <li>Adjust the screen DPI value (default 96)</li>
+                        <li>Input the inch value</li>
+                        <li>Click the "Convert" button or press Enter</li>
+                        <li>Get the corresponding VW value</li>
+                    </ol>
+                </div>
 
-        function updateViewportWidth() {
-            viewportWidthInput.value = window.innerWidth;
-        }
+                <div class="tips">
+                    <h3>Usage Tips:</h3>
+                    <ul>
+                        <li>Suitable for responsive layouts</li>
+                        <li>Changes with viewport width</li>
+                        <li>Accurate to three decimal places</li>
+                        <li>Commonly used for fluid layouts</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
 
-        function convertInchToVw() {
-            const inch = parseFloat(inchInput.value);
-            const dpi = parseFloat(dpiInput.value) || 96;
-            const viewportWidth = window.innerWidth;
-            
-            if (!isNaN(inch)) {
-                const px = inch * dpi;
-                const vw = (px / viewportWidth) * 100;
-                resultSpan.textContent = vw.toFixed(3);
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+        <script>
+            const inchInput = document.getElementById('inchValue');
+            const dpiInput = document.getElementById('dpi');
+            const viewportWidthInput = document.getElementById('viewportWidth');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
+
+            function updateViewportWidth() {
+                viewportWidthInput.value = window.innerWidth;
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function convertInchToVw() {
+                const inch = parseFloat(inchInput.value);
+                const dpi = parseFloat(dpiInput.value) || 96;
+                const viewportWidth = window.innerWidth;
+                
+                if (!isNaN(inch)) {
+                    const px = inch * dpi;
+                    const vw = (px / viewportWidth) * 100;
+                    resultSpan.textContent = vw.toFixed(3);
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
+            }
 
-        // Initialize and event listeners
-        updateViewportWidth();
-        window.addEventListener('resize', () => {
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
+
+            // Initialize and event listeners
             updateViewportWidth();
-            convertInchToVw();
-        });
-        
-        inchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertInchToVw();
-        });
-        dpiInput.addEventListener('input', convertInchToVw);
-        convertBtn.addEventListener('click', convertInchToVw);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            window.addEventListener('resize', () => {
+                updateViewportWidth();
+                convertInchToVw();
+            });
+            
+            inchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertInchToVw();
+            });
+            dpiInput.addEventListener('input', convertInchToVw);
+            convertBtn.addEventListener('click', convertInchToVw);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

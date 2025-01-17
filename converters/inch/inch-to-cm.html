@@ -5,75 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Inch (in) to Centimeter (cm) online converter - Accurately calculate the conversion from inches to centimeters">
     <meta name="keywords" content="in to cm, inch to centimeter, inch to cm, centimeter conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/inch/inch-to-cm" />
     <title>Inch to Centimeter Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Inch to Centimeter
-        </nav>
-        <h1>Inch (IN) to Centimeter (CM) Converter</h1>
-        <p>Accurately convert inches (in) to centimeters (cm), suitable for length unit conversion</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="inchValue" placeholder="Enter inch value">
-                <span class="unit">in</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">cm</span>
-            </div>
-            <div class="formula-display">
-                <p>Conversion formula: 1 inch = 2.54 centimeters</p>
-                <p>Calculation method: inch × 2.54 = cm</p>
-            </div>
-        </div>
+    <div class="page-container">
+        <header>
+            <h1>Inch to Centimeter Converter</h1>
+            <p>Accurately convert inches (in) to centimeters (cm), suitable for length unit conversion</p>
+        </header>
 
-        <section class="conversion-info">
-            <h2>Inch to Centimeter Conversion Instructions</h2>
-            <p>Inch (in) is a unit of length in the imperial system, and 1 inch is precisely equal to 2.54 centimeters. This is a fixed conversion relationship, unaffected by devices or displays.</p>
-            
-            <h3>Common conversion values reference:</h3>
-            <ul class="conversion-examples">
-                <li>1in = 2.54cm</li>
-                <li>2in = 5.08cm</li>
-                <li>0.5in = 1.27cm</li>
-                <li>12in = 30.48cm (1 foot)</li>
-            </ul>
-
-            <div class="usage-notes">
-                <h3>Usage instructions:</h3>
-                <ol>
-                    <li>Enter the inch value in the input box</li>
-                    <li>Click "Convert" button or press Enter</li>
-                    <li>Get the corresponding centimeter value</li>
-                    <li>Click the Copy button to copy the result</li>
-                </ol>
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="inchValue" placeholder="Enter inch value">
+                    <span class="unit">in</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
 
-            <div class="tips">
-                <h3>Usage tips:</h3>
-                <ul>
-                    <li>Commonly used for international unit conversion</li>
-                    <li>Accurate to two decimal places</li>
-                    <li>Suitable for everyday length measurements</li>
-                    <li>Widely used in engineering design</li>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">cm</span>
+                </div>
+                <div class="formula-display">
+                    <p>Conversion formula: 1 inch = 2.54 centimeters</p>
+                    <p>Calculation method: inch × 2.54 = cm</p>
+                </div>
+            </div>
+
+            <section class="conversion-info">
+                <h2>Inch to Centimeter Conversion Instructions</h2>
+                <p>Inch (in) is a unit of length in the imperial system, and 1 inch is precisely equal to 2.54 centimeters. This is a fixed conversion relationship, unaffected by devices or displays.</p>
+                
+                <h3>Common conversion values reference:</h3>
+                <ul class="conversion-examples">
+                    <li>1in = 2.54cm</li>
+                    <li>2in = 5.08cm</li>
+                    <li>0.5in = 1.27cm</li>
+                    <li>12in = 30.48cm (1 foot)</li>
                 </ul>
-            </div>
-        </section>
-    </main>
+
+                <div class="usage-notes">
+                    <h3>Usage instructions:</h3>
+                    <ol>
+                        <li>Enter the inch value in the input box</li>
+                        <li>Click "Convert" button or press Enter</li>
+                        <li>Get the corresponding centimeter value</li>
+                        <li>Click the Copy button to copy the result</li>
+                    </ol>
+                </div>
+
+                <div class="tips">
+                    <h3>Usage tips:</h3>
+                    <ul>
+                        <li>Commonly used for international unit conversion</li>
+                        <li>Accurate to two decimal places</li>
+                        <li>Suitable for everyday length measurements</li>
+                        <li>Widely used in engineering design</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <script>
         const inchInput = document.getElementById('inchValue');

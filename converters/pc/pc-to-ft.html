@@ -5,99 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pica to feet online converter - Accurately calculate the conversion from pica to feet">
     <meta name="keywords" content="pc to ft, pica to feet, pica conversion, feet conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/pc/pc-to-ft" />
     <title>Pica to Feet Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Pica to Feet
-        </nav>
-        <h1>Pica to Feet Converter</h1>
-        <p>Convert pica (PC) to feet (FT), suitable for typesetting and design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="pcValue" placeholder="Enter pica value">
-                <span class="unit">pc</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">ft</span>
+    <div class="page-container">
+        <header>
+            <h1>Pica to Feet Converter</h1>
+            <p>Convert pica (PC) to feet (FT), suitable for typesetting and design</p>
+        </header>
+
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="pcValue" placeholder="Enter pica value">
+                    <span class="unit">pc</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p id="formula">Calculation formula: </p>
+
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">ft</span>
+                </div>
+                <div class="formula-display">
+                    <p id="formula">Calculation formula: </p>
+                </div>
             </div>
-        </div>
 
-        <section class="introduction">
-            <h2>What are Pica (PC) and Feet (FT)?</h2>
-            <p>Pica (PC) is a unit commonly used in printing and typesetting. Feet (FT) is another commonly used unit of length.</p>
-        </section>
+            <section class="introduction">
+                <h2>What are Pica (PC) and Feet (FT)?</h2>
+                <p>Pica (PC) is a unit commonly used in printing and typesetting. Feet (FT) is another commonly used unit of length.</p>
+            </section>
 
-        <section class="usage-guide">
-            <h2>Usage Instructions</h2>
-            <ol>
-                <li>Enter the pica value to convert</li>
-                <li>Click the "Convert" button or press Enter to get the result</li>
-                <li>Use the "Copy" button to copy the conversion result</li>
-            </ol>
-        </section>
+            <section class="usage-guide">
+                <h2>Usage Instructions</h2>
+                <ol>
+                    <li>Enter the pica value to convert</li>
+                    <li>Click the "Convert" button or press Enter to get the result</li>
+                    <li>Use the "Copy" button to copy the conversion result</li>
+                </ol>
+            </section>
 
-        <section class="examples-section">
-            <h2>Common Conversion Examples</h2>
-            <ul class="conversion-examples">
-                <li>1pc = 0.0139ft</li>
-                <li>2pc = 0.0278ft</li>
-                <li>5pc = 0.0694ft</li>
-                <li>10pc = 0.1389ft</li>
-            </ul>
-        </section>
-    </main>
+            <section class="examples-section">
+                <h2>Common Conversion Examples</h2>
+                <ul class="conversion-examples">
+                    <li>1pc = 0.0139ft</li>
+                    <li>2pc = 0.0278ft</li>
+                    <li>5pc = 0.0694ft</li>
+                    <li>10pc = 0.1389ft</li>
+                </ul>
+            </section>
+        </main>
 
-    <script>
-        const pcInput = document.getElementById('pcValue');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+        <script>
+            const pcInput = document.getElementById('pcValue');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
 
-        function convertPcToFt() {
-            const pc = parseFloat(pcInput.value);
-            if (!isNaN(pc)) {
-                const ft = pc * 0.0139; // 1pc = 0.0139ft
-                resultSpan.textContent = ft.toFixed(4);
-                document.getElementById('formula').textContent = `Calculation formula: ft = ${pc}pc × 0.0139`;
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+            function convertPcToFt() {
+                const pc = parseFloat(pcInput.value);
+                if (!isNaN(pc)) {
+                    const ft = pc * 0.0139; // 1pc = 0.0139ft
+                    resultSpan.textContent = ft.toFixed(4);
+                    document.getElementById('formula').textContent = `Calculation formula: ft = ${pc}pc × 0.0139`;
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        pcInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertPcToFt();
-        });
-        convertBtn.addEventListener('click', convertPcToFt);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            pcInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertPcToFt();
+            });
+            convertBtn.addEventListener('click', convertPcToFt);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 

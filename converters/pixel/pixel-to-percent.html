@@ -5,80 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pixel (px) to Percent (%) online converter - Accurately calculate the conversion from pixels to percent">
     <meta name="keywords" content="px to %, pixel to percent, percent conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/pixel/pixel-to-percent" />
     <title>Pixel to Percent Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Pixel to Percent
-        </nav>
-        <h1>Pixel (PX) to Percent (%) Converter</h1>
-        <p>Accurately convert pixels (px) to percent (%), suitable for responsive layout design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="settings">
-                <label for="parentSize">Parent Element Size:</label>
-                <input type="number" id="parentSize" value="1000" min="1">
-                <span class="unit">px</span>
-            </div>
-            <div class="converter">
-                <input type="number" id="pxValue" placeholder="Enter pixel value">
-                <span class="unit">px</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">%</span>
-            </div>
-            <div class="formula-display">
-                <p>Conversion formula: Percentage = (Child Element Size ÷ Parent Element Size) × 100</p>
-                <p>Calculation method: (px ÷ Parent Element Size) × 100 = %</p>
-            </div>
-        </div>
+    <div class="page-container">
+        <header>
+            <h1>Pixel to Percentage Converter</h1>
+            <p>Accurately convert pixels (px) to percentage (%), suitable for responsive design</p>
+        </header>
 
-        <section class="conversion-info">
-            <h2>Pixel to Percent Conversion Instructions</h2>
-            <p>Percentage (%) is a unit relative to the parent element. For example, if the parent element width is 1000px, and the child element is 200px, the child element width is 20%.</p>
-            
-            <h3>Common Conversion Values (Based on 1000px Parent Element):</h3>
-            <ul class="conversion-examples">
-                <li>100px = 10%</li>
-                <li>250px = 25%</li>
-                <li>500px = 50%</li>
-                <li>1000px = 100%</li>
-            </ul>
-
-            <div class="usage-notes">
-                <h3>Usage Instructions:</h3>
-                <ol>
-                    <li>Set the parent element size (default 1000px)</li>
-                    <li>Enter the pixel value in the input field</li>
-                    <li>Click "Convert" button or press Enter</li>
-                    <li>Get the corresponding percentage value</li>
-                </ol>
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="settings">
+                    <label for="parentSize">Parent Element Size:</label>
+                    <input type="number" id="parentSize" value="1000" min="1">
+                    <span class="unit">px</span>
+                </div>
+                <div class="converter">
+                    <input type="number" id="pxValue" placeholder="Enter pixel value">
+                    <span class="unit">px</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
 
-            <div class="tips">
-                <h3>Usage Tips:</h3>
-                <ul>
-                    <li>Percentage units are suitable for responsive layout design</li>
-                    <li>Can be used for width, height, and margin</li>
-                    <li>Pay attention to parent element size changes</li>
-                    <li>Suitable for flow layout design</li>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">%</span>
+                </div>
+                <div class="formula-display">
+                    <p>Conversion formula: Percentage = (Child Element Size ÷ Parent Element Size) × 100</p>
+                    <p>Calculation method: (px ÷ Parent Element Size) × 100 = %</p>
+                </div>
+            </div>
+
+            <section class="conversion-info">
+                <h2>Pixel to Percent Conversion Instructions</h2>
+                <p>Percentage (%) is a unit relative to the parent element. For example, if the parent element width is 1000px, and the child element is 200px, the child element width is 20%.</p>
+                
+                <h3>Common Conversion Values (Based on 1000px Parent Element):</h3>
+                <ul class="conversion-examples">
+                    <li>100px = 10%</li>
+                    <li>250px = 25%</li>
+                    <li>500px = 50%</li>
+                    <li>1000px = 100%</li>
                 </ul>
-            </div>
-        </section>
-    </main>
+
+                <div class="usage-notes">
+                    <h3>Usage Instructions:</h3>
+                    <ol>
+                        <li>Set the parent element size (default 1000px)</li>
+                        <li>Enter the pixel value in the input field</li>
+                        <li>Click "Convert" button or press Enter</li>
+                        <li>Get the corresponding percentage value</li>
+                    </ol>
+                </div>
+
+                <div class="tips">
+                    <h3>Usage Tips:</h3>
+                    <ul>
+                        <li>Percentage units are suitable for responsive layout design</li>
+                        <li>Can be used for width, height, and margin</li>
+                        <li>Pay attention to parent element size changes</li>
+                        <li>Suitable for flow layout design</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <script>
         const pxInput = document.getElementById('pxValue');

@@ -5,100 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Point to Pica online converter - Accurately calculate the conversion from points to Pica">
     <meta name="keywords" content="pt to pc, point to Pica, Pica conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/point/pt-to-pc" />
     <title>Point to Pica Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Point to Pica
-        </nav>
-        <h1>Point to Pica (PC) Converter</h1>
-        <p>Convert points (PT) to Pica (PC), suitable for typesetting and design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <label for="ptValue">Enter Point Value:</label>
-                <input type="number" id="ptValue" placeholder="Enter point value">
-                <span class="unit">pt</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy Result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">pc</span>
+    <div class="page-container">
+        <header>
+            <h1>Point to Pica Converter</h1>
+            <p>Convert points (PT) to picas (PC), suitable for typesetting and design</p>
+        </header>
+
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <label for="ptValue">Enter Point Value:</label>
+                    <input type="number" id="ptValue" placeholder="Enter point value">
+                    <span class="unit">pt</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy Result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p id="formula">Calculation Formula: </p>
+
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">pc</span>
+                </div>
+                <div class="formula-display">
+                    <p id="formula">Calculation Formula: </p>
+                </div>
             </div>
-        </div>
 
-        <section class="introduction">
-            <h2>What are Points (PT) and Pica (PC)?</h2>
-            <p>Points (PT) are a unit of measurement commonly used in typography. Pica (PC) is a typographic unit, where 1 Pica equals 12 points.</p>
-        </section>
+            <section class="introduction">
+                <h2>What are Points (PT) and Pica (PC)?</h2>
+                <p>Points (PT) are a unit of measurement commonly used in typography. Pica (PC) is a typographic unit, where 1 Pica equals 12 points.</p>
+            </section>
 
-        <section class="usage-guide">
-            <h2>Usage Instructions</h2>
-            <ol>
-                <li>Enter the point value to convert</li>
-                <li>Click the "Convert" button or press the Enter key to get the result</li>
-                <li>Use the "Copy" button to copy the conversion result</li>
-            </ol>
-        </section>
+            <section class="usage-guide">
+                <h2>Usage Instructions</h2>
+                <ol>
+                    <li>Enter the point value to convert</li>
+                    <li>Click the "Convert" button or press the Enter key to get the result</li>
+                    <li>Use the "Copy" button to copy the conversion result</li>
+                </ol>
+            </section>
 
-        <section class="examples-section">
-            <h2>Common Conversion Examples</h2>
-            <ul class="conversion-examples">
-                <li>1pt = 0.0833pc</li>
-                <li>12pt = 1pc</li>
-                <li>24pt = 2pc</li>
-                <li>72pt = 6pc</li>
-            </ul>
-        </section>
-    </main>
+            <section class="examples-section">
+                <h2>Common Conversion Examples</h2>
+                <ul class="conversion-examples">
+                    <li>1pt = 0.0833pc</li>
+                    <li>12pt = 1pc</li>
+                    <li>24pt = 2pc</li>
+                    <li>72pt = 6pc</li>
+                </ul>
+            </section>
+        </main>
 
-    <script>
-        const ptInput = document.getElementById('ptValue');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+        <script>
+            const ptInput = document.getElementById('ptValue');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
 
-        function convertPtToPc() {
-            const pt = parseFloat(ptInput.value);
-            if (!isNaN(pt)) {
-                const pc = pt / 12; // 1pc = 12pt
-                resultSpan.textContent = pc.toFixed(3);
-                document.getElementById('formula').textContent = `Calculation Formula: pc = ${pt}pt ÷ 12`;
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+            function convertPtToPc() {
+                const pt = parseFloat(ptInput.value);
+                if (!isNaN(pt)) {
+                    const pc = pt / 12; // 1pc = 12pt
+                    resultSpan.textContent = pc.toFixed(3);
+                    document.getElementById('formula').textContent = `Calculation Formula: pc = ${pt}pt ÷ 12`;
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        ptInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertPtToPc();
-        });
-        convertBtn.addEventListener('click', convertPtToPc);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            ptInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertPtToPc();
+            });
+            convertBtn.addEventListener('click', convertPtToPc);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html>

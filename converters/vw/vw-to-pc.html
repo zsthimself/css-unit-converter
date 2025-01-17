@@ -5,60 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Viewport width to Pica online converter - Accurately calculate the conversion from viewport width to Pica">
     <meta name="keywords" content="vw to pc, viewport width to pica, viewport width conversion, pica conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/vw/vw-to-pc" />
     <title>Viewport Width to Pica Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Viewport Width to Pica
-        </nav>
-        <h1>Viewport Width to Pica Converter</h1>
-        <p>Convert viewport width (VW) to Pica (PC), suitable for typesetting and design</p>
-    </header>
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="vwValue" placeholder="Enter viewport width value">
-                <span class="unit">vw</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">pc</span>
+    </nav>
+
+    <div class="page-container">
+        <header>
+            <h1>Viewport Width to Pica Converter</h1>
+            <p>Convert viewport width (VW) to Pica (PC), suitable for typesetting and design</p>
+        </header>
+
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="vwValue" placeholder="Enter viewport width value">
+                    <span class="unit">vw</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p id="formula">Calculation formula: </p>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">pc</span>
+                </div>
+                <div class="formula-display">
+                    <p id="formula">Calculation formula: </p>
+                </div>
             </div>
-        </div>
-        <section class="introduction">
-            <h2>What are Viewport Width (VW) and Pica (PC)?</h2>
-            <p>Viewport width (VW) is a percentage unit relative to the viewport width. Pica (PC) is a commonly used unit in printing and typesetting.</p>
-        </section>
-        <section class="usage-guide">
-            <h2>Usage Guide</h2>
-            <ol>
-                <li>Enter the viewport width value</li>
-                <li>Click "Convert" button or press Enter key to get the result</li>
-                <li>Use "Copy" button to copy the result</li>
-            </ol>
-        </section>
-        <section class="examples-section">
-            <h2>Common Conversion Examples</h2>
-            <ul class="conversion-examples">
-                <li>1vw = 0.01pc (assuming viewport width is 1000px)</li>
-                <li>2vw = 0.02pc</li>
-                <li>5vw = 0.05pc</li>
-                <li>10vw = 0.1pc</li>
-            </ul>
-        </section>
-    </main>
+            <section class="introduction">
+                <h2>What are Viewport Width (VW) and Pica (PC)?</h2>
+                <p>Viewport width (VW) is a percentage unit relative to the viewport width. Pica (PC) is a commonly used unit in printing and typesetting.</p>
+            </section>
+            <section class="usage-guide">
+                <h2>Usage Guide</h2>
+                <ol>
+                    <li>Enter the viewport width value</li>
+                    <li>Click "Convert" button or press Enter key to get the result</li>
+                    <li>Use "Copy" button to copy the result</li>
+                </ol>
+            </section>
+            <section class="examples-section">
+                <h2>Common Conversion Examples</h2>
+                <ul class="conversion-examples">
+                    <li>1vw = 0.01pc (assuming viewport width is 1000px)</li>
+                    <li>2vw = 0.02pc</li>
+                    <li>5vw = 0.05pc</li>
+                    <li>10vw = 0.1pc</li>
+                </ul>
+            </section>
+        </main>
+    </div>
     <script>
         const vwInput = document.getElementById('vwValue');
         const resultSpan = document.getElementById('result');

@@ -8,62 +8,72 @@
     <title>Viewport Width to Pixel Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/vw/vw-to-px" />
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > Viewport Width to Pixel
-        </nav>
-        <h1>Viewport Width to Pixel Converter</h1>
-        <p>Convert viewport width (VW) to pixels (PX), suitable for typesetting and design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="converter">
-                <input type="number" id="vwValue" placeholder="Enter viewport width value">
-                <span class="unit">vw</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">px</span>
+    <div class="page-container">
+        <header>
+            <h1>Viewport Width to Pixel Converter</h1>
+            <p>Convert viewport width (VW) to pixels (PX), suitable for screen unit conversion</p>
+        </header>
+
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="converter">
+                    <input type="number" id="vwValue" placeholder="Enter viewport width value">
+                    <span class="unit">vw</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
-            <div class="formula-display">
-                <p id="formula">Calculation formula: </p>
+
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">px</span>
+                </div>
+                <div class="formula-display">
+                    <p id="formula">Calculation formula: </p>
+                </div>
             </div>
-        </div>
 
-        <section class="introduction">
-            <h2>What are Viewport Width (VW) and Pixels (PX)?</h2>
-            <p>Viewport width (VW) is a percentage unit relative to the viewport width. Pixels (PX) are the basic units of screen display.</p>
-        </section>
+            <section class="introduction">
+                <h2>What are Viewport Width (VW) and Pixels (PX)?</h2>
+                <p>Viewport width (VW) is a percentage unit relative to the viewport width. Pixels (PX) are the basic units of screen display.</p>
+            </section>
 
-        <section class="usage-guide">
-            <h2>Usage Instructions</h2>
-            <ol>
-                <li>Enter the viewport width value</li>
-                <li>Click "Convert" button or press Enter</li>
-                <li>Use "Copy" button to copy the result</li>
-            </ol>
-        </section>
+            <section class="usage-guide">
+                <h2>Usage Instructions</h2>
+                <ol>
+                    <li>Enter the viewport width value</li>
+                    <li>Click "Convert" button or press Enter</li>
+                    <li>Use "Copy" button to copy the result</li>
+                </ol>
+            </section>
 
-        <section class="examples-section">
-            <h2>Common Conversion Examples</h2>
-            <ul class="conversion-examples">
-                <li>1vw = 10px (assuming viewport width is 1000px)</li>
-                <li>2vw = 20px</li>
-                <li>5vw = 50px</li>
-                <li>10vw = 100px</li>
-            </ul>
-        </section>
-    </main>
+            <section class="examples-section">
+                <h2>Common Conversion Examples</h2>
+                <ul class="conversion-examples">
+                    <li>1vw = 10px (assuming viewport width is 1000px)</li>
+                    <li>2vw = 20px</li>
+                    <li>5vw = 50px</li>
+                    <li>10vw = 100px</li>
+                </ul>
+            </section>
+        </main>
+    </div>
 
     <script>
         const vwInput = document.getElementById('vwValue');

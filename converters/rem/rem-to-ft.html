@@ -5,113 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="REM to Feet online converter - Accurately calculate the conversion from REM to feet">
     <meta name="keywords" content="rem to ft, REM to feet, feet conversion">
+    <link rel="canonical" href="https://cssunitconverter.org/converters/rem/rem-to-ft" />
     <title>REM to Feet Converter - CSS Unit Conversion Tool</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../converter.css">
 </head>
 <body>
-    <header>
-        <nav class="breadcrumb">
-            <a href="../../index.html">Home</a> > REM to Feet
-        </nav>
-        <h1>REM to Feet (FT) Converter</h1>
-        <p>Convert REM to feet, suitable for print design</p>
-    </header>
-
-    <main class="converter-container">
-        <div class="input-section">
-            <div class="settings">
-                <label for="rootFontSize">Root Element Font Size:</label>
-                <input type="number" id="rootFontSize" value="16" min="1">
-                <span class="unit">px</span>
-            </div>
-            <div class="converter">
-                <input type="number" id="remValue" placeholder="Enter REM value">
-                <span class="unit">rem</span>
-            </div>
-            <div class="button-group">
-                <button id="convert" class="btn btn-primary">Convert</button>
-                <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="../../index.html" class="nav-logo">CSS Unit Converter</a>
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
             </div>
         </div>
+    </nav>
 
-        <div class="result-section">
-            <div class="result-display">
-                <span id="result">0</span>
-                <span class="unit">ft</span>
-            </div>
-            <div class="formula-display">
-                <p>Calculation method: rem × rootFontSize ÷ 12 = ft</p>
-            </div>
-        </div>
+    <div class="page-container">
+        <header>
+            <h1>REM to Feet (FT) Converter</h1>
+            <p>Convert REM to feet, suitable for print design</p>
+        </header>
 
-        <section class="conversion-info">
-            <h2>REM to Feet Conversion Instructions</h2>
-            <p>Feet is a commonly used length unit. By entering the REM value and the root element font size, you can calculate the corresponding feet value.</p>
-            
-            <h3>Common Conversion Values (Based on 16px Root Font):</h3>
-            <ul class="conversion-examples">
-                <li>1rem = 0.133ft</li>
-                <li>2rem = 0.267ft</li>
-                <li>6rem = 0.8ft</li>
-            </ul>
-
-            <div class="usage-notes">
-                <h3>Usage Instructions:</h3>
-                <ol>
-                    <li>Set the root element font size (default 16px)</li>
-                    <li>Enter the REM value</li>
-                    <li>Get the corresponding feet value</li>
-                </ol>
+        <main class="converter-container">
+            <div class="input-section">
+                <div class="settings">
+                    <label for="rootFontSize">Root Element Font Size:</label>
+                    <input type="number" id="rootFontSize" value="16" min="1">
+                    <span class="unit">px</span>
+                </div>
+                <div class="converter">
+                    <input type="number" id="remValue" placeholder="Enter REM value">
+                    <span class="unit">rem</span>
+                </div>
+                <div class="button-group">
+                    <button id="convert" class="btn btn-primary">Convert</button>
+                    <button id="copy" class="btn btn-secondary" title="Copy result">Copy</button>
+                </div>
             </div>
 
-            <div class="tips">
-                <h3>Usage Tips:</h3>
-                <ul>
-                    <li>Suitable for print design</li>
-                    <li>Calculated based on the root font size</li>
-                    <li>Accurate to 3 decimal places</li>
+            <div class="result-section">
+                <div class="result-display">
+                    <span id="result">0</span>
+                    <span class="unit">ft</span>
+                </div>
+                <div class="formula-display">
+                    <p>Calculation method: rem × rootFontSize ÷ 12 = ft</p>
+                </div>
+            </div>
+
+            <section class="conversion-info">
+                <h2>REM to Feet Conversion Instructions</h2>
+                <p>Feet is a commonly used length unit. By entering the REM value and the root element font size, you can calculate the corresponding feet value.</p>
+                
+                <h3>Common Conversion Values (Based on 16px Root Font):</h3>
+                <ul class="conversion-examples">
+                    <li>1rem = 0.133ft</li>
+                    <li>2rem = 0.267ft</li>
+                    <li>6rem = 0.8ft</li>
                 </ul>
-            </div>
-        </section>
-    </main>
 
-    <script>
-        const remInput = document.getElementById('remValue');
-        const rootFontSizeInput = document.getElementById('rootFontSize');
-        const resultSpan = document.getElementById('result');
-        const convertBtn = document.getElementById('convert');
-        const copyBtn = document.getElementById('copy');
+                <div class="usage-notes">
+                    <h3>Usage Instructions:</h3>
+                    <ol>
+                        <li>Set the root element font size (default 16px)</li>
+                        <li>Enter the REM value</li>
+                        <li>Get the corresponding feet value</li>
+                    </ol>
+                </div>
 
-        function convertRemToFt() {
-            const rem = parseFloat(remInput.value);
-            const rootFontSize = parseFloat(rootFontSizeInput.value) || 16;
-            
-            if (!isNaN(rem)) {
-                const ft = rem * rootFontSize / 12; // 1ft = 12in
-                resultSpan.textContent = ft.toFixed(3);
-            } else {
-                resultSpan.textContent = 'Please enter a valid value';
+                <div class="tips">
+                    <h3>Usage Tips:</h3>
+                    <ul>
+                        <li>Suitable for print design</li>
+                        <li>Calculated based on the root font size</li>
+                        <li>Accurate to 3 decimal places</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            const remInput = document.getElementById('remValue');
+            const rootFontSizeInput = document.getElementById('rootFontSize');
+            const resultSpan = document.getElementById('result');
+            const convertBtn = document.getElementById('convert');
+            const copyBtn = document.getElementById('copy');
+
+            function convertRemToFt() {
+                const rem = parseFloat(remInput.value);
+                const rootFontSize = parseFloat(rootFontSizeInput.value) || 16;
+                
+                if (!isNaN(rem)) {
+                    const ft = rem * rootFontSize / 12; // 1ft = 12in
+                    resultSpan.textContent = ft.toFixed(3);
+                } else {
+                    resultSpan.textContent = 'Please enter a valid value';
+                }
             }
-        }
 
-        function copyResult() {
-            navigator.clipboard.writeText(resultSpan.textContent)
-                .then(() => {
-                    copyBtn.textContent = 'Copied!';
-                    setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-                })
-                .catch(err => {
-                    console.error('Copy failed:', err);
-                });
-        }
+            function copyResult() {
+                navigator.clipboard.writeText(resultSpan.textContent)
+                    .then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => copyBtn.textContent = 'Copy', 2000);
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                    });
+            }
 
-        remInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') convertRemToFt();
-        });
-        rootFontSizeInput.addEventListener('input', convertRemToFt);
-        convertBtn.addEventListener('click', convertRemToFt);
-        copyBtn.addEventListener('click', copyResult);
-    </script>
+            remInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') convertRemToFt();
+            });
+            rootFontSizeInput.addEventListener('input', convertRemToFt);
+            convertBtn.addEventListener('click', convertRemToFt);
+            copyBtn.addEventListener('click', copyResult);
+        </script>
+    </div>
 </body>
 </html> 
