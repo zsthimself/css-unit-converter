@@ -116,4 +116,65 @@ footer {
     padding: 2rem;
     background-color: #f8f9fa;
     margin-top: 2rem;
+}
+
+/* About页面样式 */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.about-container section {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.about-container h2 {
+    color: #1a73e8;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.about-container ul {
+    list-style-type: none;
+    padding-left: 1.5rem;
+}
+
+.about-container li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    color: #5f6368;
+}
+
+.about-container li::before {
+    content: "•";
+    color: #1a73e8;
+    position: absolute;
+    left: -1rem;
+}
+
+.about-container strong {
+    color: #3c4043;
+}
+
+.contact ul li,
+.privacy ul li {
+    color: #5f6368;
+}
+
+/* 响应式调整 */
+@media (max-width: 600px) {
+    .about-container {
+        padding: 1rem;
+    }
+    
+    .about-container section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
 } 
